@@ -13,18 +13,17 @@ struct Home: View {
     // MARK: - PROPERTIES
     
     @AppStorage("log_Status") var status = false
+    @StateObject private var state = StateModel()
+
     
     // MARK: - BODY
     
     var body: some View {
-        
-        ZStack {
+    
             VStack(spacing: 0) {
                 
-                NavigationBarView()
-                    .padding(.horizontal, 15)
-                    .padding(.bottom)
-                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+                NavigationBarView(state: state)
+                    .padding()
                     .background(Color.white)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
                 
@@ -37,7 +36,7 @@ struct Home: View {
                             .frame(height: 270)
                         
                         // Category
-                        CategoryGridView()
+                        CategoryGridView(state: state)
                         
                         // Footer
                         FooterView()
@@ -64,8 +63,11 @@ struct Home: View {
                 
             } //: VSTACK
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
-        } //: ZTACK
-        .ignoresSafeArea(.all, edges: .top)
+            .fullScreenCover(item: $state.fullScreenToShow, content: { content in
+                content
+            })
+
+        
         
     }
 }
