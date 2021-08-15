@@ -1,0 +1,12 @@
+[
+    {
+        "id" : 1,
+        "name" : "Мужчины",
+        "image" : "icon-man"
+    },
+    {
+        "id" : 2,
+        "name" : "Женщины",
+        "image" : "icon-woman"
+    }
+]
