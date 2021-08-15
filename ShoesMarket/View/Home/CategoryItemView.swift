@@ -10,7 +10,7 @@ import SwiftUI
 struct CategoryItemView: View {
     
     // MARK: - PROPERTIES
-    
+    @ObservedObject var state: StateModel
     @State private var categoryMenView: Bool = false
     @State private var categoryWomenView: Bool = false
     let category: Category
@@ -19,10 +19,13 @@ struct CategoryItemView: View {
     
     var body: some View {
         Button(action: {
-            if category.name == "Мужчины" {
-                self.categoryMenView.toggle()
-            } else {
-                self.categoryWomenView.toggle()
+            if let type = category.type {
+                switch type {
+                    case .man:
+                        state.fullScreenToShow = .man
+                    case .woman:
+                        state.fullScreenToShow = .woman
+                }
             }
         }, label: {
             VStack(alignment: .center, spacing: 6) {
@@ -53,7 +56,7 @@ struct CategoryItemView: View {
 
 struct CategoryItemView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryItemView(category: categories[0])
+        CategoryItemView(state: StateModel(), category: categories[0])
             .previewLayout(.sizeThatFits)
             .padding()
             .background(colorBackground)

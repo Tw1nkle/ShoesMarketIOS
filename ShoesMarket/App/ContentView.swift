@@ -17,7 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         
-        ZStack {
+//        ZStack {
             if status {
                 Home()
             } else {
@@ -27,7 +27,7 @@ struct ContentView: View {
                         .navigationBarBackButtonHidden(true)
                 }
             }
-        } //: ZTACK
+//        } //: ZTACK
         
     }
 }

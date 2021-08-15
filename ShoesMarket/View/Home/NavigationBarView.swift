@@ -10,10 +10,9 @@ import SwiftUI
 struct NavigationBarView: View {
     
     // MARK: - PROPERTIES
-    
+    @ObservedObject var state: StateModel
     @State private var isAnimated: Bool = false
-    @State private var searchView: Bool = false
-    @State private var cartView: Bool = false
+    
     
     // MARK: - BODY
     
@@ -21,13 +20,12 @@ struct NavigationBarView: View {
         
         HStack {
             Button(action: {
-                self.searchView.toggle()
+                state.fullScreenToShow = .search
             }, label: {
                 Image(systemName: "magnifyingglass")
                     .font(.title)
                     .foregroundColor(.black)
-            }) //: BUTTON
-            .fullScreenCover(isPresented: $searchView, content: SearchView.init)
+            })
             
             Spacer()
             
@@ -43,14 +41,13 @@ struct NavigationBarView: View {
             Spacer()
             
             Button(action: {
-                self.cartView.toggle()
+                state.fullScreenToShow = .cart
             }, label: {
                 Image(systemName: "cart")
                     .font(.title)
                     .foregroundColor(.black)
-            }) //: BUTTON
-            .fullScreenCover(isPresented: $cartView, content: CartView.init)
-        } //: HSTACK
+            })
+        } 
         
     }
 }
@@ -59,7 +56,7 @@ struct NavigationBarView: View {
 
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBarView()
+        NavigationBarView(state: StateModel())
             .previewLayout(.sizeThatFits)
             .padding()
     }

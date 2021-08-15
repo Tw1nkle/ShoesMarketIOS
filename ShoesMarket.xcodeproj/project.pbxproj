@@ -36,6 +36,7 @@
 		43FA63A926BECEED00EB2018 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA63A826BECEED00EB2018 /* Constant.swift */; };
 		43FA63AB26BED3E300EB2018 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA63AA26BED3E300EB2018 /* FooterView.swift */; };
 		6D3675D0C46BB7D8E87C861B /* Pods_ShoesMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1118E3DA328075F1AA89BD /* Pods_ShoesMarket.framework */; };
+		B4FCD13D26C96A3D00BE81C4 /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FCD13C26C96A3D00BE81C4 /* StateModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		43FA63AA26BED3E300EB2018 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		4C1118E3DA328075F1AA89BD /* Pods_ShoesMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoesMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B2237F8848DDF97E7135E4 /* Pods-ShoesMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoesMarket.debug.xcconfig"; path = "Target Support Files/Pods-ShoesMarket/Pods-ShoesMarket.debug.xcconfig"; sourceTree = "<group>"; };
+		B4FCD13C26C96A3D00BE81C4 /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				4347495026BAF495004BE778 /* LoginViewModel.swift */,
+				B4FCD13C26C96A3D00BE81C4 /* StateModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				438C262326B97D740056E6B0 /* ShoesMarketApp.swift in Sources */,
 				4388590E26C00FA00061924D /* NavigationBarView.swift in Sources */,
 				43DDDC2E26C139FD00F0F388 /* CartView.swift in Sources */,
+				B4FCD13D26C96A3D00BE81C4 /* StateModel.swift in Sources */,
 				435332C526BC058400FC507C /* CustomNumberPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
