@@ -33,11 +33,11 @@ struct CategoryItemView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80, alignment: .center)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.black)
                 
                 Text(category.name.uppercased())
                     .fontWeight(.heavy)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.black)
                     .font(.title3)
                     .padding(.top, 10)
                 
@@ -47,7 +47,7 @@ struct CategoryItemView: View {
             .background(Color.white.cornerRadius(12))
             .background(
                 RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color.gray, lineWidth: 1)
+                    .stroke(Color.black, lineWidth: 6)
             )
         }) //: BUTTON
     }
