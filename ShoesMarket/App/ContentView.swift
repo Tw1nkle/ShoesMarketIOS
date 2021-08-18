@@ -16,19 +16,15 @@ struct ContentView: View {
     // MARK: - BODY
     
     var body: some View {
-        
-//        ZStack {
-            if status {
-                Home()
-            } else {
-                NavigationView {
-                    Login()
-                        .navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true)
-                }
+        if status {
+            Home()
+        } else {
+            NavigationView {
+                Login()
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
             }
-//        } //: ZTACK
-        
+        }
     }
 }
 

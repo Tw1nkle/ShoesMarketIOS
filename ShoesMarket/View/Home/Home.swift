@@ -20,10 +20,13 @@ struct Home: View {
     
     var body: some View {
     
+        ZStack {
             VStack(spacing: 0) {
                 
                 NavigationBarView(state: state)
-                    .padding()
+                    .padding(.horizontal, 15)
+                    .padding(.bottom)
+                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
                     .background(Color.white)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
                 
@@ -42,6 +45,7 @@ struct Home: View {
                         FooterView()
                             .padding(.horizontal)
                         
+                        // Sign Out
                         VStack(spacing: 15) {
                             Text("Успешный вход")
                                 .font(.title)
@@ -66,8 +70,8 @@ struct Home: View {
             .fullScreenCover(item: $state.fullScreenToShow, content: { content in
                 content
             })
-
-        
+        } //: ZTACK
+        .ignoresSafeArea(.all, edges: .top)
         
     }
 }

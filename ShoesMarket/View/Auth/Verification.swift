@@ -83,7 +83,7 @@ struct Verification: View {
                 } //: VSTACK
                 .frame(height: UIScreen.main.bounds.height / 1.8)
                 .background(Color.white)
-                .cornerRadius(20)
+                //.cornerRadius(20)
                 
                 CustomNumberPad(value: $loginData.code, isVerify: true)
             } //: VSTACK

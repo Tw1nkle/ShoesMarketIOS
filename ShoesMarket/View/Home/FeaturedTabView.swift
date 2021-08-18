@@ -24,6 +24,8 @@ struct FeaturedTabView: View {
     }
 }
 
+// MARK: - PREVIEW
+
 struct FeaturedTabView_Previews: PreviewProvider {
     static var previews: some View {
         FeaturedTabView()

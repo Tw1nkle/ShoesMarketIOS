@@ -23,6 +23,8 @@ struct FeaturedItemView: View {
     }
 }
 
+// MARK: - PREVIEW
+
 struct FeaturedItemView_Previews: PreviewProvider {
     static var previews: some View {
         FeaturedItemView(card: cards[0])

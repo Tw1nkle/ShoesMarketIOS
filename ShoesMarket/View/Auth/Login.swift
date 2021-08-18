@@ -76,7 +76,7 @@ struct Login: View {
                 } //: VSTACK
                 .frame(height: UIScreen.main.bounds.height / 1.8)
                 .background(Color.white)
-                .cornerRadius(20)
+                //.cornerRadius(20)
                 
                 // Custom number pad
                 

@@ -10,9 +10,9 @@ import SwiftUI
 struct NavigationBarView: View {
     
     // MARK: - PROPERTIES
+    
     @ObservedObject var state: StateModel
     @State private var isAnimated: Bool = false
-    
     
     // MARK: - BODY
     

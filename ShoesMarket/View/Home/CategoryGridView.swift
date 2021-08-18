@@ -10,7 +10,9 @@ import SwiftUI
 struct CategoryGridView: View {
     
     // MARK: - PROPERTIES
+    
     @ObservedObject var state: StateModel
+    
     // MARK: - BODY
     
     var body: some View {
@@ -23,6 +25,8 @@ struct CategoryGridView: View {
         .padding(.horizontal, 23)
     }
 }
+
+// MARK: - PREVIEW
 
 struct CategoryGridView_Previews: PreviewProvider {
     static var previews: some View {

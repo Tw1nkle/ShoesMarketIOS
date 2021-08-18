@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum  ScreenToShow: String, Identifiable, View {
+enum ScreenToShow: String, Identifiable, View {
     var id: String {
         self.rawValue
     }
@@ -17,7 +17,7 @@ enum  ScreenToShow: String, Identifiable, View {
     case woman
     
     var body: some View {
-        switch  self {
+        switch self {
             case .search:
                 SearchView()
             case .cart:
@@ -31,6 +31,5 @@ enum  ScreenToShow: String, Identifiable, View {
 }
 
 final class StateModel: ObservableObject {
-    @Published  var fullScreenToShow: ScreenToShow?
-    
+    @Published var fullScreenToShow: ScreenToShow?
 }

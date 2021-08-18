@@ -10,9 +10,8 @@ import SwiftUI
 struct CategoryItemView: View {
     
     // MARK: - PROPERTIES
+    
     @ObservedObject var state: StateModel
-    @State private var categoryMenView: Bool = false
-    @State private var categoryWomenView: Bool = false
     let category: Category
 
     // MARK: - BODY
@@ -53,6 +52,8 @@ struct CategoryItemView: View {
         }) //: BUTTON
     }
 }
+
+// MARK: - PREVIEW
 
 struct CategoryItemView_Previews: PreviewProvider {
     static var previews: some View {
