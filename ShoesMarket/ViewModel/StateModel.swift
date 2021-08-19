@@ -23,9 +23,9 @@ enum ScreenToShow: String, Identifiable, View {
             case .cart:
                 CartView()
             case .man:
-                Text("Man")
+                ManView()
             case .woman:
-                Text("Woman")
+                WomanView()
         }
     }
 }
