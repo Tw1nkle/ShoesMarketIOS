@@ -41,27 +41,30 @@ struct Home: View {
                         // Category
                         CategoryGridView(state: state)
                         
+                        //Title
+                        TitleView(title: "Новинки")
+                        
+                        // Product
+                        LazyVGrid(columns: gridLayoutVertical, spacing: 15, content: {
+                            ForEach(products) { product in
+                                ProductItemView(product: product)
+                            } //: LOOP
+                        }) //: GRID
+                        .padding(15)
+                        
                         // Footer
                         FooterView()
                             .padding(.horizontal)
                         
                         // Sign Out
-                        VStack(spacing: 15) {
-                            Text("Успешный вход")
-                                .font(.title)
+                        Button(action: {
+                            // Loggin out
+                            try? Auth.auth().signOut()
+                            withAnimation{status = false}
+                        }, label: {
+                            Text("Выйти из аккаунта")
                                 .fontWeight(.heavy)
-                                .foregroundColor(.black)
-                            
-                            Button(action: {
-                                // Loggin out
-                                try? Auth.auth().signOut()
-                                withAnimation{status = false}
-                            }, label: {
-                                Text("Выйти")
-                                    .fontWeight(.heavy)
-                            })
-                            
-                        } //: VSTACK
+                        }) //: BUTTON
                     } //: VSTACK
                 }) //: SCROLL
                 
