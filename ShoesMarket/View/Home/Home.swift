@@ -12,15 +12,16 @@ struct Home: View {
     
     // MARK: - PROPERTIES
     
+    //@EnvironmentObject var shop: ShopViewModel
     @AppStorage("log_Status") var status = false
     @StateObject private var state = StateModel()
-
+    @StateObject var shopData = ShopViewModel()
     
     // MARK: - BODY
     
     var body: some View {
     
-        ZStack {
+        ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
                 
                 NavigationBarView(state: state)
@@ -51,6 +52,11 @@ struct Home: View {
                             } //: LOOP
                         }) //: GRID
                         .padding(15)
+                        .onTapGesture {
+                            withAnimation(.easeInOut) {
+                                shopData.showCart.toggle()
+                            }
+                        }
                         
                         // Footer
                         FooterView()
@@ -69,12 +75,24 @@ struct Home: View {
                 }) //: SCROLL
                 
             } //: VSTACK
+            // Blurring when cart is opened
+            .blur(radius: shopData.showCart ? 20 : 0)
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
             .fullScreenCover(item: $state.fullScreenToShow, content: { content in
                 content
             })
+            
+            ProductDetailView()
+                // Hiding view when shoes is not selected
+                // Like botton sheet
+                .offset(y: shopData.showCart ? 0 : 500)
+                // Setting environment object so as to access ie easier
+                .environmentObject(shopData)
+            
         } //: ZTACK
         .ignoresSafeArea(.all, edges: .top)
+        .ignoresSafeArea(.all, edges: .bottom)
+        .background(Color.black.opacity(0.04).ignoresSafeArea())
         
     }
 }

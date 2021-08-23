@@ -27,6 +27,8 @@ var gridLayout: [GridItem] {
     return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 1)
 }
 
+let columnSize = Array(repeating: GridItem(.flexible(), spacing: 8), count: 4)
+
 var gridLayoutVertical: [GridItem] {
     return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 2)
 }
