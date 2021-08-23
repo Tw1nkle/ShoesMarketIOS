@@ -49,14 +49,16 @@ struct Home: View {
                         LazyVGrid(columns: gridLayoutVertical, spacing: 15, content: {
                             ForEach(products) { product in
                                 ProductItemView(product: product)
+                                    .onTapGesture {
+                                        withAnimation(.easeInOut) {
+                                            shopData.selectedProduct = product
+                                            shopData.showingProduct = true
+                                            shopData.showCart.toggle()
+                                        }
+                                    }
                             } //: LOOP
                         }) //: GRID
                         .padding(15)
-                        .onTapGesture {
-                            withAnimation(.easeInOut) {
-                                shopData.showCart.toggle()
-                            }
-                        }
                         
                         // Footer
                         FooterView()
