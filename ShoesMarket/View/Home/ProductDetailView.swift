@@ -12,6 +12,7 @@ struct ProductDetailView: View {
     // MARK: - PROPERTIES
     
     @EnvironmentObject var shopData: ShopViewModel
+    var animation: Namespace.ID
     
     // MARK: - BODY
     
@@ -19,11 +20,14 @@ struct ProductDetailView: View {
         VStack {
             HStack(spacing: 15) {
                 
-                // Image
-                Image(shopData.selectedProduct?.image ?? sampleProduct.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.horizontal)
+                if !shopData.startAnimation {
+                    // Image
+                    Image(shopData.selectedProduct?.image ?? sampleProduct.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .matchedGeometryEffect(id: "SHOE", in: animation)
+                        .padding(.horizontal)
+                }
                 
                 VStack(alignment: .trailing, spacing: 10, content: {
                     
@@ -52,7 +56,7 @@ struct ProductDetailView: View {
                 .font(.caption)
                 .fontWeight(.semibold)
                 .foregroundColor(.gray)
-                .padding(.top, 10)
+                .padding(.vertical)
             
             // Size
             LazyVGrid(columns: columnSize, alignment: .leading, spacing: 15, content: {
@@ -67,20 +71,25 @@ struct ProductDetailView: View {
                             .foregroundColor(shopData.selectedSize == size ? .white : .black)
                             .padding(.vertical)
                             .frame(maxWidth: .infinity)
-                            .background(shopData.selectedSize == size ? Color.orange : Color.black.opacity(0.06))
+                            .background(shopData.selectedSize == size ? Color.yellow : Color.black.opacity(0.06))
                             .cornerRadius(10)
                     }) //: BUTTON
                 }
             }) //: LAZY
+            .padding(.top)
             
             // Add to cart
-            Button(action: {}, label: {
+            Button(action: {
+                withAnimation(.easeInOut(duration: 0.7)) {
+                    shopData.startAnimation.toggle()
+                }
+            }, label: {
                 Text("Добавить в корзину")
                     .fontWeight(.bold)
                     .foregroundColor(shopData.selectedSize == "" ? .black : .white)
                     .padding(.vertical)
                     .frame(maxWidth: .infinity)
-                    .background(shopData.selectedSize == "" ? Color.black.opacity(0.06) : Color.orange)
+                    .background(shopData.selectedSize == "" ? Color.black.opacity(0.06) : Color.yellow)
                     .cornerRadius(18)
             }) //: BUTTON
             // Disabling button when no size selected
@@ -90,16 +99,7 @@ struct ProductDetailView: View {
         } //: VSTACK
         .padding()
         .padding(.bottom, 20)
-        .background(Color.white)
+        .background(Color.white.clipShape(CustomCorners(corners: [.topLeft, .topRight], radius: 35)))
         
-    }
-}
-
-// MARK: - PREVIEW
-
-struct ProductDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductDetailView()
-            .environmentObject(ShopViewModel())
     }
 }

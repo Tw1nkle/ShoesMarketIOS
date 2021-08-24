@@ -13,6 +13,7 @@ struct NavigationBarView: View {
     
     @ObservedObject var state: StateModel
     @State private var isAnimated: Bool = false
+    @StateObject var shopData = ShopViewModel()
     
     // MARK: - BODY
     
@@ -46,6 +47,17 @@ struct NavigationBarView: View {
                 Image(systemName: "cart")
                     .font(.title)
                     .foregroundColor(.black)
+                    .overlay(
+                        Text("\(shopData.cartItems)")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background(Color.yellow)
+                            .clipShape(Circle())
+                            .offset(x: 15, y: -10)
+                            .opacity(shopData.cartItems != 0 ? 1 : 0)
+                    )
             })
         } 
         
