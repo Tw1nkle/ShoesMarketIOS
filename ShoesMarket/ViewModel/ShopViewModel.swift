@@ -25,7 +25,7 @@ class ShopViewModel: ObservableObject {
     @Published var endAnimation = false
     
     // Cart items
-    @Published var cartItems = 0
+    @Published var cartItems = 1
     
     // Performing animations
     func performAnimations() {

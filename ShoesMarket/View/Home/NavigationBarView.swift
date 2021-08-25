@@ -13,7 +13,7 @@ struct NavigationBarView: View {
     
     @ObservedObject var state: StateModel
     @State private var isAnimated: Bool = false
-    @StateObject var shopData = ShopViewModel()
+    @EnvironmentObject var shopData: ShopViewModel
     
     // MARK: - BODY
     
@@ -59,8 +59,9 @@ struct NavigationBarView: View {
                             .opacity(shopData.cartItems != 0 ? 1 : 0)
                     )
             })
-        } 
-        
+        } //: HSTACK
+        .padding(.leading)
+        .padding(.trailing)
     }
 }
 
@@ -69,6 +70,7 @@ struct NavigationBarView: View {
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBarView(state: StateModel())
+            .environmentObject(ShopViewModel())
             .previewLayout(.sizeThatFits)
             .padding()
     }
