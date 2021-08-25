@@ -20,6 +20,7 @@ enum ScreenToShow: String, Identifiable, View {
         switch self {
             case .search:
                 SearchView()
+                    .environmentObject(ShopViewModel())
             case .cart:
                 CartView()
             case .man:

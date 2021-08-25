@@ -44,7 +44,7 @@ struct CategoryItemView: View {
             } //: HSTACK
             .frame(width: 140, height: 110)
             .padding()
-            .background(Color.white.cornerRadius(12))
+            .background(colorBackground.cornerRadius(12))
             .background(
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(Color.black, lineWidth: 6)

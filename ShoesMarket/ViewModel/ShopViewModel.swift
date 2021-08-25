@@ -8,24 +8,28 @@
 import SwiftUI
 
 class ShopViewModel: ObservableObject {
+    
+    // Product selection
     @Published var showCart: Bool = false
     @Published var selectedSize: String = ""
+    
+    // Product display
     @Published var showingProduct: Bool = false
     @Published var selectedProduct: Product? = nil
     
     // Animation properties
     @Published var startAnimation = false
     @Published var shoeAnimation = false
-    
     @Published var showBag = false
     @Published var saveCart = false
-    
     @Published var addItemToCart = false
-    
     @Published var endAnimation = false
     
     // Cart items
-    @Published var cartItems = 1
+    @Published var cartItems = 0
+    
+    // Search
+    @Published var searchQuery = ""
     
     // Performing animations
     func performAnimations() {

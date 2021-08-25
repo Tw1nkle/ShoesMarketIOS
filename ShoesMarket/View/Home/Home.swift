@@ -89,12 +89,8 @@ struct Home: View {
             })
             
             ProductDetailView(animation: animation)
-                // Hiding view when shoes is not selected
-                // Like botton sheet
-                
-                // Also closing when animation started
+                // Closing when animation started
                 .offset(y: shopData.showCart ? shopData.startAnimation ? 500 : 0 : 500)
-                // Setting environment object so as to access ie easier
                 .environmentObject(shopData)
             
             // Animations
