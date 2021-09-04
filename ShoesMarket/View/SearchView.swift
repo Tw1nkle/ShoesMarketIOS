@@ -12,8 +12,8 @@ struct SearchView: View {
     // MARK: - PROPERTIES
     
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var shopData = ShopViewModel()
-    @StateObject private var state = StateModel()
+    @EnvironmentObject var shopData: ShopViewModel
+    @EnvironmentObject var state: StateModel
     @State private var isEditing = false
     
     // Moving image to top like hero animation
@@ -99,9 +99,6 @@ struct SearchView: View {
             // Blurring when cart is opened
             .blur(radius: shopData.showCart ? 20 : 0)
             .background(Color.white.ignoresSafeArea(.all, edges: .all))
-            .fullScreenCover(item: $state.fullScreenToShow, content: { content in
-                content
-            })
             
             ProductDetailView(animation: animation)
                 // Closing when animation started
@@ -112,15 +109,17 @@ struct SearchView: View {
             if shopData.startAnimation {
                 VStack {
                     Spacer()
-                    
+
                     ZStack {
-                        
+
                         // Circle animation effect
                         Color.white
                             .frame(width: shopData.shoeAnimation ? 100 : getRect().width * 1.3, height: shopData.shoeAnimation ? 100 : getRect().width * 1.3)
                             .clipShape(Circle())
+
+                        // Opacit
                             .opacity(shopData.shoeAnimation ? 1 : 0)
-                        
+
                         Image(shopData.selectedProduct?.image ?? sampleProduct.image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -131,7 +130,11 @@ struct SearchView: View {
                     // Scaling effect
                     .scaleEffect(shopData.saveCart ? 0.6 : 1)
                     .onAppear(perform: shopData.performAnimations)
-                    
+
+                    if !shopData.saveCart {
+                        Spacer()
+                    }
+
                     Image(systemName: "bag\(shopData.addItemToCart ? ".fill" : "")")
                         .font(.title)
                         .foregroundColor(.white)
@@ -139,13 +142,13 @@ struct SearchView: View {
                         .background(shopData.addItemToCart ? Color.orange : Color.yellow)
                         .clipShape(Circle())
                         .offset(y: shopData.showBag ? -50 : 300)
-                    
+
                 } //: VSTACK
                 // Setting external view width to screen width
                 .frame(width: getRect().width)
                 // Moving view down
                 .offset(y: shopData.endAnimation ? 500 : 0)
-                
+
             } //: ENDIF
             
         } //: ZTACK
@@ -167,5 +170,6 @@ struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()
             .environmentObject(ShopViewModel())
+            .environmentObject(StateModel())
     }
 }

@@ -11,7 +11,7 @@ struct NavigationBarView: View {
     
     // MARK: - PROPERTIES
     
-    @ObservedObject var state: StateModel
+    @EnvironmentObject var state: StateModel
     @State private var isAnimated: Bool = false
     @EnvironmentObject var shopData: ShopViewModel
     
@@ -20,6 +20,7 @@ struct NavigationBarView: View {
     var body: some View {
         
         HStack {
+            
             Button(action: {
                 state.fullScreenToShow = .search
             }, label: {
@@ -69,7 +70,7 @@ struct NavigationBarView: View {
 
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBarView(state: StateModel())
+        NavigationBarView()
             .environmentObject(ShopViewModel())
             .previewLayout(.sizeThatFits)
             .padding()

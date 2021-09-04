@@ -12,7 +12,7 @@ struct ManView: View {
     // MARK: - PROPERTIES
     
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var shopData = ShopViewModel()
+    @EnvironmentObject var shopData: ShopViewModel
     
     // Moving image to top like hero animation
     @Namespace var animation

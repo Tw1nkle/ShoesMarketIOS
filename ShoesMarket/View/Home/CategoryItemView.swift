@@ -11,7 +11,7 @@ struct CategoryItemView: View {
     
     // MARK: - PROPERTIES
     
-    @ObservedObject var state: StateModel
+    @EnvironmentObject var state: StateModel
     let category: Category
 
     // MARK: - BODY
@@ -57,7 +57,8 @@ struct CategoryItemView: View {
 
 struct CategoryItemView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryItemView(state: StateModel(), category: categories[0])
+        CategoryItemView(category: categories[0])
+            .environmentObject(StateModel())
             .previewLayout(.sizeThatFits)
             .padding()
             .background(colorBackground)

@@ -13,7 +13,7 @@ struct Home: View {
     // MARK: - PROPERTIES
     
     @AppStorage("log_Status") var status = false
-    @StateObject private var state = StateModel()
+    @StateObject var state = StateModel()
     @StateObject var shopData = ShopViewModel()
     
     // Moving image to top like hero animation
@@ -26,13 +26,14 @@ struct Home: View {
         ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
                 
-                NavigationBarView(state: state)
+                NavigationBarView()
                     .padding(.horizontal, 15)
                     .padding(.bottom)
                     .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
                     .background(Color.white)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
                     .environmentObject(shopData)
+                    .environmentObject(state)
                 
                 ScrollView(.vertical, showsIndicators: false, content: {
                     VStack(spacing: 0) {
@@ -43,7 +44,8 @@ struct Home: View {
                             .frame(height: 270)
                         
                         // Category
-                        CategoryGridView(state: state)
+                        CategoryGridView()
+                            .environmentObject(state)
                         
                         //Title
                         TitleView(title: "Новинки")
@@ -86,6 +88,8 @@ struct Home: View {
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
             .fullScreenCover(item: $state.fullScreenToShow, content: { content in
                 content
+                    .environmentObject(shopData)
+                    .environmentObject(state)
             })
             
             ProductDetailView(animation: animation)
