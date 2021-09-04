@@ -149,7 +149,7 @@ struct Home: View {
         .ignoresSafeArea(.all, edges: .bottom)
         .background(Color.black.opacity(0.04).ignoresSafeArea())
         .onReceive(shopData.$endAnimation, perform: { value in
-            if value {
+            if value && state.fullScreenToShow == nil{
                 shopData.resetAll()
             }
         })
