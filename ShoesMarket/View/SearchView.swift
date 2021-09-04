@@ -76,8 +76,6 @@ struct SearchView: View {
                 .padding()
                 
                 ScrollView(.vertical, showsIndicators: false, content: {
-                    VStack(spacing: 0) {
-                        
                         // Product
                         LazyVGrid(columns: gridLayoutVertical, spacing: 15, content: {
                             ForEach(products.filter({"\($0)".contains(shopData.searchQuery) || shopData.searchQuery.isEmpty})) { product in
@@ -92,8 +90,6 @@ struct SearchView: View {
                             } //: LOOP
                         }) //: GRID
                         .padding(15)
-                        
-                    } //: VSTACK
                 }) //: SCROLL
             } //: VSTACK
             // Blurring when cart is opened
@@ -108,18 +104,19 @@ struct SearchView: View {
             // Animations
             if shopData.startAnimation {
                 VStack {
+                    
                     Spacer()
-
+                    
                     ZStack {
-
+                        
                         // Circle animation effect
                         Color.white
                             .frame(width: shopData.shoeAnimation ? 100 : getRect().width * 1.3, height: shopData.shoeAnimation ? 100 : getRect().width * 1.3)
                             .clipShape(Circle())
-
+                        
                         // Opacit
                             .opacity(shopData.shoeAnimation ? 1 : 0)
-
+                        
                         Image(shopData.selectedProduct?.image ?? sampleProduct.image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -130,11 +127,11 @@ struct SearchView: View {
                     // Scaling effect
                     .scaleEffect(shopData.saveCart ? 0.6 : 1)
                     .onAppear(perform: shopData.performAnimations)
-
+                    
                     if !shopData.saveCart {
                         Spacer()
                     }
-
+                    
                     Image(systemName: "bag\(shopData.addItemToCart ? ".fill" : "")")
                         .font(.title)
                         .foregroundColor(.white)
@@ -142,17 +139,16 @@ struct SearchView: View {
                         .background(shopData.addItemToCart ? Color.orange : Color.yellow)
                         .clipShape(Circle())
                         .offset(y: shopData.showBag ? -50 : 300)
-
+                    
                 } //: VSTACK
                 // Setting external view width to screen width
                 .frame(width: getRect().width)
                 // Moving view down
                 .offset(y: shopData.endAnimation ? 500 : 0)
-
+                
             } //: ENDIF
             
         } //: ZTACK
-//        .ignoresSafeArea(.all, edges: .top)
         .ignoresSafeArea(.all, edges: .bottom)
         .background(Color.black.opacity(0.04).ignoresSafeArea())
         .onChange(of: shopData.endAnimation, perform: { value in
