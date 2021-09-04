@@ -81,7 +81,7 @@ struct ProductDetailView: View {
             // Add to cart
             Button(action: {
                 withAnimation(.easeInOut(duration: 0.7)) {
-                    shopData.startAnimation.toggle()
+                    shopData.startAnimation = true
                 }
             }, label: {
                 Text("Добавить в корзину")

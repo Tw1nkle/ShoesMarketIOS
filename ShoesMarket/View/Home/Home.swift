@@ -15,6 +15,7 @@ struct Home: View {
     @AppStorage("log_Status") var status = false
     @StateObject var state = StateModel()
     @StateObject var shopData = ShopViewModel()
+    @Environment(\.presentationMode) private var presentationMode
     
     // Moving image to top like hero animation
     @Namespace var animation
@@ -58,7 +59,7 @@ struct Home: View {
                                         withAnimation(.easeInOut) {
                                             shopData.selectedProduct = product
                                             shopData.showingProduct = true
-                                            shopData.showCart.toggle()
+                                            shopData.showCart = true
                                         }
                                     }
                             } //: LOOP
@@ -98,7 +99,7 @@ struct Home: View {
                 .environmentObject(shopData)
             
             // Animations
-            if shopData.startAnimation {
+            if shopData.startAnimation && state.fullScreenToShow == nil {
                 VStack {
                     Spacer()
                     
@@ -147,11 +148,16 @@ struct Home: View {
         .ignoresSafeArea(.all, edges: .top)
         .ignoresSafeArea(.all, edges: .bottom)
         .background(Color.black.opacity(0.04).ignoresSafeArea())
-        .onChange(of: shopData.endAnimation, perform: { value in
-            if shopData.endAnimation {
+        .onReceive(shopData.$endAnimation, perform: { value in
+            if value {
                 shopData.resetAll()
             }
         })
+//        .onChange(of: shopData.endAnimation, perform: { value in
+//            if shopData.endAnimation {
+//                shopData.resetAll()
+//            }
+//        })
     }
 }
 

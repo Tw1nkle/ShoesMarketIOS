@@ -68,7 +68,7 @@ class ShopViewModel: ObservableObject {
         // Giving some time to finish animations
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
             withAnimation {
-                showCart.toggle()
+                showCart = false
             }
             
             startAnimation = false

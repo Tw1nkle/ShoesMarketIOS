@@ -28,7 +28,7 @@ struct AlertView: View {
             
             Button(action: {
                 // Closing popup
-                show.toggle()
+                show = false
             }, label: {
                 Text("Закрыть")
                     .foregroundColor(.black)
