@@ -10,11 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: - PROPERTIES
-    
     @AppStorage("log_Status") var status = false
     
     // MARK: - BODY
-    
     var body: some View {
         if status {
             Home()
@@ -29,7 +27,6 @@ struct ContentView: View {
 }
 
 // MARK: - PREVIEW
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

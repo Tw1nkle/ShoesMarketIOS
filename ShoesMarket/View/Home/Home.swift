@@ -137,7 +137,7 @@ struct Home: View {
                 // Moving view down
                 .offset(y: shopData.endAnimation ? 500 : 0)
                 
-            }
+            } //: ENDIF
             
         } //: ZTACK
         .ignoresSafeArea(.all, edges: .top)
