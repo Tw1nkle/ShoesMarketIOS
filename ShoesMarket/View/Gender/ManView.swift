@@ -53,7 +53,7 @@ struct ManView: View {
                                         withAnimation(.easeInOut) {
                                             shopData.selectedProduct = product
                                             shopData.showingProduct = true
-                                            shopData.showCart.toggle()
+                                            shopData.showCart = true
                                         }
                                     }
                             } //: LOOP

@@ -84,7 +84,7 @@ struct SearchView: View {
                                         withAnimation(.easeInOut) {
                                             shopData.selectedProduct = product
                                             shopData.showingProduct = true
-                                            shopData.showCart.toggle()
+                                            shopData.showCart = true
                                         }
                                     }
                             } //: LOOP
@@ -151,11 +151,16 @@ struct SearchView: View {
         } //: ZTACK
         .ignoresSafeArea(.all, edges: .bottom)
         .background(Color.black.opacity(0.04).ignoresSafeArea())
-        .onChange(of: shopData.endAnimation, perform: { value in
-            if shopData.endAnimation {
+        .onReceive(shopData.$endAnimation, perform: { value in
+            if value {
                 shopData.resetAll()
             }
         })
+//        .onChange(of: shopData.endAnimation, perform: { value in
+//            if shopData.endAnimation {
+//                shopData.resetAll()
+//            }
+//        })
         
     }
 }
