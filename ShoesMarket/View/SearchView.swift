@@ -84,7 +84,7 @@ struct SearchView: View {
                                         withAnimation(.easeInOut) {
                                             shopData.selectedProduct = product
                                             shopData.showingProduct = true
-                                            shopData.showCart = true
+                                            shopData.showCart.toggle()
                                         }
                                     }
                             } //: LOOP
@@ -156,12 +156,6 @@ struct SearchView: View {
                 shopData.resetAll()
             }
         })
-//        .onChange(of: shopData.endAnimation, perform: { value in
-//            if shopData.endAnimation {
-//                shopData.resetAll()
-//            }
-//        })
-        
     }
 }
 

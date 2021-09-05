@@ -59,7 +59,7 @@ struct Home: View {
                                         withAnimation(.easeInOut) {
                                             shopData.selectedProduct = product
                                             shopData.showingProduct = true
-                                            shopData.showCart = true
+                                            shopData.showCart.toggle()
                                         }
                                     }
                             } //: LOOP
@@ -149,7 +149,7 @@ struct Home: View {
         .ignoresSafeArea(.all, edges: .bottom)
         .background(Color.black.opacity(0.04).ignoresSafeArea())
         .onReceive(shopData.$endAnimation, perform: { value in
-            if value && state.fullScreenToShow == nil{
+            if value && state.fullScreenToShow == nil {
                 shopData.resetAll()
             }
         })
