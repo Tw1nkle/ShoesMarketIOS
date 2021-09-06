@@ -10,13 +10,10 @@ import SwiftUI
 struct ProductItemView: View {
     
     // MARK: - PROPERTIES
-    
     let product: Product
     
     // MARK: - BODY
-    
     var body: some View {
-        
         VStack(alignment: .leading, spacing: 6, content: {
             // PHOTO
             ZStack {
@@ -40,12 +37,10 @@ struct ProductItemView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.gray)
         }) //: VSTACK
-        
     }
 }
 
 // MARK: - PREVIEW
-
 struct ProductItemView_Previews: PreviewProvider {
     static var previews: some View {
         ProductItemView(product: products[0])

@@ -10,14 +10,11 @@ import SwiftUI
 struct Login: View {
     
     // MARK: - PROPERTIES
-    
     @StateObject var loginData = LoginViewModel()
     @State var isSmall = UIScreen.main.bounds.height < 750
     
     // MARK: - PREVIEW
-    
     var body: some View {
-        
         ZStack {
             VStack {
                 VStack {
@@ -89,6 +86,5 @@ struct Login: View {
                 AlertView(message: loginData.errorMsg, show: $loginData.error)
             }
         } //: ZTACK
-        
     }
 }

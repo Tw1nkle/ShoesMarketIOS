@@ -10,12 +10,10 @@ import SwiftUI
 struct ProductDetailView: View {
     
     // MARK: - PROPERTIES
-    
     @EnvironmentObject var shopData: ShopViewModel
     var animation: Namespace.ID
     
     // MARK: - BODY
-    
     var body: some View {
         VStack {
             HStack(spacing: 15) {
@@ -100,6 +98,5 @@ struct ProductDetailView: View {
         .padding()
         .padding(.bottom, 20)
         .background(Color.white.clipShape(CustomCorners(corners: [.topLeft, .topRight], radius: 35)))
-        
     }
 }

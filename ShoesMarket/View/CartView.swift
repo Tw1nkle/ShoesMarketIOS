@@ -10,13 +10,10 @@ import SwiftUI
 struct CartView: View {
     
     // MARK: - PROPERTIES
-    
     @Environment(\.presentationMode) var presentationMode
     
     // MARK: - BODY
-    
     var body: some View {
-        
         VStack {
             Text("Cart View")
             
@@ -26,12 +23,10 @@ struct CartView: View {
         .onTapGesture {
             presentationMode.wrappedValue.dismiss()
         }
-        
     }
 }
 
 // MARK: - PREVIEW
-
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         CartView()

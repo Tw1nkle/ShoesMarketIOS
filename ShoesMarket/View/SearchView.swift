@@ -10,7 +10,6 @@ import SwiftUI
 struct SearchView: View {
     
     // MARK: - PROPERTIES
-    
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var shopData: ShopViewModel
     @EnvironmentObject var state: StateModel
@@ -20,12 +19,9 @@ struct SearchView: View {
     @Namespace var animation
     
     // MARK: - BODY
-    
     var body: some View {
-        
         ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
-                
                 HStack {
                     TextField("Поиск", text: $shopData.searchQuery)
                         .padding(15)
@@ -71,7 +67,6 @@ struct SearchView: View {
                         .transition(.move(edge: .trailing))
                         .animation(.default)
                     }
-                    
                 } //: HSTACK
                 .padding()
                 
@@ -160,7 +155,6 @@ struct SearchView: View {
 }
 
 // MARK: - PREVIEW
-
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()

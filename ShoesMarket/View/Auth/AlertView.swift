@@ -10,14 +10,11 @@ import SwiftUI
 struct AlertView: View {
     
     // MARK: - PROPERTIES
-    
     var message: String
     @Binding var show: Bool
     
     // MARK: - BODY
-    
     var body: some View {
-        
         VStack(alignment: .leading, spacing: 15, content: {
             Text("Внимание!")
                 .fontWeight(.bold)
@@ -40,7 +37,6 @@ struct AlertView: View {
             
             // Centering the button
             .frame(alignment: .center)
-            
         }) //: VSTACK
         .padding()
         .background(Color.white)
@@ -50,6 +46,5 @@ struct AlertView: View {
         // Background dim
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black.opacity(0.3).ignoresSafeArea())
-        
     }
 }

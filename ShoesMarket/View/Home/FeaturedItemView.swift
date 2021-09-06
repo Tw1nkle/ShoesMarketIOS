@@ -10,11 +10,9 @@ import SwiftUI
 struct FeaturedItemView: View {
     
     // MARK: - PROPERTIES
-    
     let card: Card
     
     // MARK: - BODY
-    
     var body: some View {
         Image(card.image)
             .resizable()
@@ -24,7 +22,6 @@ struct FeaturedItemView: View {
 }
 
 // MARK: - PREVIEW
-
 struct FeaturedItemView_Previews: PreviewProvider {
     static var previews: some View {
         FeaturedItemView(card: cards[0])

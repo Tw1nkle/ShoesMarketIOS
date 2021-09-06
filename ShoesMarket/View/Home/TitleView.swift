@@ -10,11 +10,9 @@ import SwiftUI
 struct TitleView: View {
     
     // MARK: - PROPERTIES
-    
     var title: String
     
     // MARK: - BODY
-    
     var body: some View {
         HStack {
             Text(title)
@@ -30,7 +28,6 @@ struct TitleView: View {
 }
 
 // MARK: - PREVIEW
-
 struct TitleView_Previews: PreviewProvider {
     static var previews: some View {
         TitleView(title: "Новинки")

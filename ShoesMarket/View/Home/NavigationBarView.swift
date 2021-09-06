@@ -10,17 +10,13 @@ import SwiftUI
 struct NavigationBarView: View {
     
     // MARK: - PROPERTIES
-    
     @EnvironmentObject var state: StateModel
     @State private var isAnimated: Bool = false
     @EnvironmentObject var shopData: ShopViewModel
     
     // MARK: - BODY
-    
     var body: some View {
-        
         HStack {
-            
             Button(action: {
                 state.fullScreenToShow = .search
             }, label: {
@@ -67,7 +63,6 @@ struct NavigationBarView: View {
 }
 
 // MARK: - PREVIEW
-
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBarView()

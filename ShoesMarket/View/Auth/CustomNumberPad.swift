@@ -10,7 +10,6 @@ import SwiftUI
 struct CustomNumberPad: View {
     
     // MARK: - PROPERTIES
-    
     @Binding var value: String
     var isVerify: Bool
     
@@ -18,9 +17,7 @@ struct CustomNumberPad: View {
     var rows = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "delete.left"]
     
     // MARK: - BODY
-    
     var body: some View {
-        
         GeometryReader { reader in
             VStack {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 3), spacing: 15) {
@@ -85,5 +82,4 @@ struct CustomNumberPad: View {
             }
         }
     }
-    
 }

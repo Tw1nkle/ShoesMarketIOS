@@ -10,14 +10,11 @@ import SwiftUI
 struct Verification: View {
     
     // MARK: - PROPERTIES
-    
     @ObservedObject var loginData: LoginViewModel
     @Environment(\.presentationMode) var present
     
     // MARK: - BODY
-    
     var body: some View {
-        
         ZStack {
             VStack {
                 VStack {
@@ -33,7 +30,6 @@ struct Verification: View {
                         Text("Код из СМС")
                             .font(.title2)
                             .fontWeight(.bold)
-                        
                         
                         Spacer()
                         
@@ -113,8 +109,10 @@ struct Verification: View {
 
 struct CodeView: View {
     
+    // MARK: - PROPERTIES
     var code: String
     
+    // MARK: - BODY
     var body: some View {
         VStack(spacing: 10) {
             Text(code)

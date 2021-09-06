@@ -10,11 +10,9 @@ import SwiftUI
 struct CategoryGridView: View {
     
     // MARK: - PROPERTIES
-    
     @EnvironmentObject var state: StateModel
     
     // MARK: - BODY
-    
     var body: some View {
         LazyHGrid(rows: gridLayout, alignment: .center, spacing: columnSpacing, pinnedViews: [], content: {
             ForEach(categories) { category in
@@ -27,7 +25,6 @@ struct CategoryGridView: View {
 }
 
 // MARK: - PREVIEW
-
 struct CategoryGridView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryGridView()

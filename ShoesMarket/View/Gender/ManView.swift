@@ -10,7 +10,6 @@ import SwiftUI
 struct ManView: View {
     
     // MARK: - PROPERTIES
-    
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var shopData: ShopViewModel
     @State private var isBack = false
@@ -19,12 +18,9 @@ struct ManView: View {
     @Namespace var animation
     
     // MARK: - BODY
-    
     var body: some View {
-        
         ZStack {
             VStack(spacing: 0) {
-                
                 HStack(spacing: 0) {
                     Button(action: {
                         self.isBack = true
@@ -65,12 +61,10 @@ struct ManView: View {
             .blur(radius: shopData.showCart ? 20 : 0)
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
         } //: ZTACK
-        
     }
 }
 
 // MARK: - PREVIEW
-
 struct ManView_Previews: PreviewProvider {
     static var previews: some View {
         ManView()

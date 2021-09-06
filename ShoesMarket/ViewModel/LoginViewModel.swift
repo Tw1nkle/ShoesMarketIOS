@@ -9,32 +9,21 @@ import SwiftUI
 import Firebase
 
 class LoginViewModel: ObservableObject {
-    
     @Published var phoneNumber = ""
-    
     @Published var code = ""
-    
-    // Getting country phone code
-    
-    // DataModel for view
     
     @Published var errorMsg = ""
     @Published var error = false
     
     // Storing code for verification
-    
     @Published var CODE = ""
-    
+
     @Published var gotoVerify = false
     
     // User logged status
-    
     @AppStorage("log_Status") var status = false
     
-    // Loading view
-    
     @Published var loading = false
-    
     
     func getCountryCode() -> String {
         
@@ -44,12 +33,9 @@ class LoginViewModel: ObservableObject {
     }
     
     // Sending code to user
-    
     func sendCode() {
-        
         // Enabling testing code
         // Disable when you need to test with real device
-        
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
         
         let number = "+\(getCountryCode())\(phoneNumber)"
@@ -82,7 +68,6 @@ class LoginViewModel: ObservableObject {
             }
             
             // Else user logged in successfully
-            
             withAnimation{self.status = true}
             
         }

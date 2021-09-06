@@ -8,7 +8,6 @@
 import SwiftUI
 
 class ShopViewModel: ObservableObject {
-    
     // Product selection
     @Published var showCart: Bool = false
     @Published var selectedSize: String = ""

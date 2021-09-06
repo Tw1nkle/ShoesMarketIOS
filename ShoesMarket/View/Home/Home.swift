@@ -11,7 +11,6 @@ import Firebase
 struct Home: View {
     
     // MARK: - PROPERTIES
-    
     @AppStorage("log_Status") var status = false
     @StateObject var state = StateModel()
     @StateObject var shopData = ShopViewModel()
@@ -21,12 +20,9 @@ struct Home: View {
     @Namespace var animation
     
     // MARK: - BODY
-    
     var body: some View {
-    
         ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
-                
                 NavigationBarView()
                     .padding(.horizontal, 15)
                     .padding(.bottom)
@@ -153,11 +149,6 @@ struct Home: View {
                 shopData.resetAll()
             }
         })
-//        .onChange(of: shopData.endAnimation, perform: { value in
-//            if shopData.endAnimation {
-//                shopData.resetAll()
-//            }
-//        })
     }
 }
 
@@ -168,7 +159,6 @@ extension View {
 }
 
 // MARK: - PROPERTIES
-
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()

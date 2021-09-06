@@ -10,12 +10,10 @@ import SwiftUI
 struct CategoryItemView: View {
     
     // MARK: - PROPERTIES
-    
     @EnvironmentObject var state: StateModel
     let category: Category
 
     // MARK: - BODY
-    
     var body: some View {
         Button(action: {
             if let type = category.type {
@@ -54,7 +52,6 @@ struct CategoryItemView: View {
 }
 
 // MARK: - PREVIEW
-
 struct CategoryItemView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryItemView(category: categories[0])
