@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4303B19626E7F3E8004FECDB /* ManView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303B19526E7F3E8004FECDB /* ManView.swift */; };
+		4303B19826E7F60B004FECDB /* WomanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303B19726E7F60B004FECDB /* WomanView.swift */; };
 		431FFB2526C7AEE0001E3709 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431FFB2426C7AEE0001E3709 /* CardModel.swift */; };
 		431FFB2726C7AF22001E3709 /* FeaturedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431FFB2626C7AF22001E3709 /* FeaturedItemView.swift */; };
 		431FFB2926C7AF95001E3709 /* FeaturedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431FFB2826C7AF95001E3709 /* FeaturedTabView.swift */; };
@@ -19,8 +21,6 @@
 		435332C326BBFC8700FC507C /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435332C226BBFC8700FC507C /* Verification.swift */; };
 		435332C526BC058400FC507C /* CustomNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435332C426BC058400FC507C /* CustomNumberPad.swift */; };
 		4353901F26D4F0DE00DC5A7C /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353901E26D4F0DE00DC5A7C /* CustomCorners.swift */; };
-		435EA33E26CE498C009E7A2B /* WomanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EA33D26CE498C009E7A2B /* WomanView.swift */; };
-		435EA34026CE4993009E7A2B /* ManView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EA33F26CE4993009E7A2B /* ManView.swift */; };
 		4388590C26C00F180061924D /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388590B26C00F180061924D /* LogoView.swift */; };
 		4388590E26C00FA00061924D /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388590D26C00FA00061924D /* NavigationBarView.swift */; };
 		438C262326B97D740056E6B0 /* ShoesMarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C262226B97D740056E6B0 /* ShoesMarketApp.swift */; };
@@ -50,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		053D93E2E257EE3F2EFB8105 /* Pods-ShoesMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoesMarket.release.xcconfig"; path = "Target Support Files/Pods-ShoesMarket/Pods-ShoesMarket.release.xcconfig"; sourceTree = "<group>"; };
+		4303B19526E7F3E8004FECDB /* ManView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManView.swift; sourceTree = "<group>"; };
+		4303B19726E7F60B004FECDB /* WomanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanView.swift; sourceTree = "<group>"; };
 		431FFB2426C7AEE0001E3709 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		431FFB2626C7AF22001E3709 /* FeaturedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedItemView.swift; sourceTree = "<group>"; };
 		431FFB2826C7AF95001E3709 /* FeaturedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTabView.swift; sourceTree = "<group>"; };
@@ -62,8 +64,6 @@
 		435332C226BBFC8700FC507C /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		435332C426BC058400FC507C /* CustomNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNumberPad.swift; sourceTree = "<group>"; };
 		4353901E26D4F0DE00DC5A7C /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
-		435EA33D26CE498C009E7A2B /* WomanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanView.swift; sourceTree = "<group>"; };
-		435EA33F26CE4993009E7A2B /* ManView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManView.swift; sourceTree = "<group>"; };
 		4388590B26C00F180061924D /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		4388590D26C00FA00061924D /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		438C261F26B97D740056E6B0 /* ShoesMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoesMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,8 +151,8 @@
 		435EA33C26CE48EA009E7A2B /* Gender */ = {
 			isa = PBXGroup;
 			children = (
-				435EA33D26CE498C009E7A2B /* WomanView.swift */,
-				435EA33F26CE4993009E7A2B /* ManView.swift */,
+				4303B19526E7F3E8004FECDB /* ManView.swift */,
+				4303B19726E7F60B004FECDB /* WomanView.swift */,
 			);
 			path = Gender;
 			sourceTree = "<group>";
@@ -399,13 +399,13 @@
 				438C262526B97D740056E6B0 /* ContentView.swift in Sources */,
 				4353901F26D4F0DE00DC5A7C /* CustomCorners.swift in Sources */,
 				43254AEA26D2DB5A00589B63 /* ProductModel.swift in Sources */,
+				4303B19826E7F60B004FECDB /* WomanView.swift in Sources */,
 				439B132B26C94814007FDD92 /* CategoryModel.swift in Sources */,
 				43FA63A126BECEAA00EB2018 /* CodableBundleExtension.swift in Sources */,
 				439B132926C947E7007FDD92 /* CategoryItemView.swift in Sources */,
 				43B4C06326BD7F0900E82D5C /* Home.swift in Sources */,
 				431FFB2526C7AEE0001E3709 /* CardModel.swift in Sources */,
 				43D687F126D402CA00DF45BF /* ProductDetailView.swift in Sources */,
-				435EA34026CE4993009E7A2B /* ManView.swift in Sources */,
 				43AC1DB526E3A95F009731C6 /* TitleCategory.swift in Sources */,
 				4347495426BAF747004BE778 /* Countries.swift in Sources */,
 				43C65CE326DC2F7600B347FC /* SearchView.swift in Sources */,
@@ -423,7 +423,7 @@
 				43DDDC2E26C139FD00F0F388 /* CartView.swift in Sources */,
 				B4FCD13D26C96A3D00BE81C4 /* StateModel.swift in Sources */,
 				435332C526BC058400FC507C /* CustomNumberPad.swift in Sources */,
-				435EA33E26CE498C009E7A2B /* WomanView.swift in Sources */,
+				4303B19626E7F3E8004FECDB /* ManView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
