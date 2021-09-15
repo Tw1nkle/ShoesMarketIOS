@@ -36,7 +36,7 @@ struct ProductDetailView: View {
                         .multilineTextAlignment(.trailing)
                     
                     // Gender
-                    Text(shopData.selectedProduct?.sex ?? sampleProduct.sex)
+                    Text(shopData.selectedProduct?.gender ?? sampleProduct.gender)
                     
                     // Price
                     Text(shopData.selectedProduct?.formattedPrice ?? sampleProduct.formattedPrice)
