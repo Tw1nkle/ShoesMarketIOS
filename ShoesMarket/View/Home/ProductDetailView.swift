@@ -11,6 +11,7 @@ struct ProductDetailView: View {
     
     // MARK: - PROPERTIES
     @EnvironmentObject var shopData: ShopViewModel
+    @StateObject var ShopModel = ShopViewModel()
     var animation: Namespace.ID
     
     // MARK: - BODY
@@ -81,6 +82,9 @@ struct ProductDetailView: View {
                 withAnimation(.easeInOut(duration: 0.7)) {
                     shopData.startAnimation = true
                 }
+                // ====================================================
+                // !!!!!!! Добавить определение выбора элемента !!!!!!!
+                // ====================================================
             }, label: {
                 Text("Добавить в корзину")
                     .fontWeight(.bold)

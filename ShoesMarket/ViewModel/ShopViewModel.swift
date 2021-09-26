@@ -8,6 +8,7 @@
 import SwiftUI
 
 class ShopViewModel: ObservableObject {
+    
     // Product selection
     @Published var showCart: Bool = false
     @Published var selectedSize: String = ""
@@ -29,6 +30,12 @@ class ShopViewModel: ObservableObject {
     
     // Search
     @Published var searchQuery = ""
+    
+    // Product data
+    @Published var products: [Product] = []
+    
+    // Cart data
+    @Published var cartProducts: [Cart] = []
     
     // Performing animations
     func performAnimations() {
@@ -79,6 +86,51 @@ class ShopViewModel: ObservableObject {
             saveCart = false
             cartItems += 1
         }
+    }
+    
+    func addToCart(product: Product) {
+
+        // Checking it is added
+
+        self.products[getIndex(product: product, isCartIndex: false)].isAdded = !product.isAdded!
+
+        if product.isAdded! {
+
+            // Removing from list
+            self.cartProducts.remove(at: getIndex(product: product, isCartIndex: true))
+            return
+            
+        }
+        
+        // Else adding
+
+        self.cartProducts.append(Cart(product: product, quantity: 1))
+
+    }
+    
+    func getIndex(product: Product, isCartIndex: Bool) -> Int {
+
+        let index = self.products.firstIndex { (item1) -> Bool in
+            return product.id == item1.id
+        } ?? 0
+
+        let cartIndex = self.cartProducts.firstIndex { (item1) -> Bool in
+            return product.id == item1.product.id
+        } ?? 0
+
+        return isCartIndex ? cartIndex : index
+
+    }
+    
+    func calculateTotalPrice() -> String {
+        
+        var price: Float = 0
+        cartProducts.forEach { (item) in
+            price += Float(item.quantity) * Float(item.product.price)
+            
+        }
+        
+        return "\(price) руб."
     }
     
 }

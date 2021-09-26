@@ -23,7 +23,7 @@ struct WomanView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
-                HStack(spacing: 35) {
+                HStack {
                     Button(action: {
                         self.isBack = true
                     }, label: {
