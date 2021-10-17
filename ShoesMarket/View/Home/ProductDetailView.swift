@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ProductDetailView: View {
     
@@ -18,9 +19,8 @@ struct ProductDetailView: View {
     var body: some View {
         VStack {
             HStack(spacing: 15) {
-                
                 if !shopData.startAnimation {
-                    // Image
+                    // Изображение
                     Image(shopData.selectedProduct?.image ?? sampleProduct.image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -30,22 +30,21 @@ struct ProductDetailView: View {
                 
                 VStack(alignment: .trailing, spacing: 10, content: {
                     
-                    // Title
+                    // Название
                     Text(shopData.selectedProduct?.name ?? sampleProduct.name)
                         .fontWeight(.semibold)
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.trailing)
                     
-                    // Gender
+                    // Пол
                     Text(shopData.selectedProduct?.gender ?? sampleProduct.gender)
                     
-                    // Price
+                    // Цена
                     Text(shopData.selectedProduct?.formattedPrice ?? sampleProduct.formattedPrice)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                     
                 }) //: VSTACK
-                
             } //: HSTACK
             .padding()
             
@@ -57,7 +56,7 @@ struct ProductDetailView: View {
                 .foregroundColor(.gray)
                 .padding(.vertical)
             
-            // Size
+            // Список размеров
             LazyVGrid(columns: columnSize, alignment: .leading, spacing: 15, content: {
                 ForEach(shopData.selectedProduct?.sizes ?? sampleProduct.sizes, id: \.self) { size in
                     Button(action: {
@@ -77,14 +76,16 @@ struct ProductDetailView: View {
             }) //: LAZY
             .padding(.top)
             
-            // Add to cart
+            // Кнопка для добавления товара в корзину
             Button(action: {
                 withAnimation(.easeInOut(duration: 0.7)) {
                     shopData.startAnimation = true
+                    shopData.productName = shopData.selectedProduct?.name ?? sampleProduct.name
+                    shopData.productImage = shopData.selectedProduct?.image ?? sampleProduct.image
+                    shopData.productPrice = shopData.selectedProduct?.price ?? sampleProduct.price
+                    shopData.addData()
                 }
-                // ====================================================
-                // !!!!!!! Добавить определение выбора элемента !!!!!!!
-                // ====================================================
+                print(Realm.Configuration.defaultConfiguration.fileURL as Any)
             }, label: {
                 Text("Добавить в корзину")
                     .fontWeight(.bold)
@@ -94,7 +95,6 @@ struct ProductDetailView: View {
                     .background(shopData.selectedSize == "" ? Color.black.opacity(0.06) : Color.yellow)
                     .cornerRadius(18)
             }) //: BUTTON
-            // Disabling button when no size selected
             .disabled(shopData.selectedSize == "")
             .padding(.top)
             

@@ -15,8 +15,6 @@ struct WomanView: View {
     @EnvironmentObject var shopData: ShopViewModel
     @EnvironmentObject var state: StateModel
     @State private var isBack = false
-    
-    // Moving image to top like hero animation
     @Namespace var animation
     
     // MARK: - BODY
@@ -58,12 +56,10 @@ struct WomanView: View {
                         .padding(15)
                 }) //: SCROLL
             } //: VSTACK
-            // Blurring when cart is opened
             .blur(radius: shopData.showCart ? 20 : 0)
             .background(Color.white.ignoresSafeArea(.all, edges: .all))
             
             ProductDetailView(animation: animation)
-                // Closing when animation started
                 .offset(y: shopData.showCart ? shopData.startAnimation ? 500 : 0 : 500)
                 .environmentObject(shopData)
             
@@ -73,12 +69,9 @@ struct WomanView: View {
                     Spacer()
                     
                     ZStack {
-                        // Circle animation effect
                         Color.white
                             .frame(width: shopData.shoeAnimation ? 100 : getRect().width * 1.3, height: shopData.shoeAnimation ? 100 : getRect().width * 1.3)
                             .clipShape(Circle())
-                        
-                        // Opacit
                             .opacity(shopData.shoeAnimation ? 1 : 0)
                         
                         Image(shopData.selectedProduct?.image ?? sampleProduct.image)
@@ -88,7 +81,6 @@ struct WomanView: View {
                             .frame(width: 80, height: 80)
                     } //: ZTACK
                     .offset(y: shopData.saveCart ? 70 : -120)
-                    // Scaling effect
                     .scaleEffect(shopData.saveCart ? 0.6 : 1)
                     .onAppear(perform: shopData.performAnimations)
                     
@@ -104,9 +96,7 @@ struct WomanView: View {
                         .clipShape(Circle())
                         .offset(y: shopData.showBag ? -50 : 300)
                 } //: VSTACK
-                // Setting external view width to screen width
                 .frame(width: getRect().width)
-                // Moving view down
                 .offset(y: shopData.endAnimation ? 500 : 0)
                 
             } //: ENDIF

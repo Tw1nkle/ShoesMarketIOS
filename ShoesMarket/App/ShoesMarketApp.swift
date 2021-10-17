@@ -10,7 +10,6 @@ import Firebase
 
 @main
 struct ShoesMarketApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     
     var body: some Scene {
@@ -20,7 +19,7 @@ struct ShoesMarketApp: App {
     }
 }
 
-// Intializing firebase
+// Инициализация БД FireBase
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
@@ -29,9 +28,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
     
-    // Needed for firebase phone auth
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
     }
-    
 }

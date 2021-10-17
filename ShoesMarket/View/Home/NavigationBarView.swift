@@ -11,12 +11,13 @@ struct NavigationBarView: View {
     
     // MARK: - PROPERTIES
     @EnvironmentObject var state: StateModel
-    @State private var isAnimated: Bool = false
     @EnvironmentObject var shopData: ShopViewModel
+    @State private var isAnimated: Bool = false
     
     // MARK: - BODY
     var body: some View {
         HStack {
+            // Кнопка поиска
             Button(action: {
                 state.fullScreenToShow = .search
             }, label: {
@@ -27,6 +28,7 @@ struct NavigationBarView: View {
             
             Spacer()
             
+            // Логотип
             LogoView()
                 .opacity(isAnimated ? 1 : 0)
                 .offset(x: 0, y: isAnimated ? 0 : -25)
@@ -38,6 +40,7 @@ struct NavigationBarView: View {
             
             Spacer()
             
+            // Кнопка корзины
             Button(action: {
                 state.fullScreenToShow = .cart
             }, label: {

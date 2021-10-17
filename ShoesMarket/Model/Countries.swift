@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Countries code with phone code
+// Код страны с телефонным кодом
 let countries = ["RU" : "7",
                  "UA" : "380",
                  "BY" : "375"]

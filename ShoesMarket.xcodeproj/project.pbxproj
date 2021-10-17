@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,9 @@
 		438C262726B97D780056E6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438C262626B97D780056E6B0 /* Assets.xcassets */; };
 		438C262A26B97D780056E6B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438C262926B97D780056E6B0 /* Preview Assets.xcassets */; };
 		438DF16626BD6AF30020AA2F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 438DF16526BD6AF30020AA2F /* GoogleService-Info.plist */; };
+		439AF18C2700C17700607FE7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 439AF18B2700C17700607FE7 /* Realm */; };
+		439AF18E2700C17700607FE7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 439AF18D2700C17700607FE7 /* RealmSwift */; };
+		439AF1922700C94C00607FE7 /* CardRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AF1912700C94C00607FE7 /* CardRealm.swift */; };
 		439B132926C947E7007FDD92 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B132826C947E7007FDD92 /* CategoryItemView.swift */; };
 		439B132B26C94814007FDD92 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B132A26C94814007FDD92 /* CategoryModel.swift */; };
 		439B132D26C95843007FDD92 /* CategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B132C26C95843007FDD92 /* CategoryGridView.swift */; };
@@ -75,6 +78,7 @@
 		438C262926B97D780056E6B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		438C262B26B97D780056E6B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		438DF16526BD6AF30020AA2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		439AF1912700C94C00607FE7 /* CardRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRealm.swift; sourceTree = "<group>"; };
 		439B132826C947E7007FDD92 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
 		439B132A26C94814007FDD92 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		439B132C26C95843007FDD92 /* CategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439AF18E2700C17700607FE7 /* RealmSwift in Frameworks */,
+				439AF18C2700C17700607FE7 /* Realm in Frameworks */,
 				6D3675D0C46BB7D8E87C861B /* Pods_ShoesMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +153,7 @@
 				439B132A26C94814007FDD92 /* CategoryModel.swift */,
 				43254AE926D2DB5A00589B63 /* ProductModel.swift */,
 				435DF0A226F76BF300BDC8B2 /* Cart.swift */,
+				439AF1912700C94C00607FE7 /* CardRealm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +303,10 @@
 			dependencies = (
 			);
 			name = ShoesMarket;
+			packageProductDependencies = (
+				439AF18B2700C17700607FE7 /* Realm */,
+				439AF18D2700C17700607FE7 /* RealmSwift */,
+			);
 			productName = ShoesMarket;
 			productReference = 438C261F26B97D740056E6B0 /* ShoesMarket.app */;
 			productType = "com.apple.product-type.application";
@@ -323,6 +334,9 @@
 				Base,
 			);
 			mainGroup = 438C261626B97D740056E6B0;
+			packageReferences = (
+				439AF18A2700C17700607FE7 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 438C262026B97D740056E6B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -404,6 +418,7 @@
 				4353901F26D4F0DE00DC5A7C /* CustomCorners.swift in Sources */,
 				43254AEA26D2DB5A00589B63 /* ProductModel.swift in Sources */,
 				4303B19826E7F60B004FECDB /* WomanView.swift in Sources */,
+				439AF1922700C94C00607FE7 /* CardRealm.swift in Sources */,
 				439B132B26C94814007FDD92 /* CategoryModel.swift in Sources */,
 				43FA63A126BECEAA00EB2018 /* CodableBundleExtension.swift in Sources */,
 				439B132926C947E7007FDD92 /* CategoryItemView.swift in Sources */,
@@ -561,7 +576,7 @@
 				DEVELOPMENT_TEAM = YN96J64GT3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ShoesMarket/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,7 +599,7 @@
 				DEVELOPMENT_TEAM = YN96J64GT3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ShoesMarket/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -618,6 +633,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		439AF18A2700C17700607FE7 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.15.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		439AF18B2700C17700607FE7 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 439AF18A2700C17700607FE7 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		439AF18D2700C17700607FE7 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 439AF18A2700C17700607FE7 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 438C261726B97D740056E6B0 /* Project object */;
 }

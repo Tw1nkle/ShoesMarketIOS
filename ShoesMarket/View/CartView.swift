@@ -13,6 +13,7 @@ struct CartView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var shopData: ShopViewModel
     @EnvironmentObject var state: StateModel
+    @StateObject var modelData = ShopViewModel()
     @State private var isBack = false
     
     // MARK: - BODY
@@ -31,6 +32,7 @@ struct CartView: View {
                 })
                 .padding()
                 
+                // Название категории
                 TitleCategory(title: "Корзина")
                 
                 Spacer()
@@ -38,13 +40,45 @@ struct CartView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(spacing: 0) {
-                    ForEach(shopData.cartProducts) { product in
-                        Text(product.product.name)
+                    ForEach(modelData.cardRealm) { card in
+                        HStack(spacing: 15) {
+                            Image(card.image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 130, height: 130)
+                                .cornerRadius(15)
+                            
+                            VStack(alignment: .leading, spacing: 10) {
+                                
+                                Text("Кроссовки \(card.name)")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                                
+                                Text("Размер: \(card.size) RU")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.black)
+                                
+                                HStack(spacing: 15) {
+                                    
+                                    Text(shopData.getPrice(value: card.price))
+                                        .font(.title2)
+                                        .fontWeight(.heavy)
+                                        .foregroundColor(.black)
+                                    
+                                    Spacer(minLength: 0)
+                                    
+                                    Button(action: {}) {
+                                        Image(systemName: "minus")
+                                            .font(.system(size: 16, weight: .heavy))
+                                            .foregroundColor(.black)
+                                    }
+                                } //: HSTACK
+                            } //: VSTACK
+                        } //: HSTACK
                     }
-                }
+                } //: LAZYVSTACK
             } //: SCROLL
             
-            // Bottom View
             VStack {
                 HStack {
                     
@@ -54,7 +88,7 @@ struct CartView: View {
                     
                     Spacer()
                     
-                    // Calculating total price
+                    // Итоговая цена
                     Text(shopData.calculateTotalPrice())
                         .font(.title)
                         .fontWeight(.heavy)

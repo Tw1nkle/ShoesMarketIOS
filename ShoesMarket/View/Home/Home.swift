@@ -11,18 +11,17 @@ import Firebase
 struct Home: View {
     
     // MARK: - PROPERTIES
+    @Environment(\.presentationMode) private var presentationMode
     @AppStorage("log_Status") var status = false
     @StateObject var state = StateModel()
     @StateObject var shopData = ShopViewModel()
-    @Environment(\.presentationMode) private var presentationMode
-    
-    // Moving image to top like hero animation
     @Namespace var animation
     
     // MARK: - BODY
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
+                // Хедер
                 NavigationBarView()
                     .padding(.horizontal, 15)
                     .padding(.bottom)
@@ -34,20 +33,19 @@ struct Home: View {
                 
                 ScrollView(.vertical, showsIndicators: false, content: {
                     VStack(spacing: 0) {
-                        
-                        // Slider
+                        // Слайдер
                         FeaturedTabView()
                             .padding(.vertical, 20)
                             .frame(height: 270)
                         
-                        // Category
+                        // Категории
                         CategoryGridView()
                             .environmentObject(state)
                         
-                        //Title
+                        // Заголовок
                         TitleView(title: "Новинки")
                         
-                        // Product
+                        // Товар
                         LazyVGrid(columns: gridLayoutVertical, spacing: 15, content: {
                             ForEach(products) { product in
                                 ProductItemView(product: product)
@@ -62,13 +60,12 @@ struct Home: View {
                         }) //: GRID
                         .padding(15)
                         
-                        // Footer
+                        // Футер
                         FooterView()
                             .padding(.horizontal)
                         
-                        // Sign Out
+                        // Выход из аккаунта
                         Button(action: {
-                            // Loggin out
                             try? Auth.auth().signOut()
                             withAnimation{status = false}
                         }, label: {
@@ -78,9 +75,7 @@ struct Home: View {
                         .padding(.bottom, 50)
                     } //: VSTACK
                 }) //: SCROLL
-                
             } //: VSTACK
-            // Blurring when cart is opened
             .blur(radius: shopData.showCart ? 20 : 0)
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
             .fullScreenCover(item: $state.fullScreenToShow, content: { content in
@@ -90,23 +85,18 @@ struct Home: View {
             })
             
             ProductDetailView(animation: animation)
-                // Closing when animation started
                 .offset(y: shopData.showCart ? shopData.startAnimation ? 500 : 0 : 500)
                 .environmentObject(shopData)
             
-            // Animations
+            // Анимация добавления товара в корзину
             if shopData.startAnimation && state.fullScreenToShow == nil {
                 VStack {
                     Spacer()
                     
                     ZStack {
-                        
-                        // Circle animation effect
                         Color.white
                             .frame(width: shopData.shoeAnimation ? 100 : getRect().width * 1.3, height: shopData.shoeAnimation ? 100 : getRect().width * 1.3)
                             .clipShape(Circle())
-                        
-                        // Opacit
                             .opacity(shopData.shoeAnimation ? 1 : 0)
                         
                         Image(shopData.selectedProduct?.image ?? sampleProduct.image)
@@ -116,7 +106,6 @@ struct Home: View {
                             .frame(width: 80, height: 80)
                     } //: ZTACK
                     .offset(y: shopData.saveCart ? 70 : -120)
-                    // Scaling effect
                     .scaleEffect(shopData.saveCart ? 0.6 : 1)
                     .onAppear(perform: shopData.performAnimations)
                     
@@ -133,9 +122,7 @@ struct Home: View {
                         .offset(y: shopData.showBag ? -50 : 300)
                     
                 } //: VSTACK
-                // Setting external view width to screen width
                 .frame(width: getRect().width)
-                // Moving view down
                 .offset(y: shopData.endAnimation ? 500 : 0)
                 
             } //: ENDIF

@@ -17,7 +17,7 @@ struct Product: Codable, Identifiable {
     let color: [Double]
     let sizes: [String]
     
-    // To identify whether it is added to cart
+    // Для идентификации товара, есть ли он в корзине
     var isAdded: Bool? = false
     
     var red: Double { return color[0] }

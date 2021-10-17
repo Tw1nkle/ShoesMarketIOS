@@ -14,8 +14,6 @@ struct SearchView: View {
     @EnvironmentObject var shopData: ShopViewModel
     @EnvironmentObject var state: StateModel
     @State private var isEditing = false
-    
-    // Moving image to top like hero animation
     @Namespace var animation
     
     // MARK: - BODY
@@ -69,7 +67,6 @@ struct SearchView: View {
                 .padding()
                 
                 ScrollView(.vertical, showsIndicators: false, content: {
-                        // Product
                         LazyVGrid(columns: gridLayoutVertical, spacing: 15, content: {
                             ForEach(products.filter({"\($0)".contains(shopData.searchQuery) || shopData.searchQuery.isEmpty})) { product in
                                 ProductItemView(product: product)
@@ -85,19 +82,15 @@ struct SearchView: View {
                         .padding(15)
                 }) //: SCROLL
             } //: VSTACK
-            // Blurring when cart is opened
             .blur(radius: shopData.showCart ? 20 : 0)
             .background(Color.white.ignoresSafeArea(.all, edges: .all))
             
             ProductDetailView(animation: animation)
-                // Closing when animation started
                 .offset(y: shopData.showCart ? shopData.startAnimation ? 500 : 0 : 500)
                 .environmentObject(shopData)
             
-            // Animations
             if shopData.startAnimation {
                 VStack {
-                    
                     Spacer()
                     
                     ZStack {
@@ -117,7 +110,6 @@ struct SearchView: View {
                             .frame(width: 80, height: 80)
                     } //: ZTACK
                     .offset(y: shopData.saveCart ? 70 : -120)
-                    // Scaling effect
                     .scaleEffect(shopData.saveCart ? 0.6 : 1)
                     .onAppear(perform: shopData.performAnimations)
                     
@@ -134,13 +126,9 @@ struct SearchView: View {
                         .offset(y: shopData.showBag ? -50 : 300)
                     
                 } //: VSTACK
-                // Setting external view width to screen width
                 .frame(width: getRect().width)
-                // Moving view down
                 .offset(y: shopData.endAnimation ? 500 : 0)
-                
             } //: ENDIF
-            
         } //: ZTACK
         .ignoresSafeArea(.all, edges: .bottom)
         .background(Color.black.opacity(0.04).ignoresSafeArea())

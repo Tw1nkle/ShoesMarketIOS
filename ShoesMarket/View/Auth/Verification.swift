@@ -46,7 +46,6 @@ struct Verification: View {
                     
                     HStack(spacing: 15) {
                         ForEach(0..<6, id: \.self) { index in
-                            // Displaying code
                             CodeView(code: getCodeAtIndex(index: index))
                         }
                     } //: HSTACK
@@ -79,7 +78,6 @@ struct Verification: View {
                 } //: VSTACK
                 .frame(height: UIScreen.main.bounds.height / 1.8)
                 .background(Color.white)
-                //.cornerRadius(20)
                 
                 CustomNumberPad(value: $loginData.code, isVerify: true)
             } //: VSTACK
@@ -93,7 +91,7 @@ struct Verification: View {
         .navigationBarBackButtonHidden(true)
     }
     
-    // Getting code at each index
+    // Получение кода по каждому индексу
     func getCodeAtIndex(index: Int) -> String {
         if loginData.code.count > index {
             let start = loginData.code.startIndex
@@ -119,8 +117,6 @@ struct CodeView: View {
                 .foregroundColor(.black)
                 .fontWeight(.bold)
                 .font(.title2)
-            
-            // Default frame
                 .frame(height: 45)
         
             Capsule()

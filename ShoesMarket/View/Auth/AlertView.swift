@@ -24,7 +24,6 @@ struct AlertView: View {
                 .foregroundColor(.gray)
             
             Button(action: {
-                // Closing popup
                 show = false
             }, label: {
                 Text("Закрыть")
@@ -34,16 +33,12 @@ struct AlertView: View {
                     .background(Color.yellow)
                     .cornerRadius(15)
             })
-            
-            // Centering the button
             .frame(alignment: .center)
         }) //: VSTACK
         .padding()
         .background(Color.white)
         .cornerRadius(15)
         .padding(.horizontal, 25)
-        
-        // Background dim
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black.opacity(0.3).ignoresSafeArea())
     }

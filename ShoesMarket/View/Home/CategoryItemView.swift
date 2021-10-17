@@ -15,6 +15,7 @@ struct CategoryItemView: View {
 
     // MARK: - BODY
     var body: some View {
+        // Кнопка категории
         Button(action: {
             if let type = category.type {
                 switch type {

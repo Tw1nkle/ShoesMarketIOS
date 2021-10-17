@@ -13,7 +13,7 @@ struct CustomNumberPad: View {
     @Binding var value: String
     var isVerify: Bool
     
-    // Number data
+    // Символы для клавиатуры
     var rows = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "delete.left"]
     
     // MARK: - BODY
@@ -40,7 +40,7 @@ struct CustomNumberPad: View {
                             .background(Color.white)
                             .cornerRadius(10)
                         }
-                        // Disabling button for empty action
+                        // Отключение кнопки, если ничего не выбрано
                         .disabled(value == "" ? true : false)
                     }
                 }
@@ -49,8 +49,7 @@ struct CustomNumberPad: View {
         .padding()
     }
     
-    // Getting height and width for dynamic sizing
-    
+    // Получение ширины для динамического изменения размера экрана
     func getWidth(frame: CGRect) -> CGFloat {
         let width = frame.width
         
@@ -59,6 +58,7 @@ struct CustomNumberPad: View {
         return actualWidth / 3
     }
     
+    // Получение высоты для динамического изменения размера экрана
     func getHeight(frame: CGRect) -> CGFloat {
         let height = frame.height
         

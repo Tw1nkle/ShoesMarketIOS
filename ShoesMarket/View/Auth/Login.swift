@@ -34,8 +34,7 @@ struct Login: View {
                         .multilineTextAlignment(.center)
                         .padding()
                     
-                    // Mobile number field
-                    
+                    // Поле для ввода номера мобильного телефона
                     HStack {
                         VStack(alignment: .leading, spacing: 6) {
                             Text("Введите номер телефона")
@@ -73,10 +72,8 @@ struct Login: View {
                 } //: VSTACK
                 .frame(height: UIScreen.main.bounds.height / 1.8)
                 .background(Color.white)
-                //.cornerRadius(20)
                 
-                // Custom number pad
-                
+                // Кастомная клавиатура
                 CustomNumberPad(value: $loginData.phoneNumber, isVerify: false)
                 
             } //: VSTACK

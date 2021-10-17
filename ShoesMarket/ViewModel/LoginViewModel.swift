@@ -11,20 +11,16 @@ import Firebase
 class LoginViewModel: ObservableObject {
     @Published var phoneNumber = ""
     @Published var code = ""
-    
     @Published var errorMsg = ""
     @Published var error = false
-    
-    // Storing code for verification
+    // Хранение кода для верификации пользователя
     @Published var CODE = ""
-
     @Published var gotoVerify = false
-    
-    // User logged status
+    // Статус пользователя
     @AppStorage("log_Status") var status = false
-    
     @Published var loading = false
     
+    // Получение кода страны пользователя
     func getCountryCode() -> String {
         
         let regionCode = Locale.current.regionCode ?? ""
@@ -32,7 +28,7 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    // Sending code to user
+    // Отправка кода пользователю для подтверждения
     func sendCode() {
         // Enabling testing code
         // Disable when you need to test with real device
@@ -52,6 +48,7 @@ class LoginViewModel: ObservableObject {
         }
     }
     
+    // Проверка кода пользователя
     func verifyCode() {
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.CODE, verificationCode: code)
         
@@ -66,13 +63,13 @@ class LoginViewModel: ObservableObject {
                 withAnimation{self.error.toggle()}
                 return
             }
-            
-            // Else user logged in successfully
+
             withAnimation{self.status = true}
             
         }
     }
     
+    // Отправить код повторно
     func requestCode() {
         sendCode()
         withAnimation {
