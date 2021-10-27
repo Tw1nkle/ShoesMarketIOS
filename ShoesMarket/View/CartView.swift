@@ -99,12 +99,14 @@ struct CartView: View {
                 
                 Button(action: {}) {
                     Text("Оформить заказ")
-                        .font(.title2)
-                        .fontWeight(.heavy)
+                        .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(.vertical)
-                        .frame(width: UIScreen.main.bounds.width - 30)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.yellow)
+                        .cornerRadius(18)
                 }
+                .padding()
                 
             } //: VSTACK
             .background(Color.white)
