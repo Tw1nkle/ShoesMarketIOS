@@ -43,7 +43,7 @@ class ShopViewModel: ObservableObject {
         fetchData()
     }
     
-    // Cart data
+    // Данные корзины
     @Published var cartProducts: [Cart] = []
     
     // Анимация
@@ -89,7 +89,7 @@ class ShopViewModel: ObservableObject {
             showBag = false
             shoeAnimation = false
             saveCart = false
-            cartItems += 1
+//            cartItems += 1
         }
     }
     
@@ -135,7 +135,7 @@ class ShopViewModel: ObservableObject {
 
         if product.isAdded! {
 
-            // Removing from list
+            // Удаление из списка
             self.cartProducts.remove(at: getIndex(product: product, isCartIndex: true))
             return
             
@@ -176,6 +176,16 @@ class ShopViewModel: ObservableObject {
 
         return "\(value) ₽"
         
+    }
+    
+    // Удаление модели
+    func deleteProduct(object: CardRealm) {
+        let realm = try! Realm()
+        let deleteItem = realm.objects(CardRealm.self).filter("id == %@", object.id)
+        try! realm.write {
+            realm.delete(deleteItem)
+            fetchData()
+        }
     }
     
 }

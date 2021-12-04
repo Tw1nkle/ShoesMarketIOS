@@ -54,7 +54,7 @@ struct CartView: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
                                 
-                                Text("Размер: \(card.size) RU")
+                                Text("Размер: \(card.size)")
                                     .fontWeight(.semibold)
                                     .foregroundColor(.black)
                                 
@@ -67,10 +67,8 @@ struct CartView: View {
                                     
                                     Spacer(minLength: 0)
                                     
-                                    Button(action: {}) {
-                                        Image(systemName: "minus")
-                                            .font(.system(size: 16, weight: .heavy))
-                                            .foregroundColor(.black)
+                                    Button(action: {modelData.deleteProduct(object: card)}) {
+                                        Text("Delete")
                                     }
                                 } //: HSTACK
                             } //: VSTACK
