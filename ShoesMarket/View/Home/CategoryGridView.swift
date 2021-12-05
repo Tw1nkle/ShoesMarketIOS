@@ -14,13 +14,11 @@ struct CategoryGridView: View {
     
     // MARK: - BODY
     var body: some View {
-        LazyHGrid(rows: gridLayout, alignment: .center, spacing: columnSpacing, pinnedViews: [], content: {
+        LazyHGrid(rows: gridLayout, alignment: .center, spacing: 5, pinnedViews: [], content: {
             ForEach(categories) { category in
                 CategoryItemView(category: category)
             }
         }) //: GRID
-        .frame(height: 150)
-        .padding(.horizontal, 23)
     }
 }
 

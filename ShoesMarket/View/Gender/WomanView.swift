@@ -34,14 +34,15 @@ struct WomanView: View {
                     })
                     .padding()
                     
-                    TitleCategory(title: "Женщины")
+                    TitleCategory(title: "Женская обувь")
+                        .padding(.leading, -30)
                     
                     Spacer()
                 } //: HSTACK
                 
                 ScrollView(.vertical, showsIndicators: false, content: {
                         // Product
-                        LazyVGrid(columns: gridLayoutVertical, spacing: 15, content: {
+                        LazyVGrid(columns: gridLayoutVertical, spacing: 25, content: {
                             ForEach(products.filter({"\($0)".contains("Женские")})) { product in
                                 ProductItemView(product: product)
                                     .onTapGesture {
@@ -56,8 +57,8 @@ struct WomanView: View {
                         .padding(15)
                 }) //: SCROLL
             } //: VSTACK
-            .blur(radius: shopData.showCart ? 20 : 0)
-            .background(Color.white.ignoresSafeArea(.all, edges: .all))
+            .blur(radius: shopData.showCart ? 3 : 0)
+            .background(colorBackground.ignoresSafeArea(.all, edges: .all))
             
             ProductDetailView(animation: animation)
                 .offset(y: shopData.showCart ? shopData.startAnimation ? 500 : 0 : 500)
@@ -92,7 +93,7 @@ struct WomanView: View {
                         .font(.title)
                         .foregroundColor(.white)
                         .padding()
-                        .background(shopData.addItemToCart ? Color.orange : Color.yellow)
+                        .background(shopData.addItemToCart ? darkenColor : buttonColor)
                         .clipShape(Circle())
                         .offset(y: shopData.showBag ? -50 : 300)
                 } //: VSTACK
@@ -103,7 +104,7 @@ struct WomanView: View {
             
         } //: ZTACK
         .ignoresSafeArea(.all, edges: .bottom)
-        .background(Color.black.opacity(0.04).ignoresSafeArea())
+        .background(colorBackground.ignoresSafeArea())
         .onReceive(shopData.$endAnimation, perform: { value in
             if value {
                 shopData.resetAll()

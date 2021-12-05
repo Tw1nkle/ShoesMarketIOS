@@ -82,7 +82,7 @@ struct SearchView: View {
                         .padding(15)
                 }) //: SCROLL
             } //: VSTACK
-            .blur(radius: shopData.showCart ? 20 : 0)
+            .blur(radius: shopData.showCart ? 3 : 0)
             .background(Color.white.ignoresSafeArea(.all, edges: .all))
             
             ProductDetailView(animation: animation)
@@ -121,7 +121,7 @@ struct SearchView: View {
                         .font(.title)
                         .foregroundColor(.white)
                         .padding()
-                        .background(shopData.addItemToCart ? Color.orange : Color.yellow)
+                        .background(shopData.addItemToCart ? darkenColor : buttonColor)
                         .clipShape(Circle())
                         .offset(y: shopData.showBag ? -50 : 300)
                     

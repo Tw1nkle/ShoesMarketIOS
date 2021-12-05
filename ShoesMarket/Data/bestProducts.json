@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "NB 997H",
+    "image": "shoes-4",
+    "gender": "Женские",
+    "code": "NB9879J",
+    "price": 12990,
+    "discount": 20,
+    "sizes": ["36", "37", "38", "39"]
+  },
+  {
+    "id": 2,
+    "name": "NB 577",
+    "image": "shoes-5",
+    "gender": "Мужские",
+    "code": "NB8742P",
+    "price": 22990,
+    "discount": 15,
+    "sizes": ["39", "40", "41", "42"]
+  },
+  {
+    "id": 3,
+    "name": "NB 574",
+    "image": "shoes-6",
+    "gender": "Женские",
+    "code": "NB6281Q",
+    "price": 12990,
+    "discount": 10,
+    "sizes": ["36", "37", "38", "39"]
+  },
+  {
+    "id": 4,
+    "name": "NB X-Racer",
+    "image": "shoes-7",
+    "gender": "Мужские",
+    "code": "NB7589K",
+    "price": 12990,
+    "discount": 10,
+    "sizes": ["39", "40", "41", "42"]
+  }
+]

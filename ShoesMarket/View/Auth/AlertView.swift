@@ -18,28 +18,32 @@ struct AlertView: View {
         VStack(alignment: .leading, spacing: 15, content: {
             Text("Внимание!")
                 .fontWeight(.bold)
-                .foregroundColor(.gray)
+                .foregroundColor(.black).opacity(0.5)
             
             Text(message)
-                .foregroundColor(.gray)
+                .fontWeight(.semibold)
+                .foregroundColor(.black).opacity(0.5)
             
             Button(action: {
                 show = false
             }, label: {
                 Text("Закрыть")
-                    .foregroundColor(.black)
-                    .padding(.vertical)
+                    .foregroundColor(.white)
+                    .fontWeight(.semibold)
+                    .padding(.vertical, 16)
+                    .padding(.horizontal, 36)
+                    .background(buttonColor)
+                    .cornerRadius(10)
                     .frame(width: UIScreen.main.bounds.width - 100)
-                    .background(Color.yellow)
-                    .cornerRadius(15)
+                    .font(.system(size: 16))
             })
             .frame(alignment: .center)
         }) //: VSTACK
         .padding()
         .background(Color.white)
-        .cornerRadius(15)
-        .padding(.horizontal, 25)
+        .cornerRadius(20)
+        .padding(.horizontal, 30)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black.opacity(0.3).ignoresSafeArea())
+        .background(Color.black.opacity(0.25).ignoresSafeArea())
     }
 }

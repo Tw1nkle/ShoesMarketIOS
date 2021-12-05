@@ -26,28 +26,11 @@ struct CategoryItemView: View {
                 }
             }
         }, label: {
-            VStack(alignment: .center, spacing: 6) {
-                Image(category.image)
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 80, height: 80, alignment: .center)
-                    .foregroundColor(.black)
-                
-                Text(category.name.uppercased())
-                    .fontWeight(.heavy)
-                    .foregroundColor(.black)
-                    .font(.title3)
-                    .padding(.top, 10)
-                
-            } //: HSTACK
-            .frame(width: 140, height: 110)
-            .padding()
-            .background(colorBackground.cornerRadius(12))
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color.black, lineWidth: 6)
-            )
+            Image(category.image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 180)
+                .shadow(color: Color.black.opacity(0.25), radius: 2, x: 0, y: 0)
         }) //: BUTTON
     }
 }

@@ -123,6 +123,7 @@ class ShopViewModel: ObservableObject {
         try? dbRef.write {
             dbRef.add(card)
             fetchData()
+            cartItems += 1
         }
         
     }
@@ -161,20 +162,20 @@ class ShopViewModel: ObservableObject {
     }
     
     // Подсчет итоговой суммы
-    func calculateTotalPrice() -> String {
+    func calculateTotalPrice() -> Int {
         
-        var price: Float = 0
+        var price: Int = 0
         cardRealm.forEach { (item) in
-            price += Float(item.price)
+            price += item.price
         }
         
-        return "\(price) ₽"
+        return price
     }
     
     // Получение цены
-    func getPrice(value: Int) -> String {
+    func getPrice(value: Int) -> Int {
 
-        return "\(value) ₽"
+        return value
         
     }
     
@@ -185,6 +186,7 @@ class ShopViewModel: ObservableObject {
         try! realm.write {
             realm.delete(deleteItem)
             fetchData()
+            cartItems -= 1
         }
     }
     

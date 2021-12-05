@@ -14,36 +14,61 @@ struct ProductItemView: View {
     
     // MARK: - BODY
     var body: some View {
-        VStack(alignment: .leading, spacing: 6, content: {
+        VStack(alignment: .leading, spacing: 5, content: {
             ZStack {
+                
+                if product.discount > 0 {
+                    Text("-\(product.discount)%")
+                        .font(.system(size: 13))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding(5)
+                        .background(Color.red)
+                        .cornerRadius(10)
+                        .offset(x: -50, y: -70)
+                }
+                
                 // Изображение
                 Image(product.image)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 170, height: 170)
-                    .shadow(color: .black, radius: 20, x: 10, y: 9)
-
+                    .frame(width: 165, height: 100)
             } //: ZTACK
-            .background(Color(red: product.red, green: product.green, blue: product.blue))
-            .cornerRadius(12)
+            .frame(width: 175, height: 180)
+            .background(Color.white)
+            .cornerRadius(20)
             
             // Название
             Text("\(product.name)")
-                .font(.title3)
-                .fontWeight(.black)
+                .font(.system(size: 16))
+                .padding(.leading, 10)
             
-            // Цена
-            Text(product.formattedPrice)
-                .fontWeight(.semibold)
-                .foregroundColor(.gray)
+            HStack {
+                // Цена
+                Text("\(product.discountPrice) ₽")
+                    .font(.title2)
+                    .fontWeight(.heavy)
+                    .padding(.leading, 10)
+                    .foregroundColor(product.discount > 0 ? Color.red : Color.black)
+                
+                // Скидочная цена
+                Text(product.discount > 0 ? "\(product.formattedPrice) ₽" : " ")
+                    .font(.system(size: 12))
+                    .fontWeight(.heavy)
+                    .foregroundColor(Color.black.opacity(0.4))
+                    .strikethrough(true, color: .gray)
+                    .padding(.top, 8)
+            }
+            
         }) //: VSTACK
+        .shadow(color: Color.black.opacity(0.25), radius: 1, x: 0, y: 0)
     }
 }
 
 // MARK: - PREVIEW
 struct ProductItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductItemView(product: products[0])
+        ProductItemView(product: products[3])
             .previewLayout(.fixed(width: 200, height: 300))
             .padding()
             .background(colorBackground)

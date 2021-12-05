@@ -20,8 +20,8 @@ struct Verification: View {
                 VStack {
                     HStack {
                         Button(action: {present.wrappedValue.dismiss()}) {
-                            Image(systemName: "arrow.left")
-                                .font(.title2)
+                            Image(systemName: "chevron.backward")
+                                .font(.title)
                                 .foregroundColor(.black)
                         }
                         
@@ -29,7 +29,7 @@ struct Verification: View {
                         
                         Text("Код из СМС")
                             .font(.title2)
-                            .fontWeight(.bold)
+                            .fontWeight(.heavy)
                         
                         Spacer()
                         
@@ -38,7 +38,7 @@ struct Verification: View {
                     } //: HSTACK
                     .padding()
                     
-                    Text("Код отправлен на \(loginData.phoneNumber)")
+                    Text("Код отправлен на +\(loginData.phoneNumber)")
                         .foregroundColor(.gray)
                         .padding(.bottom)
                     
@@ -57,27 +57,32 @@ struct Verification: View {
                     HStack(spacing: 6) {
                         Text("Не получили код?")
                             .foregroundColor(.gray)
+                            .font(.system(size: 15))
                         
                         Button(action: loginData.requestCode) {
                             Text("Запросить новый код")
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
+                                .font(.system(size: 15))
                         }
                     } //: HSTACK
                     
                     Button(action: loginData.verifyCode) {
                         Text("Подтвердить")
-                            .foregroundColor(.black)
-                            .padding(.vertical)
+                            .foregroundColor(.white)
+                            .fontWeight(.semibold)
+                            .padding(.vertical, 16)
+                            .padding(.horizontal, 100)
                             .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(Color.yellow)
-                            .cornerRadius(15)
+                            .background(buttonColor)
+                            .cornerRadius(10)
+                            .font(.system(size: 16))
                     }
                     .padding()
                     
                 } //: VSTACK
                 .frame(height: UIScreen.main.bounds.height / 1.8)
-                .background(Color.white)
+                .background(colorBackground.ignoresSafeArea())
                 
                 CustomNumberPad(value: $loginData.code, isVerify: true)
             } //: VSTACK

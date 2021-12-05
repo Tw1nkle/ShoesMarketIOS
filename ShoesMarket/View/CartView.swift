@@ -16,6 +16,9 @@ struct CartView: View {
     @StateObject var modelData = ShopViewModel()
     @State private var isBack = false
     
+    // Промокод
+    @State private var promocode = ""
+    
     // MARK: - BODY
     var body: some View {
         VStack {
@@ -34,6 +37,7 @@ struct CartView: View {
                 
                 // Название категории
                 TitleCategory(title: "Корзина")
+                    .padding(.leading, -30)
                 
                 Spacer()
             } //: HSTACK
@@ -45,50 +49,84 @@ struct CartView: View {
                             Image(card.image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 130, height: 130)
+                                .frame(width: 160, height: 110)
                                 .cornerRadius(15)
                             
                             VStack(alignment: .leading, spacing: 10) {
                                 
                                 Text("Кроссовки \(card.name)")
+                                    .font(.system(size: 16))
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
                                 
                                 Text("Размер: \(card.size)")
-                                    .fontWeight(.semibold)
+                                    .font(.system(size: 16))
                                     .foregroundColor(.black)
                                 
                                 HStack(spacing: 15) {
                                     
-                                    Text(shopData.getPrice(value: card.price))
-                                        .font(.title2)
-                                        .fontWeight(.heavy)
+                                    Text("\(shopData.getPrice(value: card.price)) ₽")
+                                        .font(.system(size: 20))
+                                        .fontWeight(.bold)
                                         .foregroundColor(.black)
                                     
                                     Spacer(minLength: 0)
                                     
                                     Button(action: {modelData.deleteProduct(object: card)}) {
-                                        Text("Delete")
+                                        Image(systemName: "trash")
+                                            .frame(width: 20, height: 20)
+                                            .foregroundColor(Color.black.opacity(0.5))
                                     }
                                 } //: HSTACK
                             } //: VSTACK
                         } //: HSTACK
+
+                        Divider()
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                        
                     }
                 } //: LAZYVSTACK
             } //: SCROLL
+            .padding()
             
             VStack {
+                
                 HStack {
                     
-                    Text("Итого")
+                    TextField("Промокод", text: $promocode)
+                    
+                    Button(action: {}) {
+                        Image(systemName: "arrow.right")
+                            .foregroundColor(Color.black.opacity(0.3))
+                            .frame(width: 20, height: 20)
+                    }
+                    .padding(5)
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(5)
+
+                    
+                }
+                .padding(.leading)
+                .padding(.trailing)
+                
+                Divider()
+                    .padding(.top, 5)
+                    .padding(.leading)
+                    .padding(.trailing)
+                
+                HStack {
+                    
+                    Text("Итого к оплате")
+                        .font(.system(size: 22))
                         .fontWeight(.heavy)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                     
                     Spacer()
                     
                     // Итоговая цена
-                    Text(shopData.calculateTotalPrice())
-                        .font(.title)
+                    Text("\(shopData.calculateTotalPrice()) ₽")
+                        .font(.system(size: 22))
                         .fontWeight(.heavy)
                         .foregroundColor(.black)
                     
@@ -96,13 +134,16 @@ struct CartView: View {
                 .padding([.top, .horizontal])
                 
                 Button(action: {}) {
-                    Text("Оформить заказ")
-                        .fontWeight(.bold)
+                    Text("Оформить заказ на \(shopData.calculateTotalPrice()) ₽")
                         .foregroundColor(.white)
-                        .padding(.vertical)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.yellow)
-                        .cornerRadius(18)
+                        .fontWeight(.semibold)
+                        .padding(.top, 16)
+                        .padding(.bottom, 16)
+                        .padding(.leading, 60)
+                        .padding(.trailing, 60)
+                        .background(buttonColor)
+                        .cornerRadius(10)
+                        .font(.system(size: 16))
                 }
                 .padding()
                 

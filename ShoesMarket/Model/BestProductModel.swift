@@ -1,19 +1,18 @@
 //
-//  ProductModel.swift
+//  BestProductModel.swift
 //  ShoesMarket
 //
-//  Created by Дарья Федяшова on 22.08.2021.
+//  Created by Дарья Федяшова on 04.12.2021.
 //
 
 import Foundation
 
-struct Product: Codable, Identifiable {
+struct BestProduct: Codable, Identifiable {
     let id: Int
     let name: String
     let image: String
     let gender: String
     let price: Int
-    let color: String
     let code: String
     let discount: Int
     let sizes: [String]
@@ -21,7 +20,5 @@ struct Product: Codable, Identifiable {
     // Для идентификации товара, есть ли он в корзине
     var isAdded: Bool? = false
     
-    var formattedPrice: Int { return price }
-    
-    var discountPrice: Int { return price - (price * discount) / 100 }
+    var formattedPrice: String { return "\(price) ₽" }
 }

@@ -15,20 +15,26 @@ struct TitleCategory: View {
     // MARK: - BODY
     var body: some View {
         HStack {
+            
             Text(title)
-                .font(.largeTitle)
+                .font(.title2)
                 .fontWeight(.heavy)
+                .foregroundColor(.black)
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .center)
+            
         } //: HSTACK
-        .padding(.horizontal)
-        .padding(.top, 15)
-        .padding(.bottom, 10)
+        .padding(.leading, -25)
+//        .padding(.horizontal)
+//        .padding(.top, 15)
+//        .padding(.bottom, 10)
     }
 }
 
 // MARK: - PREVIEW
 struct TitleCategory_Previews: PreviewProvider {
     static var previews: some View {
-        TitleCategory(title: "Пол")
+        TitleCategory(title: "Мужская обувь")
             .previewLayout(.sizeThatFits)
             .background(colorBackground)
     }

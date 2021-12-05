@@ -15,25 +15,30 @@ struct FooterView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             Text("Мы предлагаем самую современную, удобную и легкую обувь на рынке по хорошим ценам.")
-                .foregroundColor(.gray)
+                .fontWeight(.semibold)
+                .foregroundColor(.black.opacity(0.5))
+                .font(.system(size: 16))
                 .multilineTextAlignment(.center)
                 .layoutPriority(2)
+                .padding(.bottom, 7)
             
             Image("logo-white")
                 .resizable()
                 .renderingMode(.template)
-                .frame(width: 32.0, height: 32.0)
+                .frame(width: 40.0, height: 40.0)
                 .foregroundColor(.gray)
                 .layoutPriority(0)
+                .padding(.bottom, 7)
             
             Text("Авторские права © Shoes Market\nВсе права защищены")
-                .font(.footnote)
-                .fontWeight(.bold)
+                .font(.system(size: 16))
+                .fontWeight(.semibold)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
                 .layoutPriority(1)
         } //: VSTACK
         .padding()
+        .padding(.top, 30)
     }
 }
 

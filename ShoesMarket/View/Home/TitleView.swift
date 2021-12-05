@@ -16,14 +16,14 @@ struct TitleView: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.largeTitle)
+                .font(.system(size: 25))
                 .fontWeight(.heavy)
             
             Spacer()
         } //: HSTACK
         .padding(.horizontal)
-        .padding(.top, 15)
-        .padding(.bottom, 10)
+        .padding(.top, 25)
+        .padding(.bottom, 15)
     }
 }
 

@@ -26,8 +26,7 @@ struct Home: View {
                     .padding(.horizontal, 15)
                     .padding(.bottom)
                     .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-                    .background(Color.white)
-                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
+                    .background(Color.white.shadow(color: Color.black.opacity(0.25), radius: 2, x: 0, y: 0))
                     .environmentObject(shopData)
                     .environmentObject(state)
                 
@@ -35,6 +34,7 @@ struct Home: View {
                     VStack(spacing: 0) {
                         // Слайдер
                         FeaturedTabView()
+                            .shadow(color: Color.black.opacity(0.25), radius: 2, x: 0, y: 0)
                             .padding(.vertical, 20)
                             .frame(height: 270)
                         
@@ -45,9 +45,10 @@ struct Home: View {
                         // Заголовок
                         TitleView(title: "Новинки")
                         
-                        // Товар
-                        LazyVGrid(columns: gridLayoutVertical, spacing: 15, content: {
-                            ForEach(products) { product in
+                        // Товар новинок
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 10) {
+                                ForEach(products) { product in
                                 ProductItemView(product: product)
                                     .onTapGesture {
                                         withAnimation(.easeInOut) {
@@ -56,9 +57,34 @@ struct Home: View {
                                             shopData.showCart.toggle()
                                         }
                                     }
-                            } //: LOOP
-                        }) //: GRID
-                        .padding(15)
+                                }
+                            }
+                        }
+                        .padding(.leading, 10)
+                        .padding(.top, 10)
+                        
+                        // Заголовок
+                        TitleView(title: "Лучшая цена")
+                        
+                        // Товар с лучшими ценами
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 10) {
+                                ForEach(products) { product in
+                                    if product.discount > 0 {
+                                        ProductItemView(product: product)
+                                            .onTapGesture {
+                                                withAnimation(.easeInOut) {
+                                                    shopData.selectedProduct = product
+                                                    shopData.showingProduct = true
+                                                    shopData.showCart.toggle()
+                                                }
+                                            }
+                                    }
+                                }
+                            }
+                        }
+                        .padding(.leading, 10)
+                        .padding(.top, 10)
                         
                         // Футер
                         FooterView()
@@ -76,7 +102,7 @@ struct Home: View {
                     } //: VSTACK
                 }) //: SCROLL
             } //: VSTACK
-            .blur(radius: shopData.showCart ? 20 : 0)
+            .blur(radius: shopData.showCart ? 3 : 0)
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
             .fullScreenCover(item: $state.fullScreenToShow, content: { content in
                 content
@@ -117,7 +143,7 @@ struct Home: View {
                         .font(.title)
                         .foregroundColor(.white)
                         .padding()
-                        .background(shopData.addItemToCart ? Color.orange : Color.yellow)
+                        .background(shopData.addItemToCart ? darkenColor : buttonColor)
                         .clipShape(Circle())
                         .offset(y: shopData.showBag ? -50 : 300)
                     
@@ -130,7 +156,7 @@ struct Home: View {
         } //: ZTACK
         .ignoresSafeArea(.all, edges: .top)
         .ignoresSafeArea(.all, edges: .bottom)
-        .background(Color.black.opacity(0.04).ignoresSafeArea())
+        .background(colorBackground.ignoresSafeArea())
         .onReceive(shopData.$endAnimation, perform: { value in
             if value && state.fullScreenToShow == nil {
                 shopData.resetAll()
