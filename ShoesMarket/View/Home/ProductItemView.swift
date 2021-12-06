@@ -23,7 +23,7 @@ struct ProductItemView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                         .padding(5)
-                        .background(Color.red)
+                        .background(discountColor)
                         .cornerRadius(10)
                         .offset(x: -50, y: -70)
                 }
@@ -35,7 +35,7 @@ struct ProductItemView: View {
                     .frame(width: 165, height: 100)
             } //: ZTACK
             .frame(width: 175, height: 180)
-            .background(Color.white)
+            .background(Color.white.shadow(color: Color.black.opacity(0.25), radius: 1, x: 0, y: 0))
             .cornerRadius(20)
             
             // Название
@@ -49,7 +49,7 @@ struct ProductItemView: View {
                     .font(.title2)
                     .fontWeight(.heavy)
                     .padding(.leading, 10)
-                    .foregroundColor(product.discount > 0 ? Color.red : Color.black)
+                    .foregroundColor(product.discount > 0 ? discountColor : Color.black)
                 
                 // Скидочная цена
                 Text(product.discount > 0 ? "\(product.formattedPrice) ₽" : " ")
@@ -61,7 +61,6 @@ struct ProductItemView: View {
             }
             
         }) //: VSTACK
-        .shadow(color: Color.black.opacity(0.25), radius: 1, x: 0, y: 0)
     }
 }
 

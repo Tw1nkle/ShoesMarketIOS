@@ -24,7 +24,7 @@ struct SearchView: View {
                     TextField("Поиск", text: $shopData.searchQuery)
                         .padding(15)
                         .padding(.horizontal, 25)
-                        .background(Color(.systemGray6))
+                        .background(Color.gray.opacity(0.10))
                         .foregroundColor(.black)
                         .cornerRadius(8)
                         .overlay(
@@ -77,13 +77,14 @@ struct SearchView: View {
                                             shopData.showCart.toggle()
                                         }
                                     }
+                                    .padding(.bottom, 10)
                             } //: LOOP
                         }) //: GRID
                         .padding(15)
                 }) //: SCROLL
             } //: VSTACK
             .blur(radius: shopData.showCart ? 3 : 0)
-            .background(Color.white.ignoresSafeArea(.all, edges: .all))
+            .background(colorBackground.ignoresSafeArea(.all, edges: .all))
             
             ProductDetailView(animation: animation)
                 .offset(y: shopData.showCart ? shopData.startAnimation ? 500 : 0 : 500)
@@ -131,7 +132,6 @@ struct SearchView: View {
             } //: ENDIF
         } //: ZTACK
         .ignoresSafeArea(.all, edges: .bottom)
-        .background(Color.black.opacity(0.04).ignoresSafeArea())
         .onReceive(shopData.$endAnimation, perform: { value in
             if value {
                 shopData.resetAll()

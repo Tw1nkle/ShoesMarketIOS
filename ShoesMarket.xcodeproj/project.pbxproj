@@ -133,7 +133,6 @@
 				43FA639B26BECDFF00EB2018 /* Home */,
 				43DDDC2F26C13BAB00F0F388 /* Auth */,
 				435EA33C26CE48EA009E7A2B /* Gender */,
-				43DDDC2D26C139FD00F0F388 /* CartView.swift */,
 				43C65CE226DC2F7600B347FC /* SearchView.swift */,
 			);
 			path = View;
@@ -168,6 +167,7 @@
 			children = (
 				4303B19526E7F3E8004FECDB /* ManView.swift */,
 				4303B19726E7F60B004FECDB /* WomanView.swift */,
+				43DDDC2D26C139FD00F0F388 /* CartView.swift */,
 			);
 			path = Gender;
 			sourceTree = "<group>";

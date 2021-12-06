@@ -107,6 +107,7 @@ struct CartView: View {
 
                     
                 }
+                .padding(.top, 10)
                 .padding(.leading)
                 .padding(.trailing)
                 
@@ -148,8 +149,9 @@ struct CartView: View {
                 .padding()
                 
             } //: VSTACK
-            .background(Color.white)
+//            .background(Color.white.ignoresSafeArea(edges: .bottom))
             
         } //: VSTACK
+        .background(colorBackground.ignoresSafeArea())
     }
 }

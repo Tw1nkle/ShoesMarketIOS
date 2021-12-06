@@ -52,7 +52,7 @@ struct NavigationBarView: View {
                             .font(.system(size: 13))
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
-                            .padding(8)
+                            .padding(7)
                             .background(buttonColor)
                             .clipShape(Circle())
                             .offset(x: 23, y: -17)
@@ -60,6 +60,7 @@ struct NavigationBarView: View {
                     )
             })
         } //: HSTACK
+        .padding(.top, 10)
         .padding(.leading)
         .padding(.trailing)
     }

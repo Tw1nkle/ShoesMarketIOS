@@ -40,10 +40,12 @@ struct ProductDetailView: View {
                         .font(.system(size: 20))
                         .foregroundColor(.black)
                     
+                    // Work
+                    // "\(sampleProduct.discountPrice) ₽"
                     // String(shopData.selectedProduct?.discountPrice ?? sampleProduct.discountPrice)
                     
                     // Цена
-                    Text(String(shopData.selectedProduct?.discountPrice ?? sampleProduct.discountPrice))
+                    Text("\(shopData.selectedProduct?.discountPrice ?? sampleProduct.discountPrice) ₽")
                         .font(.system(size: 22))
                         .fontWeight(.heavy)
                         .foregroundColor(.black)
@@ -95,7 +97,7 @@ struct ProductDetailView: View {
             }, label: {
                 Text("Добавить в корзину")
                     .font(.system(size: 16))
-                    .fontWeight(.bold)
+                    .fontWeight(.semibold)
                     .foregroundColor(shopData.selectedSize == "" ? .black : .white)
                     .padding(.vertical)
                     .frame(maxWidth: .infinity)
@@ -113,7 +115,7 @@ struct ProductDetailView: View {
                     Text("Примерить обувь")
                         .font(.system(size: 16))
                         .foregroundColor(.white)
-                        .fontWeight(.bold)
+                        .fontWeight(.semibold)
                 }
                 .padding(.vertical)
                 .frame(maxWidth: .infinity)

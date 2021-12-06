@@ -38,7 +38,7 @@ struct Verification: View {
                     } //: HSTACK
                     .padding()
                     
-                    Text("Код отправлен на +\(loginData.phoneNumber)")
+                    Text("Код отправлен на +\(loginData.getCountryCode()) \(loginData.phoneNumber)")
                         .foregroundColor(.gray)
                         .padding(.bottom)
                     
