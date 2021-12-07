@@ -21,6 +21,18 @@
 		435332C326BBFC8700FC507C /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435332C226BBFC8700FC507C /* Verification.swift */; };
 		435332C526BC058400FC507C /* CustomNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435332C426BC058400FC507C /* CustomNumberPad.swift */; };
 		4353901F26D4F0DE00DC5A7C /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353901E26D4F0DE00DC5A7C /* CustomCorners.swift */; };
+		435519C1275E5E3000D1F6B7 /* ARCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435519C0275E5E3000D1F6B7 /* ARCameraView.swift */; };
+		435519CD275E795800D1F6B7 /* NB 574Z.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519C3275E795500D1F6B7 /* NB 574Z.usdz */; };
+		435519CE275E795800D1F6B7 /* NB 530P.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519C4275E795500D1F6B7 /* NB 530P.usdz */; };
+		435519CF275E795800D1F6B7 /* NB 530C.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519C5275E795500D1F6B7 /* NB 530C.usdz */; };
+		435519D0275E795800D1F6B7 /* NB 997H.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519C6275E795600D1F6B7 /* NB 997H.usdz */; };
+		435519D1275E795800D1F6B7 /* NB 574.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519C7275E795600D1F6B7 /* NB 574.usdz */; };
+		435519D2275E795800D1F6B7 /* NB 577.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519C8275E795600D1F6B7 /* NB 577.usdz */; };
+		435519D3275E795800D1F6B7 /* NB 996.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519C9275E795700D1F6B7 /* NB 996.usdz */; };
+		435519D4275E795800D1F6B7 /* NB 530.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519CA275E795700D1F6B7 /* NB 530.usdz */; };
+		435519D5275E795800D1F6B7 /* NB 991.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519CB275E795800D1F6B7 /* NB 991.usdz */; };
+		435519D6275E795800D1F6B7 /* NB X-Racer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 435519CC275E795800D1F6B7 /* NB X-Racer.usdz */; };
+		435519D8275E7AD400D1F6B7 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435519D7275E7AD400D1F6B7 /* ControlView.swift */; };
 		435DF0A326F76BF300BDC8B2 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435DF0A226F76BF300BDC8B2 /* Cart.swift */; };
 		4388590C26C00F180061924D /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388590B26C00F180061924D /* LogoView.swift */; };
 		4388590E26C00FA00061924D /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388590D26C00FA00061924D /* NavigationBarView.swift */; };
@@ -70,6 +82,18 @@
 		435332C226BBFC8700FC507C /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		435332C426BC058400FC507C /* CustomNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNumberPad.swift; sourceTree = "<group>"; };
 		4353901E26D4F0DE00DC5A7C /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		435519C0275E5E3000D1F6B7 /* ARCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCameraView.swift; sourceTree = "<group>"; };
+		435519C3275E795500D1F6B7 /* NB 574Z.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB 574Z.usdz"; sourceTree = "<group>"; };
+		435519C4275E795500D1F6B7 /* NB 530P.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB 530P.usdz"; sourceTree = "<group>"; };
+		435519C5275E795500D1F6B7 /* NB 530C.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB 530C.usdz"; sourceTree = "<group>"; };
+		435519C6275E795600D1F6B7 /* NB 997H.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB 997H.usdz"; sourceTree = "<group>"; };
+		435519C7275E795600D1F6B7 /* NB 574.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB 574.usdz"; sourceTree = "<group>"; };
+		435519C8275E795600D1F6B7 /* NB 577.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB 577.usdz"; sourceTree = "<group>"; };
+		435519C9275E795700D1F6B7 /* NB 996.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB 996.usdz"; sourceTree = "<group>"; };
+		435519CA275E795700D1F6B7 /* NB 530.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB 530.usdz"; sourceTree = "<group>"; };
+		435519CB275E795800D1F6B7 /* NB 991.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB 991.usdz"; sourceTree = "<group>"; };
+		435519CC275E795800D1F6B7 /* NB X-Racer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "NB X-Racer.usdz"; sourceTree = "<group>"; };
+		435519D7275E7AD400D1F6B7 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		435DF0A226F76BF300BDC8B2 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		4388590B26C00F180061924D /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		4388590D26C00FA00061924D /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
@@ -130,10 +154,12 @@
 		4347494C26BAEAAB004BE778 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				435519BD275E5C5600D1F6B7 /* AR */,
 				43FA639B26BECDFF00EB2018 /* Home */,
 				43DDDC2F26C13BAB00F0F388 /* Auth */,
 				435EA33C26CE48EA009E7A2B /* Gender */,
 				43C65CE226DC2F7600B347FC /* SearchView.swift */,
+				43DDDC2D26C139FD00F0F388 /* CartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,12 +188,37 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		435519BD275E5C5600D1F6B7 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				435519C0275E5E3000D1F6B7 /* ARCameraView.swift */,
+				435519D7275E7AD400D1F6B7 /* ControlView.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		435519C2275E792F00D1F6B7 /* 3D Assets */ = {
+			isa = PBXGroup;
+			children = (
+				435519CA275E795700D1F6B7 /* NB 530.usdz */,
+				435519C5275E795500D1F6B7 /* NB 530C.usdz */,
+				435519C4275E795500D1F6B7 /* NB 530P.usdz */,
+				435519C7275E795600D1F6B7 /* NB 574.usdz */,
+				435519C3275E795500D1F6B7 /* NB 574Z.usdz */,
+				435519C8275E795600D1F6B7 /* NB 577.usdz */,
+				435519CB275E795800D1F6B7 /* NB 991.usdz */,
+				435519C9275E795700D1F6B7 /* NB 996.usdz */,
+				435519C6275E795600D1F6B7 /* NB 997H.usdz */,
+				435519CC275E795800D1F6B7 /* NB X-Racer.usdz */,
+			);
+			path = "3D Assets";
+			sourceTree = "<group>";
+		};
 		435EA33C26CE48EA009E7A2B /* Gender */ = {
 			isa = PBXGroup;
 			children = (
 				4303B19526E7F3E8004FECDB /* ManView.swift */,
 				4303B19726E7F60B004FECDB /* WomanView.swift */,
-				43DDDC2D26C139FD00F0F388 /* CartView.swift */,
 			);
 			path = Gender;
 			sourceTree = "<group>";
@@ -195,6 +246,7 @@
 			children = (
 				43FA639926BECDEF00EB2018 /* App */,
 				4347494C26BAEAAB004BE778 /* View */,
+				435519C2275E792F00D1F6B7 /* 3D Assets */,
 				43FA639F26BECE3C00EB2018 /* Data */,
 				4347495226BAF725004BE778 /* Model */,
 				43FA639D26BECE1300EB2018 /* Extension */,
@@ -359,11 +411,21 @@
 			files = (
 				438C262A26B97D780056E6B0 /* Preview Assets.xcassets in Resources */,
 				43BEB7C7275BDB54009CFA10 /* bestProducts.json in Resources */,
+				435519D5275E795800D1F6B7 /* NB 991.usdz in Resources */,
+				435519CD275E795800D1F6B7 /* NB 574Z.usdz in Resources */,
+				435519D3275E795800D1F6B7 /* NB 996.usdz in Resources */,
+				435519D2275E795800D1F6B7 /* NB 577.usdz in Resources */,
 				438C262726B97D780056E6B0 /* Assets.xcassets in Resources */,
 				438DF16626BD6AF30020AA2F /* GoogleService-Info.plist in Resources */,
 				43FA63A726BECECB00EB2018 /* category.json in Resources */,
 				43FA63A526BECECB00EB2018 /* cards.json in Resources */,
+				435519D6275E795800D1F6B7 /* NB X-Racer.usdz in Resources */,
+				435519CF275E795800D1F6B7 /* NB 530C.usdz in Resources */,
 				43FA63A626BECECB00EB2018 /* product.json in Resources */,
+				435519D4275E795800D1F6B7 /* NB 530.usdz in Resources */,
+				435519D0275E795800D1F6B7 /* NB 997H.usdz in Resources */,
+				435519CE275E795800D1F6B7 /* NB 530P.usdz in Resources */,
+				435519D1275E795800D1F6B7 /* NB 574.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +486,7 @@
 				438C262526B97D740056E6B0 /* ContentView.swift in Sources */,
 				4353901F26D4F0DE00DC5A7C /* CustomCorners.swift in Sources */,
 				43254AEA26D2DB5A00589B63 /* ProductModel.swift in Sources */,
+				435519C1275E5E3000D1F6B7 /* ARCameraView.swift in Sources */,
 				4303B19826E7F60B004FECDB /* WomanView.swift in Sources */,
 				439AF1922700C94C00607FE7 /* CardRealm.swift in Sources */,
 				439B132B26C94814007FDD92 /* CategoryModel.swift in Sources */,
@@ -439,6 +502,7 @@
 				43B4C06126BD6E2500E82D5C /* AlertView.swift in Sources */,
 				43FA63A926BECEED00EB2018 /* Constant.swift in Sources */,
 				43FA63AB26BED3E300EB2018 /* FooterView.swift in Sources */,
+				435519D8275E7AD400D1F6B7 /* ControlView.swift in Sources */,
 				4388590C26C00F180061924D /* LogoView.swift in Sources */,
 				431FFB2726C7AF22001E3709 /* FeaturedItemView.swift in Sources */,
 				43254AEC26D2DB7D00589B63 /* ProductItemView.swift in Sources */,

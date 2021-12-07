@@ -17,10 +17,20 @@ struct ProductItemView: View {
         VStack(alignment: .leading, spacing: 5, content: {
             ZStack {
                 
+                // Добавить в избранное
+                // ====
+                Button {} label: {
+                    Image(systemName: "heart")
+                        .foregroundColor(.black)
+                        .offset(x: 63, y: -70)
+                        .font(.title3)
+                }
+                // ====
+                
                 if product.discount > 0 {
                     Text("-\(product.discount)%")
                         .font(.system(size: 13))
-                        .fontWeight(.semibold)
+                        .fontWeight(.medium)
                         .foregroundColor(.white)
                         .padding(5)
                         .background(discountColor)
@@ -37,6 +47,7 @@ struct ProductItemView: View {
             .frame(width: 175, height: 180)
             .background(Color.white.shadow(color: Color.black.opacity(0.25), radius: 1, x: 0, y: 0))
             .cornerRadius(20)
+            .shadow(color: Color.black.opacity(0.05), radius: 1, x: 0, y: 0)
             
             // Название
             Text("\(product.name)")
@@ -47,17 +58,17 @@ struct ProductItemView: View {
                 // Цена
                 Text("\(product.discountPrice) ₽")
                     .font(.title2)
-                    .fontWeight(.heavy)
+                    .fontWeight(.bold)
                     .padding(.leading, 10)
                     .foregroundColor(product.discount > 0 ? discountColor : Color.black)
                 
                 // Скидочная цена
                 Text(product.discount > 0 ? "\(product.formattedPrice) ₽" : " ")
-                    .font(.system(size: 12))
-                    .fontWeight(.heavy)
+                    .font(.system(size: 11))
+                    .fontWeight(.bold)
                     .foregroundColor(Color.black.opacity(0.4))
                     .strikethrough(true, color: .gray)
-                    .padding(.top, 8)
+                    .padding(.top, -5)
             }
             
         }) //: VSTACK

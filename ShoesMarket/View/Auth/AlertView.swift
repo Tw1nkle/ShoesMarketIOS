@@ -21,7 +21,8 @@ struct AlertView: View {
                 .foregroundColor(.black).opacity(0.5)
             
             Text(message)
-                .fontWeight(.semibold)
+//                .fontWeight(.semibold)
+                .fontWeight(.medium)
                 .foregroundColor(.black).opacity(0.5)
             
             Button(action: {
@@ -29,7 +30,8 @@ struct AlertView: View {
             }, label: {
                 Text("Закрыть")
                     .foregroundColor(.white)
-                    .fontWeight(.semibold)
+//                    .fontWeight(.semibold)
+                    .fontWeight(.medium)
                     .padding(.vertical, 16)
                     .padding(.horizontal, 36)
                     .background(buttonColor)

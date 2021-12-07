@@ -7,12 +7,15 @@
 
 import SwiftUI
 import RealmSwift
+import RealityKit
 
 struct ProductDetailView: View {
     
     // MARK: - PROPERTIES
     @EnvironmentObject var shopData: ShopViewModel
+    @EnvironmentObject var state: StateModel
     @StateObject var ShopModel = ShopViewModel()
+    @State var showARView: Bool = false
     var animation: Namespace.ID
     
     // MARK: - BODY
@@ -107,7 +110,9 @@ struct ProductDetailView: View {
             .disabled(shopData.selectedSize == "")
             .padding(.top)
             
-            Button {} label: {
+            Button {
+                showARView = true
+            } label: {
                 HStack {
                     Image(systemName: "arkit")
                         .foregroundColor(.white)
@@ -123,6 +128,9 @@ struct ProductDetailView: View {
                 .cornerRadius(10)
             }
             .padding(.top, 10)
+            .fullScreenCover(isPresented: $showARView) {
+            ARCameraView()
+            }
 
             
         } //: VSTACK

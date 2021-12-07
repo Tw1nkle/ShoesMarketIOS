@@ -15,8 +15,8 @@ struct FooterView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             Text("Мы предлагаем самую современную, удобную и легкую обувь на рынке по хорошим ценам.")
-                .fontWeight(.semibold)
-                .foregroundColor(.black.opacity(0.5))
+                .fontWeight(.medium)
+                .foregroundColor(.gray)
                 .font(.system(size: 16))
                 .multilineTextAlignment(.center)
                 .layoutPriority(2)
@@ -32,7 +32,7 @@ struct FooterView: View {
             
             Text("Авторские права © Shoes Market\nВсе права защищены")
                 .font(.system(size: 16))
-                .fontWeight(.semibold)
+                .fontWeight(.medium)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
                 .layoutPriority(1)

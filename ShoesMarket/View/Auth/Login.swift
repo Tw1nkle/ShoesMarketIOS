@@ -41,7 +41,7 @@ struct Login: View {
                         VStack(alignment: .leading, spacing: 11) {
                             Text("Введите номер телефона")
                                 .font(.caption)
-                                .fontWeight(.semibold)
+                                .fontWeight(.medium)
                                 .foregroundColor(.gray)
                             
                             Text("+ \(loginData.getCountryCode()) \(loginData.phoneNumber)")
@@ -60,7 +60,7 @@ struct Login: View {
                         Button(action: loginData.sendCode, label: {
                             Text("Далее")
                                 .foregroundColor(.white)
-                                .fontWeight(.semibold)
+                                .fontWeight(.medium)
                                 .padding(.vertical, 16)
                                 .padding(.horizontal, 36)
                                 .background(buttonColor)

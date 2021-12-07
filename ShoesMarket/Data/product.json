@@ -8,6 +8,7 @@
         "code" : "NB3518A",
         "color" : "белый",
         "discount" : 0,
+        "new": true,
         "sizes" : [
             "40",
             "41"
@@ -22,6 +23,7 @@
         "code" : "NB9918B",
         "color" : "серый",
         "discount" : 0,
+        "new": true,
         "sizes" : [
             "39",
             "40",
@@ -38,6 +40,7 @@
         "price" : 26990,
         "color" : "бежевый",
         "discount" : 0,
+        "new": true,
         "sizes" : [
             "37",
             "38",
@@ -54,6 +57,7 @@
         "price" : 12990,
         "color" : "синий",
         "discount" : 30,
+        "new": false,
         "sizes" : [
             "36",
             "37",
@@ -70,6 +74,7 @@
         "price" : 22990,
         "color" : "бордовый",
         "discount" : 15,
+        "new": false,
         "sizes" : [
             "39",
             "40",
@@ -86,6 +91,7 @@
         "price" : 12990,
         "color" : "коричневый",
         "discount" : 10,
+        "new": false,
         "sizes" : [
             "36",
             "37",
@@ -102,6 +108,7 @@
         "price" : 12990,
         "color" : "белый",
         "discount" : 10,
+        "new": false,
         "sizes" : [
             "39",
             "40",
@@ -111,13 +118,14 @@
     },
     {
         "id" : 8,
-        "name" : "NB 574",
+        "name" : "NB 574Z",
         "image" : "shoes-8",
         "gender" : "Женские",
         "code" : "NB8754G",
         "price" : 12990,
         "color" : "зеленый",
         "discount" : 0,
+        "new": true,
         "sizes" : [
             "37",
             "38",
@@ -127,13 +135,14 @@
     },
     {
         "id" : 9,
-        "name" : "NB 530",
+        "name" : "NB 530C",
         "image" : "shoes-9",
         "gender" : "Женские",
         "code" : "NB8263I",
         "price" : 12990,
         "color" : "черный",
         "discount" : 0,
+        "new": true,
         "sizes" : [
             "39",
             "40",
@@ -142,13 +151,14 @@
     },
     {
         "id" : 10,
-        "name" : "NB 530",
+        "name" : "NB 530P",
         "image" : "shoes-10",
         "gender" : "Мужские",
         "code" : "NB8594O",
         "price" : 12990,
         "color" : "черный",
         "discount" : 5,
+        "new": false,
         "sizes" : [
             "41",
             "42",

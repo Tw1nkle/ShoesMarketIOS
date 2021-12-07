@@ -70,7 +70,7 @@ struct Verification: View {
                     Button(action: loginData.verifyCode) {
                         Text("Подтвердить")
                             .foregroundColor(.white)
-                            .fontWeight(.semibold)
+                            .fontWeight(.medium)
                             .padding(.vertical, 16)
                             .padding(.horizontal, 100)
                             .frame(width: UIScreen.main.bounds.width - 30)

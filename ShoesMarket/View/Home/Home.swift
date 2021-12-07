@@ -45,17 +45,21 @@ struct Home: View {
                         // Заголовок
                         TitleView(title: "Новинки")
                         
+                        // products.filter({"\($0)".contains("Мужские")})
+                        
                         // Товар новинок
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
                                 ForEach(products) { product in
-                                ProductItemView(product: product)
-                                    .onTapGesture {
-                                        withAnimation(.easeInOut) {
-                                            shopData.selectedProduct = product
-                                            shopData.showingProduct = true
-                                            shopData.showCart.toggle()
-                                        }
+                                    if product.new == true {
+                                        ProductItemView(product: product)
+                                            .onTapGesture {
+                                                withAnimation(.easeInOut) {
+                                                    shopData.selectedProduct = product
+                                                    shopData.showingProduct = true
+                                                    shopData.showCart.toggle()
+                                                }
+                                            }
                                     }
                                 }
                             }

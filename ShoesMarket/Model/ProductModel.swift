@@ -17,6 +17,7 @@ struct Product: Codable, Identifiable {
     let code: String
     let discount: Int
     let sizes: [String]
+    let new: Bool
     
     // Для идентификации товара, есть ли он в корзине
     var isAdded: Bool? = false
