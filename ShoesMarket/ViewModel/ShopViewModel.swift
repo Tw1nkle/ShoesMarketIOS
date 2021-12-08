@@ -24,7 +24,7 @@ class ShopViewModel: ObservableObject {
     @Published var endAnimation = false
     
     // Количество элементов
-    @Published var cartItems = 1
+    @Published var cartItems = 0
     
     // Поиск
     @Published var searchQuery = ""
