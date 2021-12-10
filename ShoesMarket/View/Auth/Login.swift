@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import iPhoneNumberField
 
 struct Login: View {
     
     // MARK: - PROPERTIES
     @StateObject var loginData = LoginViewModel()
     @State var isSmall = UIScreen.main.bounds.height < 750
+    
+    @State var text = ""
+    var placeText = "+7"
     
     // MARK: - PREVIEW
     var body: some View {
@@ -44,10 +48,24 @@ struct Login: View {
                                 .fontWeight(.medium)
                                 .foregroundColor(.gray)
                             
-                            Text("+ \(loginData.getCountryCode()) \(loginData.phoneNumber)")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
+                            if loginData.phoneNumber.isEmpty {
+                                Text(placeText)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.black.opacity(0.5))
+                                    .font(.title2)
+                            } else {
+                                Text("+\(loginData.getCountryCode()) \(loginData.phoneNumber)")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                            }
+                                
+//                                === Изначальный вариант ===
+//                                Text("+\(loginData.getCountryCode()) (\(loginData.phoneNumber)")
+//                                    .font(.title2)
+//                                    .fontWeight(.bold)
+//                                    .foregroundColor(.black)
+                                
                         } //: VSTACK
                         
                         Spacer(minLength: 0)

@@ -16,17 +16,6 @@ struct ProductItemView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5, content: {
             ZStack {
-                
-                // Добавить в избранное
-                // ====
-                Button {} label: {
-                    Image(systemName: "heart")
-                        .foregroundColor(.black)
-                        .offset(x: 63, y: -70)
-                        .font(.title3)
-                }
-                // ====
-                
                 if product.discount > 0 {
                     Text("-\(product.discount)%")
                         .font(.system(size: 13))

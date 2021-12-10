@@ -33,9 +33,9 @@ struct EmptyCartView: View {
             } label: {
                 Text("Вернуться к покупкам")
                     .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .padding(.vertical, 15)
-                    .padding(.horizontal, 15)
+                    .fontWeight(.medium)
+                    .padding(.vertical, 17)
+                    .padding(.horizontal, 17)
                     .background(buttonColor)
                     .cornerRadius(10)
                     .font(.system(size: 16))
