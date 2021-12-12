@@ -15,6 +15,13 @@ struct Product: Codable, Identifiable {
     let price: Int
     let color: String
     let code: String
+    let topMaterial: String
+    let innerMaterial: String
+    let outsoleMaterial: String
+    let insoleMaterial: String
+    let season: String
+    let country: String
+    let clasp: String
     let discount: Int
     let sizes: [String]
     let new: Bool

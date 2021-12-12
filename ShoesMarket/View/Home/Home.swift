@@ -45,8 +45,6 @@ struct Home: View {
                         // Заголовок
                         TitleView(title: "Новинки")
                         
-                        // products.filter({"\($0)".contains("Мужские")})
-                        
                         // Товар новинок
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {

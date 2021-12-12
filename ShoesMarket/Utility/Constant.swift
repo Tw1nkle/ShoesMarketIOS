@@ -11,6 +11,7 @@ import SwiftUI
 let cards: [Card] = Bundle.main.decode("cards.json")
 let categories: [Category] = Bundle.main.decode("category.json")
 let products: [Product] = Bundle.main.decode("product.json")
+let sizes: [Size] = Bundle.main.decode("sizes.json")
 let sampleProduct: Product = products[3]
 
 // Цвета
