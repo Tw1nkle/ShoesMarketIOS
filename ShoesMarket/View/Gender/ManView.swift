@@ -60,8 +60,8 @@ struct ManView: View {
             .blur(radius: shopData.showCart ? 3 : 0)
             .background(colorBackground.ignoresSafeArea(.all, edges: .all))
             
-            ProductDetailView(animation: animation)
-                .offset(y: shopData.showCart ? shopData.startAnimation ? 500 : 0 : 500)
+            ProductMainDetailView(animation: animation)
+                .offset(y: shopData.showCart ? shopData.startAnimation ? 1000 : 0 : 1000)
                 .environmentObject(shopData)
             
             // Animations

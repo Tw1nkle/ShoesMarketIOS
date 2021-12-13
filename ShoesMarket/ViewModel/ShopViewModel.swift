@@ -89,7 +89,6 @@ class ShopViewModel: ObservableObject {
             showBag = false
             shoeAnimation = false
             saveCart = false
-//            cartItems += 1
         }
     }
     

@@ -25,9 +25,6 @@ struct TitleCategory: View {
             
         } //: HSTACK
         .padding(.leading, -25)
-//        .padding(.horizontal)
-//        .padding(.top, 15)
-//        .padding(.bottom, 10)
     }
 }
 

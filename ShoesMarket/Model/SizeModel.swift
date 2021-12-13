@@ -7,6 +7,8 @@
 
 import Foundation
 
-struct Size: Codable {
-    let size: [String: String]
+struct Size: Codable, Identifiable {
+    let id: Int
+    let globalSize: String
+    let centimeters: String
 }

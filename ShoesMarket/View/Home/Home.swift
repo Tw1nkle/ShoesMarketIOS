@@ -112,8 +112,8 @@ struct Home: View {
                     .environmentObject(state)
             })
             
-            ProductDetailView(animation: animation)
-                .offset(y: shopData.showCart ? shopData.startAnimation ? 500 : 0 : 500)
+            ProductMainDetailView(animation: animation)
+                .offset(y: shopData.showCart ? shopData.startAnimation ? 1000 : 0 : 1000)
                 .environmentObject(shopData)
             
             // Анимация добавления товара в корзину
