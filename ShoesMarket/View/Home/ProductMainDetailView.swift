@@ -15,7 +15,6 @@ struct ProductMainDetailView: View {
     @EnvironmentObject var state: StateModel
     @StateObject var ShopModel = ShopViewModel()
     @State private var showARView: Bool = false
-    @State private var isBack: Bool = false
     @State private var showSizeTable: Bool = false
     var animation: Namespace.ID
     
@@ -25,7 +24,7 @@ struct ProductMainDetailView: View {
             VStack(alignment: .center) {
                 HStack {
                     Button(action: {
-                        isBack = true
+                        shopData.showCart.toggle()
                     }) {
                         Image(systemName: "chevron.backward")
                             .font(.title)
