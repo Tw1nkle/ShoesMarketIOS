@@ -89,6 +89,7 @@ struct SearchView: View {
             ProductMainDetailView(animation: animation)
                 .offset(y: shopData.showCart ? shopData.startAnimation ? 1000 : 0 : 1000)
                 .environmentObject(shopData)
+                .padding(.top, -50)
             
             if shopData.startAnimation {
                 VStack {
