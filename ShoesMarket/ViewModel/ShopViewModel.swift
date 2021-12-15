@@ -23,9 +23,6 @@ class ShopViewModel: ObservableObject {
     @Published var addItemToCart = false
     @Published var endAnimation = false
     
-    // Количество элементов
-    @Published var cartItems = 0
-    
     // Поиск
     @Published var searchQuery = ""
     
@@ -35,6 +32,10 @@ class ShopViewModel: ObservableObject {
     @Published var productImage: String = ""
     @Published var productPrice: Int = 0
     @Published var selectedSize: String = ""
+    @Published var productColor: String = ""
+    @Published var productCode: String = ""
+    @Published var formattedPrice: Int = 0
+    @Published var productItems: Int = 0
     
     // Получение данных
     @Published var cardRealm: [CardRealm] = []
@@ -114,15 +115,19 @@ class ShopViewModel: ObservableObject {
         card.image = productImage
         card.price = productPrice
         card.size = selectedSize
+        card.color = productColor
+        card.code = productCode
+        card.formattedPrice = formattedPrice
+        card.items = productItems
         
         // Получение справки
         guard let dbRef = try? Realm() else {return}
         
         // Запись данных
         try? dbRef.write {
+            productItems += 1
             dbRef.add(card)
             fetchData()
-            cartItems += 1
         }
         
     }
@@ -185,7 +190,6 @@ class ShopViewModel: ObservableObject {
         try! realm.write {
             realm.delete(deleteItem)
             fetchData()
-            cartItems -= 1
         }
     }
     

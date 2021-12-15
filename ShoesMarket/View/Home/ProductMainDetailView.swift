@@ -159,6 +159,9 @@ struct ProductMainDetailView: View {
                                     shopData.productName = shopData.selectedProduct?.name ?? sampleProduct.name
                                     shopData.productImage = shopData.selectedProduct?.image ?? sampleProduct.image
                                     shopData.productPrice = shopData.selectedProduct?.discountPrice ?? sampleProduct.discountPrice
+                                    shopData.productCode = shopData.selectedProduct?.code ?? sampleProduct.code
+                                    shopData.productColor = shopData.selectedProduct?.color ?? sampleProduct.color
+                                    shopData.formattedPrice = shopData.selectedProduct?.formattedPrice ?? sampleProduct.formattedPrice
                                     shopData.addData()
                                 }
                                 print(Realm.Configuration.defaultConfiguration.fileURL as Any)

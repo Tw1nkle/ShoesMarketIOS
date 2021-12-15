@@ -15,6 +15,7 @@ struct CartView: View {
     @EnvironmentObject var state: StateModel
     @StateObject var modelData = ShopViewModel()
     @State private var isBack = false
+    @State private var showOrderCartView: Bool = false
     
     // MARK: - BODY
     var body: some View {
@@ -39,7 +40,7 @@ struct CartView: View {
                 Spacer()
             } //: HSTACK
             
-            if shopData.cartItems == 0 {
+            if shopData.productItems == 0 {
                 EmptyCartView()
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
@@ -49,26 +50,40 @@ struct CartView: View {
                                 Image(card.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 160, height: 110)
+                                    .frame(width: 160, height: 100)
                                     .cornerRadius(15)
                                 
-                                VStack(alignment: .leading, spacing: 10) {
+                                VStack(alignment: .leading) {
                                     
                                     Text("Кроссовки \(card.name)")
-                                        .font(.system(size: 16))
+                                        .font(.system(size: 14))
                                         .fontWeight(.bold)
-                                        .foregroundColor(.black)
+                                    
+                                    Text("Артикул: \(card.code)")
+                                        .font(.system(size: 14))
+                                    
+                                    Text("Цвет: \(card.color)")
+                                        .font(.system(size: 14))
                                     
                                     Text("Размер: \(card.size)")
-                                        .font(.system(size: 16))
-                                        .foregroundColor(.black)
+                                        .font(.system(size: 14))
                                     
-                                    HStack(spacing: 15) {
+                                    HStack() {
                                         
                                         Text("\(shopData.getPrice(value: card.price)) ₽")
                                             .font(.system(size: 20))
                                             .fontWeight(.bold)
                                             .foregroundColor(.black)
+                                        
+                                        // ===
+                                        // Скидка
+                                        // ===
+                                        Text("\(card.formattedPrice) ₽")
+                                            .font(.system(size: 11))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color.black.opacity(0.4))
+                                            .strikethrough(true, color: .gray)
+                                            .padding(.top, -3)
                                         
                                         Spacer(minLength: 0)
                                         
@@ -78,12 +93,13 @@ struct CartView: View {
                                                 .foregroundColor(Color.black.opacity(0.5))
                                         }
                                     } //: HSTACK
+                                    .padding(.top, -3)
                                 } //: VSTACK
                             } //: HSTACK
 
                             Divider()
-                                .padding(.top, 10)
-                                .padding(.bottom, 10)
+                                .padding(.top, 15)
+                                .padding(.bottom, 15)
                             
                         }
                     } //: LAZYVSTACK
@@ -93,16 +109,64 @@ struct CartView: View {
                 VStack {
                     
                     Divider()
-                        .padding(.top, 5)
                         .padding(.leading)
                         .padding(.trailing)
+                    
+                    HStack {
+                        
+                        Text("Количество товаров")
+                            .font(.system(size: 16))
+                            .fontWeight(.semibold)
+                        
+                        Spacer(minLength: 0)
+                        
+                        Text("1шт.")
+                            .font(.system(size: 16))
+                            .fontWeight(.semibold)
+                        
+                    } //: HSTACK
+                    .padding(.horizontal)
+                    .padding(.top, 10)
+                    
+                    HStack {
+                        
+                        Text("Товары на сумму")
+                            .font(.system(size: 16))
+                            .fontWeight(.semibold)
+                        
+                        Spacer(minLength: 0)
+                        
+                        Text("\(shopData.calculateTotalPrice()) ₽")
+                            .font(.system(size: 16))
+                            .fontWeight(.semibold)
+                        
+                    } //: HSTACK
+                    .padding(.horizontal)
+                    .padding(.top, 3)
+                    
+                    HStack {
+                        
+                        Text("Скидка")
+                            .font(.system(size: 16))
+                            .fontWeight(.semibold)
+                            .foregroundColor(discountColor)
+                        
+                        Spacer(minLength: 0)
+                        
+                        Text("-3 897₽")
+                            .font(.system(size: 16))
+                            .fontWeight(.semibold)
+                            .foregroundColor(discountColor)
+                        
+                    } //: HSTACK
+                    .padding(.horizontal)
+                    .padding(.top, 3)
                     
                     HStack {
                         
                         Text("Итого к оплате")
                             .font(.system(size: 22))
                             .fontWeight(.heavy)
-                            .foregroundColor(.black)
                         
                         Spacer()
                         
@@ -110,12 +174,14 @@ struct CartView: View {
                         Text("\(shopData.calculateTotalPrice()) ₽")
                             .font(.system(size: 22))
                             .fontWeight(.heavy)
-                            .foregroundColor(.black)
                         
                     } //: HSTACK
-                    .padding([.top, .horizontal])
+                    .padding(.horizontal)
+                    .padding(.top, 3)
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        showOrderCartView.toggle()
+                    }) {
                         Text("Оформить заказ на \(shopData.calculateTotalPrice()) ₽")
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
@@ -128,8 +194,12 @@ struct CartView: View {
                             .font(.system(size: 16))
                     }
                     .padding()
+                    .fullScreenCover(isPresented: $showOrderCartView) { 
+                        OrderCartView()
+                    }
                     
                 } //: VSTACK
+                .background(colorBackground)
             }
             
         } //: VSTACK
