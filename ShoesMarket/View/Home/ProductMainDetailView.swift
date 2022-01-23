@@ -56,6 +56,7 @@ struct ProductMainDetailView: View {
                                 
                                 Button {
                                     showARView = true
+                                    print("selected \(shopData.selectedProduct?.name ?? sampleProduct.name)")
                                 } label: {
                                     ZStack {
                                         // VR
@@ -67,7 +68,7 @@ struct ProductMainDetailView: View {
                                     } //: ZTACK
                                 }
                                 .fullScreenCover(isPresented: $showARView) {
-                                    ARCameraView()
+                                    ARCameraView(nameARModel: shopData.selectedProduct?.name ?? sampleProduct.name)
                                 }
                                 .padding(.top, 4)
 

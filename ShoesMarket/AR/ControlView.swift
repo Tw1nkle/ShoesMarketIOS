@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ControlView: View {
+    
     var body: some View {
         
         VStack {
             
-            // Кнопка закрыть View
-            CloseButton()
+            // Кнопка закрыть окно
+            ControlCloseButton()
             
             Spacer()
             
@@ -25,15 +26,39 @@ struct ControlView: View {
     }
 }
 
-struct CloseButton: View {
+struct ControlCloseButton: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        
         HStack {
             
+            Spacer()
             
+            ZStack {
+                
+                Color.black.opacity(0.25)
+                
+                Button(action: {
+                    print("Closed VR View.")
+                    
+                }) {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 25))
+                        .foregroundColor(.white)
+                        .buttonStyle(PlainButtonStyle())
+                        .onTapGesture {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                }
+                
+            } //: ZTACK
+            .frame(width: 50, height: 50)
+            .cornerRadius(8.0)
             
         } //: HSTACK
-        
+        .padding(.top, 45)
+        .padding(.trailing, 20)
     }
 }
 

@@ -11,6 +11,7 @@ import RealityKit
 struct ARCameraView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    var nameARModel: String
     
     var body: some View {
         
@@ -24,6 +25,7 @@ struct ARCameraView: View {
         .edgesIgnoringSafeArea(.all)
         
     }
+    
 }
 
 struct ARViewContainer: UIViewRepresentable {
@@ -38,8 +40,9 @@ struct ARViewContainer: UIViewRepresentable {
 
 }
 
-struct ARCameraView_Previews: PreviewProvider {
-    static var previews: some View {
-        ARCameraView()
-    }
-}
+//struct ARCameraView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ARCameraView()
+//
+//    }
+//}
