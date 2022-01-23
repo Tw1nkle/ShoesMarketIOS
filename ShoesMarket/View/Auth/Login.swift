@@ -60,12 +60,6 @@ struct Login: View {
                                     .foregroundColor(.black)
                             }
                                 
-//                                === Изначальный вариант ===
-//                                Text("+\(loginData.getCountryCode()) (\(loginData.phoneNumber)")
-//                                    .font(.title2)
-//                                    .fontWeight(.bold)
-//                                    .foregroundColor(.black)
-                                
                         } //: VSTACK
                         
                         Spacer(minLength: 0)

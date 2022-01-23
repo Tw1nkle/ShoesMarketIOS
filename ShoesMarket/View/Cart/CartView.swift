@@ -182,13 +182,13 @@ struct CartView: View {
                     Button(action: {
                         showOrderCartView.toggle()
                     }) {
-                        Text("Оформить заказ на \(shopData.calculateTotalPrice()) ₽")
+                        Text("Перейти к оформлению заказа")
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .padding(.top, 16)
                             .padding(.bottom, 16)
-                            .padding(.leading, 60)
-                            .padding(.trailing, 60)
+                            .padding(.leading, 40)
+                            .padding(.trailing, 40)
                             .background(buttonColor)
                             .cornerRadius(10)
                             .font(.system(size: 16))

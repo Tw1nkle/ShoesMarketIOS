@@ -245,7 +245,7 @@ struct OrderCartView: View {
                     .padding(.top, 3)
                     
                     Button(action: {}) {
-                        Text("Оформить заказ на 2 123 ₽")
+                        Text("Оформить заказ")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                             .foregroundColor(.black)
