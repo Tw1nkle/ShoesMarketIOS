@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ControlView: View {
-    
+    @EnvironmentObject var ps: PlacementSettings
     var body: some View {
         
         VStack {
@@ -19,7 +19,17 @@ struct ControlView: View {
             Spacer()
             
             // Кнопка расположения модели
-            ControlButtonBar()
+            VStack(spacing: 16){
+                if self.ps.selectedModel != nil{
+                    ControlButton(systemIconName: "checkmark.circle.fill", action: {
+                        self.ps.confirmedModel = self.ps.selectedModel
+                        self.ps.selectedModel = nil
+                        print(self.ps.confirmedModel?.name ?? "Nil data")
+                    })
+                }
+                ControlButtonBar()
+            }
+            
             
         } //: VSTACK
         
@@ -27,7 +37,7 @@ struct ControlView: View {
 }
 
 struct ControlCloseButton: View {
-    
+    @EnvironmentObject var ps: PlacementSettings
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -41,7 +51,7 @@ struct ControlCloseButton: View {
                 
                 Button(action: {
                     print("Closed VR View.")
-                    
+                    ps.selectedModel = nil
                 }) {
                     Image(systemName: "xmark")
                         .font(.system(size: 25))

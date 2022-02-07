@@ -31,7 +31,7 @@ struct CartView: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                 })
-                .padding()
+                    .padding()
                 
                 // Название категории
                 TitleCategory(title: "Корзина")
@@ -40,67 +40,68 @@ struct CartView: View {
                 Spacer()
             } //: HSTACK
             
-            if shopData.productItems == 0 {
+            if shopData.cardRealm.isEmpty {
                 EmptyCartView()
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(spacing: 0) {
                         ForEach(modelData.cardRealm) { card in
-                            HStack(spacing: 15) {
-                                Image(card.image)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 160, height: 100)
-                                    .cornerRadius(15)
+                            if !card.isInvalidated{
+                                HStack(spacing: 15) {
+                                    Image(card.image)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 160, height: 100)
+                                        .cornerRadius(15)
+                                    
+                                    VStack(alignment: .leading) {
+                                        
+                                        Text("Кроссовки \(card.name)")
+                                            .font(.system(size: 14))
+                                            .fontWeight(.bold)
+                                        
+                                        Text("Артикул: \(card.code)")
+                                            .font(.system(size: 14))
+                                        
+                                        Text("Цвет: \(card.color)")
+                                            .font(.system(size: 14))
+                                        
+                                        Text("Размер: \(card.size)")
+                                            .font(.system(size: 14))
+                                        
+                                        HStack() {
+                                            
+                                            Text("\(shopData.getPrice(value: card.price)) ₽")
+                                                .font(.system(size: 20))
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.black)
+                                            
+                                            // ===
+                                            // Скидка
+                                            // ===
+                                            Text("\(card.formattedPrice) ₽")
+                                                .font(.system(size: 11))
+                                                .fontWeight(.bold)
+                                                .foregroundColor(Color.black.opacity(0.4))
+                                                .strikethrough(true, color: .gray)
+                                                .padding(.top, -3)
+                                            
+                                            Spacer(minLength: 0)
+                                            
+                                            Button(action: {modelData.deleteProduct(object: card)}) {
+                                                Image(systemName: "trash")
+                                                    .frame(width: 20, height: 20)
+                                                    .foregroundColor(Color.black.opacity(0.5))
+                                            }
+                                        } //: HSTACK
+                                        .padding(.top, -3)
+                                    } //: VSTACK
+                                } //: HSTACK
                                 
-                                VStack(alignment: .leading) {
-                                    
-                                    Text("Кроссовки \(card.name)")
-                                        .font(.system(size: 14))
-                                        .fontWeight(.bold)
-                                    
-                                    Text("Артикул: \(card.code)")
-                                        .font(.system(size: 14))
-                                    
-                                    Text("Цвет: \(card.color)")
-                                        .font(.system(size: 14))
-                                    
-                                    Text("Размер: \(card.size)")
-                                        .font(.system(size: 14))
-                                    
-                                    HStack() {
-                                        
-                                        Text("\(shopData.getPrice(value: card.price)) ₽")
-                                            .font(.system(size: 20))
-                                            .fontWeight(.bold)
-                                            .foregroundColor(.black)
-                                        
-                                        // ===
-                                        // Скидка
-                                        // ===
-                                        Text("\(card.formattedPrice) ₽")
-                                            .font(.system(size: 11))
-                                            .fontWeight(.bold)
-                                            .foregroundColor(Color.black.opacity(0.4))
-                                            .strikethrough(true, color: .gray)
-                                            .padding(.top, -3)
-                                        
-                                        Spacer(minLength: 0)
-                                        
-                                        Button(action: {modelData.deleteProduct(object: card)}) {
-                                            Image(systemName: "trash")
-                                                .frame(width: 20, height: 20)
-                                                .foregroundColor(Color.black.opacity(0.5))
-                                        }
-                                    } //: HSTACK
-                                    .padding(.top, -3)
-                                } //: VSTACK
-                            } //: HSTACK
-
-                            Divider()
-                                .padding(.top, 15)
-                                .padding(.bottom, 15)
-                            
+                                Divider()
+                                    .padding(.top, 15)
+                                    .padding(.bottom, 15)
+                            }
                         }
                     } //: LAZYVSTACK
                 } //: SCROLL
@@ -120,7 +121,7 @@ struct CartView: View {
                         
                         Spacer(minLength: 0)
                         
-                        Text("1шт.")
+                        Text("\(shopData.cardRealm.count)шт.")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                         
@@ -194,7 +195,7 @@ struct CartView: View {
                             .font(.system(size: 16))
                     }
                     .padding()
-                    .fullScreenCover(isPresented: $showOrderCartView) { 
+                    .fullScreenCover(isPresented: $showOrderCartView) {
                         OrderCartView()
                     }
                     

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37136D9E27A71E0800B38937 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37136D9D27A71E0800B38937 /* Launch Screen.storyboard */; };
+		37136DA027A7218400B38937 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37136D9F27A7218400B38937 /* String + Extension.swift */; };
+		37136DA327A726B600B38937 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 37136DA227A726B600B38937 /* FocusEntity */; };
+		37136DA527A7282F00B38937 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37136DA427A7282F00B38937 /* CustomARView.swift */; };
+		37136DA827A7295900B38937 /* PlacementSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37136DA727A7295900B38937 /* PlacementSettings.swift */; };
+		37136DAA27A72E6E00B38937 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37136DA927A72E6E00B38937 /* ARModel.swift */; };
 		4303B19626E7F3E8004FECDB /* ManView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303B19526E7F3E8004FECDB /* ManView.swift */; };
 		4303B19826E7F60B004FECDB /* WomanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303B19726E7F60B004FECDB /* WomanView.swift */; };
 		431FFB2526C7AEE0001E3709 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431FFB2426C7AEE0001E3709 /* CardModel.swift */; };
@@ -75,6 +81,11 @@
 
 /* Begin PBXFileReference section */
 		053D93E2E257EE3F2EFB8105 /* Pods-ShoesMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoesMarket.release.xcconfig"; path = "Target Support Files/Pods-ShoesMarket/Pods-ShoesMarket.release.xcconfig"; sourceTree = "<group>"; };
+		37136D9D27A71E0800B38937 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		37136D9F27A7218400B38937 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		37136DA427A7282F00B38937 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
+		37136DA727A7295900B38937 /* PlacementSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementSettings.swift; sourceTree = "<group>"; };
+		37136DA927A72E6E00B38937 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
 		4303B19526E7F3E8004FECDB /* ManView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManView.swift; sourceTree = "<group>"; };
 		4303B19726E7F60B004FECDB /* WomanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanView.swift; sourceTree = "<group>"; };
 		431FFB2426C7AEE0001E3709 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
@@ -146,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37136DA327A726B600B38937 /* FocusEntity in Frameworks */,
 				439AF18E2700C17700607FE7 /* RealmSwift in Frameworks */,
 				437513BB27610EA000C7DB64 /* iPhoneNumberField in Frameworks */,
 				439AF18C2700C17700607FE7 /* Realm in Frameworks */,
@@ -163,6 +175,14 @@
 				053D93E2E257EE3F2EFB8105 /* Pods-ShoesMarket.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		37136DA627A7294E00B38937 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				37136DA727A7295900B38937 /* PlacementSettings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		4347494C26BAEAAB004BE778 /* View */ = {
@@ -196,6 +216,7 @@
 				435DF0A226F76BF300BDC8B2 /* Cart.swift */,
 				439AF1912700C94C00607FE7 /* CardRealm.swift */,
 				43E31FC727660166004D17B8 /* SizeModel.swift */,
+				37136DA927A72E6E00B38937 /* ARModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,8 +224,10 @@
 		435519BD275E5C5600D1F6B7 /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				37136DA627A7294E00B38937 /* Settings */,
 				435519C0275E5E3000D1F6B7 /* ARCameraView.swift */,
 				435519D7275E7AD400D1F6B7 /* ControlView.swift */,
+				37136DA427A7282F00B38937 /* CustomARView.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -310,6 +333,7 @@
 			children = (
 				438C262226B97D740056E6B0 /* ShoesMarketApp.swift */,
 				438C262426B97D740056E6B0 /* ContentView.swift */,
+				37136D9D27A71E0800B38937 /* Launch Screen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -340,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				43FA63A026BECEAA00EB2018 /* CodableBundleExtension.swift */,
+				37136D9F27A7218400B38937 /* String + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -393,6 +418,7 @@
 				439AF18B2700C17700607FE7 /* Realm */,
 				439AF18D2700C17700607FE7 /* RealmSwift */,
 				437513BA27610EA000C7DB64 /* iPhoneNumberField */,
+				37136DA227A726B600B38937 /* FocusEntity */,
 			);
 			productName = ShoesMarket;
 			productReference = 438C261F26B97D740056E6B0 /* ShoesMarket.app */;
@@ -424,6 +450,7 @@
 			packageReferences = (
 				439AF18A2700C17700607FE7 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				437513B927610EA000C7DB64 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+				37136DA127A726B600B38937 /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = 438C262026B97D740056E6B0 /* Products */;
 			projectDirPath = "";
@@ -451,6 +478,7 @@
 				43E31FC62766014A004D17B8 /* sizes.json in Resources */,
 				435519D6275E795800D1F6B7 /* NB X-Racer.usdz in Resources */,
 				435519CF275E795800D1F6B7 /* NB 530C.usdz in Resources */,
+				37136D9E27A71E0800B38937 /* Launch Screen.storyboard in Resources */,
 				43FA63A626BECECB00EB2018 /* product.json in Resources */,
 				435519D4275E795800D1F6B7 /* NB 530.usdz in Resources */,
 				435519D0275E795800D1F6B7 /* NB 997H.usdz in Resources */,
@@ -526,11 +554,13 @@
 				439B132B26C94814007FDD92 /* CategoryModel.swift in Sources */,
 				43FA63A126BECEAA00EB2018 /* CodableBundleExtension.swift in Sources */,
 				43E31FCE276604E5004D17B8 /* ProductMainDetailView.swift in Sources */,
+				37136DA027A7218400B38937 /* String + Extension.swift in Sources */,
 				43E31FC827660166004D17B8 /* SizeModel.swift in Sources */,
 				439B132926C947E7007FDD92 /* CategoryItemView.swift in Sources */,
 				43B4C06326BD7F0900E82D5C /* Home.swift in Sources */,
 				431FFB2526C7AEE0001E3709 /* CardModel.swift in Sources */,
 				43AC1DB526E3A95F009731C6 /* TitleCategory.swift in Sources */,
+				37136DAA27A72E6E00B38937 /* ARModel.swift in Sources */,
 				4347495426BAF747004BE778 /* Countries.swift in Sources */,
 				43C65CE326DC2F7600B347FC /* SearchView.swift in Sources */,
 				43254AE826D2DAB900589B63 /* TitleView.swift in Sources */,
@@ -547,6 +577,8 @@
 				438C262326B97D740056E6B0 /* ShoesMarketApp.swift in Sources */,
 				4388590E26C00FA00061924D /* NavigationBarView.swift in Sources */,
 				43DDDC2E26C139FD00F0F388 /* CartView.swift in Sources */,
+				37136DA827A7295900B38937 /* PlacementSettings.swift in Sources */,
+				37136DA527A7282F00B38937 /* CustomARView.swift in Sources */,
 				433FEA3F276A3B3400A6E2CF /* NewAddressView.swift in Sources */,
 				B4FCD13D26C96A3D00BE81C4 /* StateModel.swift in Sources */,
 				435332C526BC058400FC507C /* CustomNumberPad.swift in Sources */,
@@ -679,9 +711,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ShoesMarket/Preview Content\"";
-				DEVELOPMENT_TEAM = YN96J64GT3;
+				DEVELOPMENT_TEAM = 5RVS7LV4U3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ShoesMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -689,8 +722,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dariafediashova.ShoesMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dd.ShoesMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -702,9 +736,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ShoesMarket/Preview Content\"";
-				DEVELOPMENT_TEAM = YN96J64GT3;
+				DEVELOPMENT_TEAM = 5RVS7LV4U3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ShoesMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -712,8 +747,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dariafediashova.ShoesMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dd.ShoesMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -743,6 +779,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		37136DA127A726B600B38937 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		437513B927610EA000C7DB64 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField";
@@ -762,6 +806,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		37136DA227A726B600B38937 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37136DA127A726B600B38937 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
 		437513BA27610EA000C7DB64 /* iPhoneNumberField */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 437513B927610EA000C7DB64 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;

@@ -129,7 +129,8 @@ class ShopViewModel: ObservableObject {
             dbRef.add(card)
             fetchData()
         }
-        
+        print(cardRealm.count)
+        print("Hello from add method")
     }
     
     // Добавление товара в корзину
@@ -189,8 +190,8 @@ class ShopViewModel: ObservableObject {
         let deleteItem = realm.objects(CardRealm.self).filter("id == %@", object.id)
         try! realm.write {
             realm.delete(deleteItem)
-            fetchData()
         }
+        fetchData()
     }
     
 }

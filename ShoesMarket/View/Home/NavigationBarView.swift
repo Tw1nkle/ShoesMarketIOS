@@ -12,7 +12,7 @@ struct NavigationBarView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var state: StateModel
     @EnvironmentObject var shopData: ShopViewModel
-    @StateObject var modelData = ShopViewModel()
+//    @StateObject var modelData = ShopViewModel()
     @State private var isAnimated: Bool = false
     
     // MARK: - BODY
@@ -49,7 +49,7 @@ struct NavigationBarView: View {
                     .font(.title)
                     .foregroundColor(.black)
                     .overlay(
-                        Text("\(shopData.productItems)")
+                        Text("\(shopData.cardRealm.count)")
                             .font(.system(size: 13))
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
@@ -57,7 +57,7 @@ struct NavigationBarView: View {
                             .background(buttonColor)
                             .clipShape(Circle())
                             .offset(x: 23, y: -17)
-                            .opacity(shopData.productItems != 0 ? 1 : 0)
+                            .opacity(shopData.cardRealm.isEmpty ? 0 : 1)
                     )
             })
         } //: HSTACK

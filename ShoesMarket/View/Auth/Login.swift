@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import iPhoneNumberField
 
 struct Login: View {
     
@@ -54,11 +53,21 @@ struct Login: View {
                                     .foregroundColor(Color.black.opacity(0.5))
                                     .font(.title2)
                             } else {
-                                Text("+\(loginData.getCountryCode()) \(loginData.phoneNumber)")
+//                                loginData.getCountryCode()
+                                Text("+7 \(loginData.phoneNumber.formatPhone())")
                                     .font(.title2)
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.5)
+                                    .onChange(of: loginData.phoneNumber) { value in
+                                        if value.count > 10{
+                                            loginData.phoneNumber.removeLast()
+                                        }
+                                    }
                             }
+                            
+                        
                                 
                         } //: VSTACK
                         
