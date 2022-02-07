@@ -26,8 +26,9 @@ struct ControlView: View {
                         self.ps.selectedModel = nil
                         print(self.ps.confirmedModel?.name ?? "Nil data")
                     })
+                        .padding(.bottom, 80)
                 }
-                ControlButtonBar()
+//                ControlButtonBar()
             }
             
             
