@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct NewAddressView: View {
+    @Environment(\.presentationMode) var presentationMode
     // MARK: - PROPERTIES
     @State private var street: String = ""
     @State private var apartment: String = ""
     @State private var entrance: String = ""
     @State private var floor: String = ""
-    
+    @Binding var deliveryType: DeliveryType?
     // MARK: - BODY
     var body: some View {
         VStack(alignment: .leading) {
@@ -67,7 +68,12 @@ struct NewAddressView: View {
             
             Spacer()
             
-            Button(action: {}) {
+            Button(action: {
+                withAnimation {
+                    deliveryType = .address
+                }
+                presentationMode.wrappedValue.dismiss()
+            }) {
                 Text("Сохранить")
                     .font(.system(size: 16))
                     .fontWeight(.semibold)
@@ -77,6 +83,7 @@ struct NewAddressView: View {
                     .background(buttonColor)
                     .cornerRadius(10)
             }
+            .padding(.bottom)
             
         } //: VSTACK
         .padding(.leading)
@@ -85,8 +92,8 @@ struct NewAddressView: View {
 }
 
 // MARK: - PREVIEW
-struct NewAddressView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewAddressView()
-    }
-}
+//struct NewAddressView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewAddressView()
+//    }
+//}

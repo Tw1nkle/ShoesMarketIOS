@@ -121,7 +121,7 @@ struct CartView: View {
                         
                         Spacer(minLength: 0)
                         
-                        Text("\(shopData.cardRealm.count)шт.")
+                        Text("\(shopData.cardRealm.count) шт.")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                         
@@ -154,7 +154,7 @@ struct CartView: View {
                         
                         Spacer(minLength: 0)
                         
-                        Text("-3 897₽")
+                        Text("\(shopData.summOfDiscount()) ₽")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                             .foregroundColor(discountColor)
@@ -172,7 +172,7 @@ struct CartView: View {
                         Spacer()
                         
                         // Итоговая цена
-                        Text("\(shopData.calculateTotalPrice()) ₽")
+                        Text("\(shopData.calculatePrice()) ₽")
                             .font(.system(size: 22))
                             .fontWeight(.heavy)
                         

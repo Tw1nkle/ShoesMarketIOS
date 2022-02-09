@@ -39,15 +39,15 @@ struct SizeTableView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(sizes) { size in
-                    HStack(alignment: .center, spacing: 180) {
+                    HStack(alignment: .center, spacing: 0) {
                         
                         Text(size.globalSize)
                             .fontWeight(.bold)
-                            .padding(.leading, 60)
+                            .frame(maxWidth: .infinity)
                         
                         Text(size.centimeters)
                             .fontWeight(.bold)
-                            .padding(.trailing, 50)
+                            .frame(maxWidth: .infinity)
                         
                     } //: HSTACK
                     .padding()

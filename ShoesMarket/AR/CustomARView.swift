@@ -20,6 +20,7 @@ class CustomARView: ARView{
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
         focusEntity = FocusEntity(on: self, focus: .classic)
+        print(focusEntity ?? "No focus entity")
         configure()
     }
     

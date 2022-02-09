@@ -107,6 +107,21 @@ class ShopViewModel: ObservableObject {
         
     }
     
+    // Суммарная скидка всех объектов
+    func summOfDiscount() -> Int{
+        var price: Int = 0
+        var discount: Int = 0
+        var result: Int = 0
+        cardRealm.forEach { (item) in
+            discount += item.formattedPrice
+            price += item.price
+        }
+        
+        result = price - discount
+        
+        return result
+    }
+    
     // Добавление данных в Realm
     func addData() {
         
@@ -166,12 +181,32 @@ class ShopViewModel: ObservableObject {
 
     }
     
+    // Подсчет цены без скидки
+    func calculatePrice() -> Int {
+        
+        var price: Int = 0
+        cardRealm.forEach { (item) in
+            price += item.price
+        }
+        
+        return price
+    }
+    
+    // Проверка на заполнение всех полей в окне (Оформление заказа)
+    
+    func isDisabled(name: String, email: String, deliveryType: DeliveryType?)-> Bool{
+        if !name.isEmpty && !email.isEmpty && deliveryType != nil{
+            return false
+        }
+        return true
+    }
+    
     // Подсчет итоговой суммы
     func calculateTotalPrice() -> Int {
         
         var price: Int = 0
         cardRealm.forEach { (item) in
-            price += item.price
+            price += item.formattedPrice
         }
         
         return price
