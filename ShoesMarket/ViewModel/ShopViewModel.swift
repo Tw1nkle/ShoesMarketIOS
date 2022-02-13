@@ -38,8 +38,7 @@ class ShopViewModel: ObservableObject {
     @Published var productItems: Int = 0
     
     // Получение данных
-    @Published var cardRealm: [CardRealm] = []
-    
+    @Published var cardRealm: Results<CardRealm> = try! Realm(configuration: Realm.Configuration(schemaVersion: 1)).objects(CardRealm.self)
     init() {
         fetchData()
     }
@@ -96,14 +95,13 @@ class ShopViewModel: ObservableObject {
     // Получение данных
     func fetchData() {
         
-        guard let dbRef = try? Realm() else {return}
-        
-        let results = dbRef.objects(CardRealm.self)
+        let dbRef = try? Realm()
         
         // Отображение результатов
-        self.cardRealm = results.compactMap({ (card) -> CardRealm? in
-            return card
-        })
+        
+        if let results = dbRef?.objects(CardRealm.self){
+            self.cardRealm = results
+        }
         
     }
     

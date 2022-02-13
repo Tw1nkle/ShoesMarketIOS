@@ -55,7 +55,9 @@ struct ProductMainDetailView: View {
                                 Spacer()
                                 
                                 Button {
-                                    showARView = true
+                                    DispatchQueue.main.async {
+                                        showARView = true
+                                    }
                                     print("selected \(shopData.selectedProduct?.name ?? sampleProduct.name)")
                                 } label: {
                                     ZStack {

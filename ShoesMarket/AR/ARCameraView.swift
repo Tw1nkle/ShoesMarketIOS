@@ -16,12 +16,13 @@ struct ARCameraView: View {
     var body: some View {
         
         ZStack(alignment: .bottom) {
-            
+         
             ARViewContainer()
-                .environmentObject(ps)
+                
             ControlView()
-                .environmentObject(ps)
+            
         } //: ZSTACK
+        .environmentObject(ps)
         .edgesIgnoringSafeArea(.all)
         .onAppear {
             let item = ARModel(name: nameARModel, scaleCompensation: 1)
@@ -29,7 +30,10 @@ struct ARCameraView: View {
             
             self.ps.selectedModel = item
         }
-        
+        .onDisappear {
+            self.ps.selectedModel = nil
+            self.ps.confirmedModel = nil
+        }
     }
     
 }

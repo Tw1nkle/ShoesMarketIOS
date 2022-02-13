@@ -714,7 +714,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ShoesMarket/Preview Content\"";
-				DEVELOPMENT_TEAM = 5RVS7LV4U3;
+				DEVELOPMENT_TEAM = 626J3875DM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ShoesMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -722,7 +722,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dd.ShoesMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddd.ShoesMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -739,7 +739,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ShoesMarket/Preview Content\"";
-				DEVELOPMENT_TEAM = 5RVS7LV4U3;
+				DEVELOPMENT_TEAM = 626J3875DM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ShoesMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -747,7 +747,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dd.ShoesMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddd.ShoesMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
