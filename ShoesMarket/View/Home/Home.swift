@@ -61,8 +61,8 @@ struct Home: View {
                                     }
                                 }
                             }
+                            .padding(.horizontal, 10)
                         }
-                        .padding(.leading, 10)
                         .padding(.top, 10)
                         
                         // Заголовок
@@ -84,8 +84,8 @@ struct Home: View {
                                     }
                                 }
                             }
+                            .padding(.horizontal, 10)
                         }
-                        .padding(.leading, 10)
                         .padding(.top, 10)
                         
                         // Футер

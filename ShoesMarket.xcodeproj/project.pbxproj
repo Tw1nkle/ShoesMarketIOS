@@ -13,6 +13,7 @@
 		37136DA527A7282F00B38937 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37136DA427A7282F00B38937 /* CustomARView.swift */; };
 		37136DA827A7295900B38937 /* PlacementSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37136DA727A7295900B38937 /* PlacementSettings.swift */; };
 		37136DAA27A72E6E00B38937 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37136DA927A72E6E00B38937 /* ARModel.swift */; };
+		37E065DC27B9C528008289F8 /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E065DB27B9C528008289F8 /* PaymentHandler.swift */; };
 		4303B19626E7F3E8004FECDB /* ManView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303B19526E7F3E8004FECDB /* ManView.swift */; };
 		4303B19826E7F60B004FECDB /* WomanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303B19726E7F60B004FECDB /* WomanView.swift */; };
 		431FFB2526C7AEE0001E3709 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431FFB2426C7AEE0001E3709 /* CardModel.swift */; };
@@ -86,6 +87,7 @@
 		37136DA427A7282F00B38937 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		37136DA727A7295900B38937 /* PlacementSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementSettings.swift; sourceTree = "<group>"; };
 		37136DA927A72E6E00B38937 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
+		37E065DB27B9C528008289F8 /* PaymentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHandler.swift; sourceTree = "<group>"; };
 		4303B19526E7F3E8004FECDB /* ManView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManView.swift; sourceTree = "<group>"; };
 		4303B19726E7F60B004FECDB /* WomanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomanView.swift; sourceTree = "<group>"; };
 		431FFB2426C7AEE0001E3709 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
@@ -185,6 +187,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		37E065DD27B9C5C9008289F8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				37E065DB27B9C528008289F8 /* PaymentHandler.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		4347494C26BAEAAB004BE778 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +289,7 @@
 		438C262126B97D740056E6B0 /* ShoesMarket */ = {
 			isa = PBXGroup;
 			children = (
+				37E065DD27B9C5C9008289F8 /* Helper */,
 				43FA639926BECDEF00EB2018 /* App */,
 				4347494C26BAEAAB004BE778 /* View */,
 				435519BD275E5C5600D1F6B7 /* AR */,
@@ -579,6 +590,7 @@
 				43DDDC2E26C139FD00F0F388 /* CartView.swift in Sources */,
 				37136DA827A7295900B38937 /* PlacementSettings.swift in Sources */,
 				37136DA527A7282F00B38937 /* CustomARView.swift in Sources */,
+				37E065DC27B9C528008289F8 /* PaymentHandler.swift in Sources */,
 				433FEA3F276A3B3400A6E2CF /* NewAddressView.swift in Sources */,
 				B4FCD13D26C96A3D00BE81C4 /* StateModel.swift in Sources */,
 				435332C526BC058400FC507C /* CustomNumberPad.swift in Sources */,

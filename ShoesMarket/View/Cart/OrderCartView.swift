@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-    
-    //MARK: - Payment Type
+
+//MARK: - Payment Type
 
 enum PaymentType: String, CaseIterable{
     case applePay = "Apple Pay"
@@ -15,7 +15,7 @@ enum PaymentType: String, CaseIterable{
     case uponReceipt = "При получении наличными/картой"
 }
 
-    //MARK: - Payment Type
+//MARK: - Payment Type
 
 enum DeliveryType: String, CaseIterable{
     case address = "Адресная доставка домой/в офис"
@@ -35,6 +35,7 @@ struct OrderCartView: View {
     @State private var showReternOrderView: Bool = false
     @State private var paymentType: PaymentType = .applePay
     @State private var deliveryType: DeliveryType? = nil
+    let paymentHandler = PaymentHandler()
     // MARK: - BODY
     var body: some View {
         VStack(alignment: .leading) {
@@ -49,7 +50,7 @@ struct OrderCartView: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                 })
-                .padding()
+                    .padding()
                 
                 // Название категории
                 TitleCategory(title: "Оформление заказа")
@@ -69,20 +70,20 @@ struct OrderCartView: View {
                         "ФИО*",
                         text: $fullName
                     )
-                    .disableAutocorrection(true)
-                    .padding()
-                    .background(Color.black.opacity(0.05))
-                    .cornerRadius(10)
-                    .padding(.bottom, 5)
+                        .disableAutocorrection(true)
+                        .padding()
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .padding(.bottom, 5)
                     
                     TextField(
                         "Email",
                         text: $email
                     )
-                    .disableAutocorrection(true)
-                    .padding()
-                    .background(Color.black.opacity(0.05))
-                    .cornerRadius(10)
+                        .disableAutocorrection(true)
+                        .padding()
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
                     
                     Text("Доставка")
                         .font(.system(size: 25))
@@ -90,7 +91,7 @@ struct OrderCartView: View {
                         .padding(.top, 20)
                         .padding(.bottom, 15)
                     
-                  
+                    
                     
                     VStack{
                         ForEach(DeliveryType.allCases, id: \.self){type in
@@ -118,7 +119,7 @@ struct OrderCartView: View {
                                     .padding(.bottom, 5)
                                     .padding(.horizontal, 1)
                             }
-                          
+                            
                         }
                     }
                     
@@ -147,34 +148,34 @@ struct OrderCartView: View {
                         .padding(.top, 20)
                         .padding(.bottom, 15)
                     
-                   
-                       
+                    
+                    
                     VStack(spacing: 0){
                         ForEach(PaymentType.allCases, id: \.self){type in
                             VStack(alignment: .leading, spacing: 0) {
                                 Spacer(minLength: 0)
-                            HStack {
-                                Text(type.rawValue)
-                                
-                                Spacer()
-                                
-                                ZStack {
-                                    if paymentType == type{
-                                        Circle()
-                                            .foregroundColor(buttonColor)
-                                            .frame(width: 25, height: 25)
-                                        
-                                        Circle()
-                                            .foregroundColor(Color.white)
-                                            .frame(width: 15, height: 15)
-                                    } else {
-                                    Circle()
-                                        .foregroundColor(Color.black.opacity(0.05))
-                                        .frame(width: 25, height: 25)
+                                HStack {
+                                    Text(type.rawValue)
+                                    
+                                    Spacer()
+                                    
+                                    ZStack {
+                                        if paymentType == type{
+                                            Circle()
+                                                .foregroundColor(buttonColor)
+                                                .frame(width: 25, height: 25)
+                                            
+                                            Circle()
+                                                .foregroundColor(Color.white)
+                                                .frame(width: 15, height: 15)
+                                        } else {
+                                            Circle()
+                                                .foregroundColor(Color.black.opacity(0.05))
+                                                .frame(width: 25, height: 25)
+                                        }
                                     }
                                 }
-                            }
-                            Spacer(minLength: 0)
+                                Spacer(minLength: 0)
                                 if type != PaymentType.allCases.last{
                                     Divider()
                                 }
@@ -259,7 +260,17 @@ struct OrderCartView: View {
                     } //: HSTACK
                     .padding(.top, 3)
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        if paymentType == .applePay{
+                            self.paymentHandler.startPayment { (success) in
+                                if success {
+                                    print("Success")
+                                } else {
+                                    print("Failed")
+                                }
+                            }
+                        }
+                    }) {
                         Text("Оформить заказ на \(shopData.calculatePrice()) ₽")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)

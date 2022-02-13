@@ -19,7 +19,7 @@ struct CartView: View {
     
     // MARK: - BODY
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HStack {
                 Button(action: {
                     self.isBack = true
@@ -88,7 +88,12 @@ struct CartView: View {
                                             
                                             Spacer(minLength: 0)
                                             
-                                            Button(action: {modelData.deleteProduct(object: card)}) {
+                                            Button(action: {
+                                                withAnimation {
+                                                    modelData.deleteProduct(object: card)
+                                                }
+                                            })
+                                            {
                                                 Image(systemName: "trash")
                                                     .frame(width: 20, height: 20)
                                                     .foregroundColor(Color.black.opacity(0.5))
@@ -105,7 +110,7 @@ struct CartView: View {
                         }
                     } //: LAZYVSTACK
                 } //: SCROLL
-                .padding()
+                .padding([.leading, .trailing, .top])
                 
                 VStack {
                     
