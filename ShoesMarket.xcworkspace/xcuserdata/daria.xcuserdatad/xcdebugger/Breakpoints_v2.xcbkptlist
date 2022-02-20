@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6A619F2C-4B05-487E-876B-F61033CEAA97"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShoesMarket/ViewModel/LoginViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "verifyCode()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6A619F2C-4B05-487E-876B-F61033CEAA97 - 6f3e76abbcc7db76"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ShoesMarket.LoginViewModel.verifyCode() -&gt; ()"
-                  moduleName = "ShoesMarket"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/daria/Desktop/App/ShoesMarket/ShoesMarket/ViewModel/LoginViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "284">
-               </Location>
-               <Location
-                  uuid = "6A619F2C-4B05-487E-876B-F61033CEAA97 - 53658baad7f08e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ShoesMarket.LoginViewModel.verifyCode() -&gt; ()"
-                  moduleName = "ShoesMarket"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/daria/Desktop/App/ShoesMarket/ShoesMarket/ViewModel/LoginViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "120">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "08E0A910-0411-4A7B-A246-9E662ABB62EA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
