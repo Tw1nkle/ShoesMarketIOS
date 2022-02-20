@@ -42,7 +42,7 @@ struct ProductItemView: View {
             Text("\(product.name)")
                 .font(.system(size: 16))
                 .padding(.leading, 10)
-            
+
             HStack {
                 // Цена
                 Text("\(product.discountPrice) ₽")
@@ -57,9 +57,8 @@ struct ProductItemView: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color.black.opacity(0.4))
                     .strikethrough(true, color: .gray)
-                    .padding(.top, -5)
+                    .padding(.top, -5)   
             }
-            
         }) //: VSTACK
     }
 }

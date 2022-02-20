@@ -55,7 +55,6 @@ struct CartView: View {
                                         .cornerRadius(15)
                                     
                                     VStack(alignment: .leading) {
-                                        
                                         Text("Кроссовки \(card.name)")
                                             .font(.system(size: 14))
                                             .fontWeight(.bold)
@@ -70,15 +69,12 @@ struct CartView: View {
                                             .font(.system(size: 14))
                                         
                                         HStack() {
-                                            
                                             Text("\(shopData.getPrice(value: card.price)) ₽")
                                                 .font(.system(size: 20))
                                                 .fontWeight(.bold)
                                                 .foregroundColor(.black)
                                             
-                                            // ===
                                             // Скидка
-                                            // ===
                                             Text("\(card.formattedPrice) ₽")
                                                 .font(.system(size: 11))
                                                 .fontWeight(.bold)
@@ -113,13 +109,11 @@ struct CartView: View {
                 .padding([.leading, .trailing, .top])
                 
                 VStack {
-                    
                     Divider()
                         .padding(.leading)
                         .padding(.trailing)
                     
                     HStack {
-                        
                         Text("Количество товаров")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
@@ -129,13 +123,11 @@ struct CartView: View {
                         Text("\(shopData.cardRealm.count) шт.")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
-                        
                     } //: HSTACK
                     .padding(.horizontal)
                     .padding(.top, 10)
                     
                     HStack {
-                        
                         Text("Товары на сумму")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
@@ -145,13 +137,11 @@ struct CartView: View {
                         Text("\(shopData.calculateTotalPrice()) ₽")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
-                        
                     } //: HSTACK
                     .padding(.horizontal)
                     .padding(.top, 3)
                     
                     HStack {
-                        
                         Text("Скидка")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
@@ -163,13 +153,11 @@ struct CartView: View {
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                             .foregroundColor(discountColor)
-                        
                     } //: HSTACK
                     .padding(.horizontal)
                     .padding(.top, 3)
                     
                     HStack {
-                        
                         Text("Итого к оплате")
                             .font(.system(size: 22))
                             .fontWeight(.heavy)
@@ -180,7 +168,6 @@ struct CartView: View {
                         Text("\(shopData.calculatePrice()) ₽")
                             .font(.system(size: 22))
                             .fontWeight(.heavy)
-                        
                     } //: HSTACK
                     .padding(.horizontal)
                     .padding(.top, 3)
@@ -203,11 +190,9 @@ struct CartView: View {
                     .fullScreenCover(isPresented: $showOrderCartView) {
                         OrderCartView()
                     }
-                    
                 } //: VSTACK
                 .background(colorBackground)
             }
-            
         } //: VSTACK
         .background(colorBackground.ignoresSafeArea())
     }

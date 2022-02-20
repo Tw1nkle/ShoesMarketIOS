@@ -2,7 +2,7 @@
 //  PlacementSettings.swift
 //  ShoesMarket
 //
-//  Created by Даня on 30.01.2022.
+//  Created by Дарья Федяшова on 30.01.2022.
 //
 
 import Foundation

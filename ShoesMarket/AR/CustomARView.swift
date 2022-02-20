@@ -2,7 +2,7 @@
 //  CustomARView.swift
 //  ShoesMarket
 //
-//  Created by Даня on 30.01.2022.
+//  Created by Дарья Федяшова on 30.01.2022.
 //
 
 import Foundation
@@ -11,10 +11,9 @@ import ARKit
 import FocusEntity
 
 
-//MARK: - Focus View
+// MARK: - Focus View
 
 class CustomARView: ARView{
-    
     var focusEntity: FocusEntity?
     
     required init(frame frameRect: CGRect) {

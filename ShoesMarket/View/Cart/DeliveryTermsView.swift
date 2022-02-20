@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct DeliveryTermsView: View {
+    
     // MARK: - PROPERTIES
     
     // MARK: - BODY
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            
             VStack(alignment: .leading) {
-                
                 Text("Условия доставки")
                     .font(.title3)
                     .fontWeight(.heavy)
@@ -64,11 +63,9 @@ struct DeliveryTermsView: View {
                 Text("с 9.00 до 21.00 по Москве в пределах МКАД.")
                     .padding(.bottom, 10)
                     .padding(.leading, 64)
-                
             } //: VSTACK
             
             VStack {
-                
                 HStack {
                     Text(String("\u{25CF}"))
                         .padding(.trailing, 15)
@@ -93,9 +90,7 @@ struct DeliveryTermsView: View {
                 } //: HSTACK
                 .padding(.trailing)
                 .padding(.bottom, 10)
-                
             } //: VSTACK
-            
         } //: SCROLL
         .padding(.leading)
         .padding(.trailing)

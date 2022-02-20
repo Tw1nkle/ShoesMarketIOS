@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SizeTableView: View {
+    
     // MARK: - PROPERTIES
     
     // MARK: - BODY
     var body: some View {
         VStack {
-            
             Text("Таблица соответствия размеров")
                 .font(.title3)
                 .fontWeight(.heavy)
@@ -21,7 +21,6 @@ struct SizeTableView: View {
                 .padding(.bottom, 50)
             
             HStack(alignment: .center) {
-                
                 Text("Размер")
                     .fontWeight(.bold)
                     .foregroundColor(Color.black.opacity(0.4))
@@ -31,7 +30,6 @@ struct SizeTableView: View {
                 Text("См")
                     .fontWeight(.bold)
                     .foregroundColor(Color.black.opacity(0.4))
-                
             } //: HSTACK
             .padding(.leading, 60)
             .padding(.trailing, 80)
@@ -40,7 +38,6 @@ struct SizeTableView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 ForEach(sizes) { size in
                     HStack(alignment: .center, spacing: 0) {
-                        
                         Text(size.globalSize)
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity)
@@ -48,7 +45,6 @@ struct SizeTableView: View {
                         Text(size.centimeters)
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity)
-                        
                     } //: HSTACK
                     .padding()
                     
@@ -57,7 +53,6 @@ struct SizeTableView: View {
                         .padding(.trailing)
                 }
             }
-            
         } //: VSTACK
     }
 }

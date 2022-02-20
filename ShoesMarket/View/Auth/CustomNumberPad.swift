@@ -12,7 +12,6 @@ struct CustomNumberPad: View {
     // MARK: - PROPERTIES
     @Binding var value: String
     var isVerify: Bool
-    
     // Символы для клавиатуры
     var rows = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "delete.left"]
     
@@ -40,6 +39,7 @@ struct CustomNumberPad: View {
                             .background(Color.white)
                             .cornerRadius(10)
                         }
+                        
                         // Отключение кнопки, если ничего не выбрано
                         .disabled(value == "" ? true : false)
                     }

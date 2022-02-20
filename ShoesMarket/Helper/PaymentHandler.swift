@@ -2,7 +2,7 @@
 //  PaymentHandler.swift
 //  ShoesMarket
 //
-//  Created by Даня on 14.02.2022.
+//  Created by Дарья Федяшова on 14.02.2022.
 //
 
 import PassKit
@@ -31,7 +31,7 @@ func startPayment(completion: @escaping PaymentCompletionHandler) {
     paymentSummaryItems = [amount, tax, total];
     completionHandler = completion
 
-    // Create our payment request
+    // Запрос на оплату
     let paymentRequest = PKPaymentRequest()
     paymentRequest.paymentSummaryItems = paymentSummaryItems
     paymentRequest.merchantIdentifier = "merchant.de.xxx"
@@ -41,7 +41,7 @@ func startPayment(completion: @escaping PaymentCompletionHandler) {
     paymentRequest.requiredShippingContactFields = [.phoneNumber, .emailAddress]
     paymentRequest.supportedNetworks = PaymentHandler.supportedNetworks
 
-    // Display our payment request
+    // Отображение запроса на оплату
     paymentController = PKPaymentAuthorizationController(paymentRequest: paymentRequest)
     paymentController?.delegate = self
     paymentController?.present(completion: { (presented: Bool) in
@@ -55,19 +55,14 @@ func startPayment(completion: @escaping PaymentCompletionHandler) {
   }
 }
 
-/*
-    PKPaymentAuthorizationControllerDelegate conformance.
-*/
 extension PaymentHandler: PKPaymentAuthorizationControllerDelegate {
 
 func paymentAuthorizationController(_ controller: PKPaymentAuthorizationController, didAuthorizePayment payment: PKPayment, completion: @escaping (PKPaymentAuthorizationStatus) -> Void) {
 
-    // Perform some very basic validation on the provided contact information
+    // Проверка формы
     if payment.shippingContact?.emailAddress == nil || payment.shippingContact?.phoneNumber == nil {
         paymentStatus = .failure
     } else {
-        // Here you would send the payment token to your server or payment provider to process
-        // Once processed, return an appropriate status in the completion handler (success, failure, etc)
         paymentStatus = .success
     }
 

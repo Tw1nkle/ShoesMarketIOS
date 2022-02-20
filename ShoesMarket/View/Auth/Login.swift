@@ -12,7 +12,6 @@ struct Login: View {
     // MARK: - PROPERTIES
     @StateObject var loginData = LoginViewModel()
     @State var isSmall = UIScreen.main.bounds.height < 750
-    
     @State var text = ""
     var placeText = "+7"
     
@@ -53,7 +52,6 @@ struct Login: View {
                                     .foregroundColor(Color.black.opacity(0.5))
                                     .font(.title2)
                             } else {
-//                                loginData.getCountryCode()
                                 Text("+7 \(loginData.phoneNumber.formatPhone())")
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -66,8 +64,6 @@ struct Login: View {
                                         }
                                     }
                             }
-                            
-                        
                                 
                         } //: VSTACK
                         
@@ -113,6 +109,8 @@ struct Login: View {
     }
 }
 
+
+// MARK: - PREVIEW
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
         Login()

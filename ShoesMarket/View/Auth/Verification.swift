@@ -105,7 +105,6 @@ struct Verification: View {
             
             return String(loginData.code[current])
         }
-        
         return ""
     }
 }

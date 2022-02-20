@@ -28,6 +28,6 @@ extension Bundle {
         }
         
         // 5. Возвращение извлеченных данных
-        return decodedData
+        return decodedData 
     }
 }

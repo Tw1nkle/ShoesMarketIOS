@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct NewAddressView: View {
-    @Environment(\.presentationMode) var presentationMode
+    
     // MARK: - PROPERTIES
+    @Environment(\.presentationMode) var presentationMode
     @State private var street: String = ""
     @State private var apartment: String = ""
     @State private var entrance: String = ""
     @State private var floor: String = ""
     @Binding var deliveryType: DeliveryType?
+    
     // MARK: - BODY
     var body: some View {
         VStack(alignment: .leading) {
-            
             Text("Новый адрес")
                 .font(.title3)
                 .fontWeight(.heavy)
@@ -84,16 +85,8 @@ struct NewAddressView: View {
                     .cornerRadius(10)
             }
             .padding(.bottom)
-            
         } //: VSTACK
         .padding(.leading)
         .padding(.trailing)
     }
 }
-
-// MARK: - PREVIEW
-//struct NewAddressView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewAddressView()
-//    }
-//}

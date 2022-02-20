@@ -9,18 +9,18 @@ import SwiftUI
 import RealityKit
 
 struct ARCameraView: View {
+    
+    // MARK: - PROPERTIES
     @StateObject var ps = PlacementSettings()
     @Environment(\.presentationMode) var presentationMode
     var nameARModel: String
     
+    // MARK: - BODY
     var body: some View {
-        
         ZStack(alignment: .bottom) {
-         
             ARViewContainer()
                 
             ControlView()
-            
         } //: ZSTACK
         .environmentObject(ps)
         .edgesIgnoringSafeArea(.all)
@@ -71,10 +71,3 @@ struct ARViewContainer: UIViewRepresentable {
         arView.scene.addAnchor(anchorEntity)
     }
 }
-// Preview
-//struct ARCameraView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ARCameraView()
-//
-//    }
-//}

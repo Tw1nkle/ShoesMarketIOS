@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ReternOrderView: View {
+    
     // MARK: - PROPERTIES
     
     // MARK: - BODY
     var body: some View {
         VStack(alignment: .leading) {
-            
             Text("Условия возврата")
                 .font(.title3)
                 .fontWeight(.heavy)
@@ -43,7 +43,6 @@ struct ReternOrderView: View {
             Text("Обращаем внимание, что вернуть можно только товары, приобретенные на территории РФ. Товары, приобретенные за пределами РФ, вернуть товар нельзя.")
             
             Spacer()
-            
         } //: VSTACK
         .padding(.trailing)
         .padding(.leading)

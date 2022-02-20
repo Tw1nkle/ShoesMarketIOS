@@ -30,8 +30,8 @@ class LoginViewModel: ObservableObject {
     
     // Отправка кода пользователю для подтверждения
     func sendCode() {
-        // Enabling testing code
-        // Disable when you need to test with real device
+        // TRUE - когда тестирование
+        // FALSE - когда использовать на реальном устройстве
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
         //getCountryCode()
         let number = "+7\(phoneNumber)"
@@ -42,7 +42,6 @@ class LoginViewModel: ObservableObject {
                 withAnimation{self.error.toggle()}
                 return
             }
-            
             self.CODE = CODE ?? ""
             self.gotoVerify = true
         }
@@ -65,7 +64,6 @@ class LoginViewModel: ObservableObject {
             }
 
             withAnimation{self.status = true}
-            
         }
     }
     

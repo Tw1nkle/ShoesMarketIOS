@@ -10,7 +10,6 @@ import SwiftUI
 struct WomanView: View {
     
     // MARK: - PROPERTIES
-    
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var shopData: ShopViewModel
     @EnvironmentObject var state: StateModel
@@ -65,7 +64,6 @@ struct WomanView: View {
                 .environmentObject(shopData)
                 .padding(.top, -50)
             
-            // Animations
             if shopData.startAnimation {
                 VStack {
                     Spacer()
@@ -102,7 +100,6 @@ struct WomanView: View {
                 .offset(y: shopData.endAnimation ? 500 : 0)
                 
             } //: ENDIF
-            
         } //: ZTACK
         .ignoresSafeArea(.all, edges: .bottom)
         .background(colorBackground.ignoresSafeArea())
@@ -114,6 +111,7 @@ struct WomanView: View {
     }
 }
 
+// MARK: - PREVIEW
 struct WomanView_Previews: PreviewProvider {
     static var previews: some View {
         WomanView()

@@ -15,7 +15,6 @@ struct TitleCategory: View {
     // MARK: - BODY
     var body: some View {
         HStack {
-            
             Text(title)
                 .font(.title2)
                 .fontWeight(.heavy)

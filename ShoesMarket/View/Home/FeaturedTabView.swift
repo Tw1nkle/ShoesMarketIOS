@@ -27,13 +27,15 @@ struct FeaturedTabView: View {
         } //: TAB
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         .onReceive(timer) { out in
+            
             // Каждые две секунды меняется состояние selection -> TabView перелистывается
             if counter == 2 {
                 withAnimation {
-                    // Если id у нашего последнего элемента массива не равно нашей selection, то +1
+                    // Если id последнего элемента массива не равно нашей selection, то +1
                     if selection != cards.last?.id {
                         selection += 1
                     } else {
+                        
                         // Если id у него последнего элемента массива равно нашей selection, то задаем значение первого элемента массива
                         selection = cards.first?.id ?? 1
                     }

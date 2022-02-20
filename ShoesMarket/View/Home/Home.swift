@@ -21,7 +21,6 @@ struct Home: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack(spacing: 0) {
-                // Хедер
                 NavigationBarView()
                     .padding(.horizontal, 15)
                     .padding(.bottom)
@@ -88,7 +87,6 @@ struct Home: View {
                         }
                         .padding(.top, 10)
                         
-                        // Футер
                         FooterView()
                             .padding(.horizontal)
                         
@@ -148,7 +146,6 @@ struct Home: View {
                         .background(shopData.addItemToCart ? darkenColor : buttonColor)
                         .clipShape(Circle())
                         .offset(y: shopData.showBag ? -50 : 300)
-                    
                 } //: VSTACK
                 .frame(width: getRect().width)
                 .offset(y: shopData.endAnimation ? 500 : 0)

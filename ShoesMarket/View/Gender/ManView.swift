@@ -10,7 +10,6 @@ import SwiftUI
 struct ManView: View {
     
     // MARK: - PROPERTIES
-    
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var shopData: ShopViewModel
     @EnvironmentObject var state: StateModel
@@ -65,7 +64,6 @@ struct ManView: View {
                 .environmentObject(shopData)
                 .padding(.top, -50)
             
-            // Animations
             if shopData.startAnimation {
                 VStack {
                     Spacer()
@@ -100,9 +98,7 @@ struct ManView: View {
                 } //: VSTACK
                 .frame(width: getRect().width)
                 .offset(y: shopData.endAnimation ? 500 : 0)
-                
             } //: ENDIF
-            
         } //: ZTACK
         .ignoresSafeArea(.all, edges: .bottom)
         .background(Color.black.ignoresSafeArea())

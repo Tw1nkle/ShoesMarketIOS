@@ -9,12 +9,13 @@ import SwiftUI
 
 struct EmptyCartView: View {
     
+    // MARK: - PROPERTIES
     @Environment(\.presentationMode) var presentationMode
     @State private var isBack: Bool = false
     
+    // MARK: - BODY
     var body: some View {
         VStack {
-            
             Spacer()
             
             Text("В вашей корзине пусто")
@@ -52,6 +53,7 @@ struct EmptyCartView: View {
     }
 }
 
+// MARK: - PREVIEW
 struct EmptyCartView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyCartView()

@@ -726,7 +726,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ShoesMarket/Preview Content\"";
-				DEVELOPMENT_TEAM = 626J3875DM;
+				DEVELOPMENT_TEAM = YN96J64GT3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ShoesMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -751,7 +751,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ShoesMarket/Preview Content\"";
-				DEVELOPMENT_TEAM = 626J3875DM;
+				DEVELOPMENT_TEAM = YN96J64GT3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ShoesMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

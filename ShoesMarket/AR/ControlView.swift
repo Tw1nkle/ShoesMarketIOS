@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ControlView: View {
+    
+    // MARK: - PROPERTIES
     @EnvironmentObject var ps: PlacementSettings
+    
+    // MARK: - BODY
     var body: some View {
-        
         VStack {
-            
             // Кнопка закрыть окно
             ControlCloseButton()
             
@@ -28,10 +30,7 @@ struct ControlView: View {
                     })
                         .padding(.bottom, 80)
                 }
-//                ControlButtonBar()
             }
-            
-            
         } //: VSTACK
         
     }
@@ -43,11 +42,9 @@ struct ControlCloseButton: View {
     
     var body: some View {
         HStack {
-            
             Spacer()
             
             ZStack {
-                
                 Color.black.opacity(0.25)
                 
                 Button(action: {
@@ -62,11 +59,9 @@ struct ControlCloseButton: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                 }
-                
             } //: ZTACK
             .frame(width: 50, height: 50)
             .cornerRadius(8.0)
-            
         } //: HSTACK
         .padding(.top, 45)
         .padding(.trailing, 20)
@@ -77,7 +72,6 @@ struct ControlButtonBar: View {
     var body: some View {
         
         HStack {
-            
             ControlButton(systemIconName: "clock.fill") {
                 print("MostRecentlyPlaced button pressed.")
             }
@@ -93,8 +87,6 @@ struct ControlButtonBar: View {
             ControlButton(systemIconName: "slider.horizontal.3") {
                 print("Settings button pressed.")
             }
-
-            
         } //: HSTACK
         .frame(maxWidth: 500)
         .padding(30)
@@ -104,7 +96,6 @@ struct ControlButtonBar: View {
 }
 
 struct ControlButton: View {
-    
     let systemIconName: String
     var action: () -> Void
     
@@ -119,7 +110,6 @@ struct ControlButton: View {
                 .buttonStyle(PlainButtonStyle())
         }
         .frame(width: 50, height: 50)
-        
     }
 }
 

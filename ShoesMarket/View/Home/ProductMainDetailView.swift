@@ -10,6 +10,7 @@ import RealmSwift
 import RealityKit
 
 struct ProductMainDetailView: View {
+    
     // MARK: - PROPERTIES
     @EnvironmentObject var shopData: ShopViewModel
     @EnvironmentObject var state: StateModel
@@ -47,6 +48,7 @@ struct ProductMainDetailView: View {
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 7) {
                             HStack {
+                                
                                 // Главный заговолок
                                 Text("New Balance")
                                     .font(.system(size: 22))
@@ -189,6 +191,7 @@ struct ProductMainDetailView: View {
                                 .padding(.bottom, 10)
                             
                             VStack(alignment: .leading) {
+                                
                                 // Артикул
                                 Text("Артикул")
                                     .font(.system(size: 12))
@@ -222,6 +225,7 @@ struct ProductMainDetailView: View {
                                     .font(.system(size: 12))
                                     .foregroundColor(Color.black.opacity(0.5))
                                 Text(shopData.selectedProduct?.country ?? sampleProduct.country)
+                                
                                     .padding(.bottom, 1)
                             } //: VSTACK
                             .font(.system(size: 12))

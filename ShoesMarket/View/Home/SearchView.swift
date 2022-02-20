@@ -97,12 +97,10 @@ struct SearchView: View {
                     
                     ZStack {
                         
-                        // Circle animation effect
+                        // Эффект круговой анимации
                         Color.white
                             .frame(width: shopData.shoeAnimation ? 100 : getRect().width * 1.3, height: shopData.shoeAnimation ? 100 : getRect().width * 1.3)
                             .clipShape(Circle())
-                        
-                        // Opacit
                             .opacity(shopData.shoeAnimation ? 1 : 0)
                         
                         Image(shopData.selectedProduct?.image ?? sampleProduct.image)

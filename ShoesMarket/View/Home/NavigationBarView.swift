@@ -12,7 +12,6 @@ struct NavigationBarView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var state: StateModel
     @EnvironmentObject var shopData: ShopViewModel
-//    @StateObject var modelData = ShopViewModel()
     @State private var isAnimated: Bool = false
     
     // MARK: - BODY

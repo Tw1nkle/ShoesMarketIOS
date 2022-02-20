@@ -7,17 +7,15 @@
 
 import SwiftUI
 
-//MARK: - Payment Type
-
-enum PaymentType: String, CaseIterable{
+// MARK: - Payment Type
+enum PaymentType: String, CaseIterable {
     case applePay = "Apple Pay"
     case card = "Банковской картой"
     case uponReceipt = "При получении наличными/картой"
 }
 
-//MARK: - Payment Type
-
-enum DeliveryType: String, CaseIterable{
+// MARK: - Payment Type
+enum DeliveryType: String, CaseIterable {
     case address = "Адресная доставка домой/в офис"
     case pointOfIssue = "В постамат/пункт выдачи"
 }
@@ -36,6 +34,7 @@ struct OrderCartView: View {
     @State private var paymentType: PaymentType = .applePay
     @State private var deliveryType: DeliveryType? = nil
     let paymentHandler = PaymentHandler()
+    
     // MARK: - BODY
     var body: some View {
         VStack(alignment: .leading) {
@@ -90,8 +89,6 @@ struct OrderCartView: View {
                         .fontWeight(.bold)
                         .padding(.top, 20)
                         .padding(.bottom, 15)
-                    
-                    
                     
                     VStack{
                         ForEach(DeliveryType.allCases, id: \.self){type in
@@ -194,11 +191,9 @@ struct OrderCartView: View {
                 }
                 
                 VStack {
-                    
                     Divider()
                     
                     HStack {
-                        
                         Text("Количество товаров")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
@@ -208,12 +203,10 @@ struct OrderCartView: View {
                         Text("\(shopData.cardRealm.count) шт.")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
-                        
                     } //: HSTACK
                     .padding(.top, 10)
                     
                     HStack {
-                        
                         Text("Товары на сумму")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
@@ -223,12 +216,10 @@ struct OrderCartView: View {
                         Text("\(shopData.calculateTotalPrice()) ₽")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
-                        
                     } //: HSTACK
                     .padding(.top, 3)
                     
                     HStack {
-                        
                         Text("Скидка")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
@@ -240,12 +231,10 @@ struct OrderCartView: View {
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                             .foregroundColor(discountColor)
-                        
                     } //: HSTACK
                     .padding(.top, 3)
                     
                     HStack {
-                        
                         Text("Итого к оплате")
                             .font(.system(size: 22))
                             .fontWeight(.heavy)
