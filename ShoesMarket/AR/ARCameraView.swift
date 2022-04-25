@@ -18,16 +18,18 @@ struct ARCameraView: View {
     // MARK: - BODY
     var body: some View {
         ZStack(alignment: .bottom) {
+            // Расположение модели
             ARViewContainer()
-                
+            // Контроллер
             ControlView()
         } //: ZSTACK
         .environmentObject(ps)
         .edgesIgnoringSafeArea(.all)
         .onAppear {
-            let item = ARModel(name: nameARModel, scaleCompensation: 1)
+            let item = ARModel(name: nameARModel,
+            scaleCompensation: 1)
             item.asyncLoadModelEntity()
-            
+            // Выбранная модель
             self.ps.selectedModel = item
         }
         .onDisappear {
@@ -50,7 +52,6 @@ struct ARViewContainer: UIViewRepresentable {
 
     func updateUIView(_ uiView: CustomARView, context: Context) {}
 
-    
     private func updateScene(for arView: CustomARView){
         arView.focusEntity?.isEnabled = self.placementSettings.selectedModel != nil
         

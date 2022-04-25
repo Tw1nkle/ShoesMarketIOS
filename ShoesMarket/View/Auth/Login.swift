@@ -59,7 +59,7 @@ struct Login: View {
                                     .lineLimit(1)
                                     .minimumScaleFactor(0.5)
                                     .onChange(of: loginData.phoneNumber) { value in
-                                        if value.count > 10{
+                                        if value.count > 10 {
                                             loginData.phoneNumber.removeLast()
                                         }
                                     }

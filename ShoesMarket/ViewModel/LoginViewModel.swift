@@ -49,7 +49,8 @@ class LoginViewModel: ObservableObject {
     
     // Проверка кода пользователя
     func verifyCode() {
-        let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.CODE, verificationCode: code)
+        let credential = PhoneAuthProvider.provider()
+            .credential(withVerificationID: self.CODE, verificationCode: code)
         
         loading = true
         

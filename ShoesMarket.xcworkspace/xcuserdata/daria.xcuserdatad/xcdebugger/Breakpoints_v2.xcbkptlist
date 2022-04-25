@@ -23,17 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9E6370E3-5510-4D15-8FE4-9D43CDA9764F"
-            shouldBeEnabled = "No"
+            uuid = "411D432A-FCFE-4AD8-8D91-5C49462D31CF"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoesMarket/ViewModel/ShopViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "ShopViewModel"
-            landmarkType = "3">
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "calculateTotalPrice()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
